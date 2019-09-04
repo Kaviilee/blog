@@ -83,17 +83,18 @@
   <title>kaviilee's blog</title>
   <meta name="generator" content="Hexo 3.9.0">
   
-
-
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131668078-1"></script>
   <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?9d3dab5d798aee499d2483765e63345c";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
+    var host = window.location.hostname;
+    if (host !== "localhost" || !true) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-131668078-1');
+    }
   </script>
+
+
 
 
 
