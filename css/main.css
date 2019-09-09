@@ -1032,6 +1032,16 @@ pre .javascript .function {
     opacity: 0.8;
   }
 }
+.reading-progress-bar {
+  background: #37c6c0;
+  display: block;
+  height: 2px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 0;
+  z-index: 9999;
+}
 .header {
   background: transparent;
 }
@@ -1159,6 +1169,30 @@ pre .javascript .function {
 }
 .use-motion .menu-item {
   opacity: 0;
+}
+.book-mark-link {
+  border-bottom: none;
+  display: inline-block;
+  position: fixed;
+  right: 30px;
+  top: -10px;
+  transition: 0.3s;
+}
+@media (max-width: 991px) {
+  .book-mark-link {
+    display: none;
+  }
+}
+.book-mark-link::before {
+  color: #222;
+  content: '\f02e';
+  font-family: 'FontAwesome';
+  font-size: 32px;
+  line-height: 1;
+}
+.book-mark-link:hover,
+.book-mark-link-fixed {
+  top: -2px;
 }
 .github-corner :hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out;
@@ -1689,6 +1723,13 @@ article:last-child .post-eof {
   align-self: center;
   height: 30px;
 }
+.post-copyright {
+  background-color: #f9f9f9;
+  border-left: 3px solid #ff1700;
+  list-style: none;
+  margin: 2em 0 0;
+  padding: 0.5em 1em;
+}
 .sidebar {
   background: #222;
   bottom: 0;
@@ -1770,7 +1811,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #0e1d71;
+  background: #65c4ec;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
