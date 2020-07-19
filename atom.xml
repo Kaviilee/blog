@@ -3,7 +3,7 @@
   <title>kaviilee&#39;s blog</title>
   
   
-  <link href="/blog/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
   <link href="https://github.com/Kaviilee/blog.git/"/>
   <updated>2019-09-07T09:25:18.554Z</updated>
@@ -14,12 +14,12 @@
     
   </author>
   
-  <generator uri="http://hexo.io/">Hexo</generator>
+  <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
     <title>js获取视口和文档高度</title>
     <link href="https://github.com/Kaviilee/blog.git/2019/09/07/js%E8%8E%B7%E5%8F%96%E8%A7%86%E5%8F%A3%E5%92%8C%E6%96%87%E6%A1%A3%E9%AB%98%E5%BA%A6/"/>
-    <id>https://github.com/Kaviilee/blog.git/2019/09/07/js获取视口和文档高度/</id>
+    <id>https://github.com/Kaviilee/blog.git/2019/09/07/js%E8%8E%B7%E5%8F%96%E8%A7%86%E5%8F%A3%E5%92%8C%E6%96%87%E6%A1%A3%E9%AB%98%E5%BA%A6/</id>
     <published>2019-09-07T09:25:18.000Z</published>
     <updated>2019-09-07T09:25:18.554Z</updated>
     
