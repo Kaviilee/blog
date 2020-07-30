@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: kaviilee's blog
+title: kavii
 subtitle:
 description: 分享与成长的记录
-keywords:
-author: kaviilee
+keywords: 'Blog,博客,技术,分享'
+author: 'kaviilee'
 language: zh-CN
 timezone:
 
@@ -27,13 +27,22 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - README.md
+  - manifest.json
+  - start
+  - CNAME
+  - assets/*
 
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
+auto_spacing: true
 titlecase: false # Transform title into titlecase
-external_link: true # Open external links in new tab
-filename_case: 0
+external_link:
+  enable: true # Open external links in new tab
+  field: site
+  exclude: ''
+filename_case: 1
 render_drafts: false
 post_asset_folder: false
 relative_link: false
@@ -42,7 +51,9 @@ highlight:
   enable: true
   line_number: true
   auto_detect: false
-  tab_replace:
+  tab_replace: '    '
+  wrap: true
+  hljs: false
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -64,6 +75,7 @@ tag_map:
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
+updated_option: false
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -73,7 +85,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: volantis
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -82,16 +94,22 @@ deploy:
   repo: https://github.com/Kaviilee/blog.git
   branch: gh-pages
 
-#  search
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
+lazyload:
+  enable: true
+  onlypost: false
+  loadingImg: https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg
+  isSPA: true
 
-# 统计阅读时长
-# symbols_count_time:
-#   symbols: true
-#   time: true
-#   total_symbols: true
-#   total_time: true
+import:
+  meta:
+    - <meta name="msapplication-TileColor" content="#ffffff">
+    - <meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/browserconfig.xml">
+    - <meta name="theme-color" content="#ffffff">
+  link:
+    - <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png">
+    - <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-32x32.png">
+    - <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-16x16.png">
+    - <link rel="manifest" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/site.webmanifest">
+    - <link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    - <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon.ico">
+  script:
