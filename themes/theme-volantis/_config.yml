@@ -107,21 +107,21 @@ cover:
   subtitle: ''
   search: A Wonderful Theme for Hexo # search bar placeholder
   features:
-    - name: 文档
-      img: https://i.loli.net/2020/07/24/GaeXvVAdtJkCYT3.png
-      icon: fas fa-book
-      url: /v3/getting-started/
-    - name: 帮助
-      img: https://i.loli.net/2020/07/24/cxRslyWzk2OTP9r.png
-      icon: fas fa-question-circle
+    - name: 首页
+      # img: https://i.loli.net/2020/07/24/GaeXvVAdtJkCYT3.png
+      icon: fas fa-home
+      url: /blog/
+    - name: 标签
+      # img: https://i.loli.net/2020/07/24/cxRslyWzk2OTP9r.png
+      icon: fas fa-hashtag
       url: faqs/
     - name: 示例
       img: https://i.loli.net/2020/07/24/9kHJZNA8m4RBxhp.png
       icon: fas fa-play-circle
       url: /examples/
-    - name: 社区
-      img: https://i.loli.net/2020/07/24/skczZ1VdMGRbTLi.png
-      icon: fas fa-fan fa-spin
+    - name: 友链
+      # img: https://i.loli.net/2020/07/24/skczZ1VdMGRbTLi.png
+      icon: fas fa-link
       url: /contributors/
 
 
@@ -135,7 +135,7 @@ navbar:
   menu:
     # The following can be written in `blog/source/_data/menu.yml`
     - name: 首页
-      icon: fas fa-rss
+      icon: fas fa-home
       url: /
     - name: 分类
       icon: fas fa-folder-open
