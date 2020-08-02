@@ -1,6 +1,8 @@
 ---
 title: js获取视口和文档高度
 date: 2019-09-07 17:25:18
+categories:
+    - [JavaScript]
 tags:
 ---
 

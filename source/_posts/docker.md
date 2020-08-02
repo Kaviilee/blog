@@ -1,6 +1,8 @@
 ---
 title: docker学习笔记
 tags: docker
+categories:
+    - ['技术']
 date: 2020-07-21 00:03:15
 ---
 

@@ -97,39 +97,43 @@ style:
 ############################### Layout ###############################
 cover:
   scheme: docs # docs, blog
-  layout: dock # search (搜索), dock (坞), featured (精选), focus (焦点)
+  layout: search # search (搜索), dock (坞), featured (精选), focus (焦点)
   display:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  logo: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
+  logo: https://i.loli.net/2020/08/02/kt7G6RHwvgTYzc2.png
   title: ''
   subtitle: ''
-  search: A Wonderful Theme for Hexo # search bar placeholder
+  search: Search # search bar placeholder
   features:
     - name: 首页
       # img: https://i.loli.net/2020/07/24/GaeXvVAdtJkCYT3.png
-      icon: fas fa-home
-      url: /blog/
+      icon: fas fa-home faa-vertical
+      color: '#20c997'
+      url: /
     - name: 标签
       # img: https://i.loli.net/2020/07/24/cxRslyWzk2OTP9r.png
-      icon: fas fa-hashtag
-      url: faqs/
-    - name: 示例
-      img: https://i.loli.net/2020/07/24/9kHJZNA8m4RBxhp.png
-      icon: fas fa-play-circle
-      url: /examples/
+      icon: fas fa-tags faa-tada
+      color: '#2196f3'
+      url: /tags/
+    - name: 归档
+      # img: https://i.loli.net/2020/07/24/9kHJZNA8m4RBxhp.png
+      icon: fas fa-archive
+      color: '#ff9800'
+      url: /archives/
     - name: 友链
       # img: https://i.loli.net/2020/07/24/skczZ1VdMGRbTLi.png
       icon: fas fa-link
-      url: /contributors/
+      color: '#734ae6'
+      url: /friends/
 
 
 
 # Navigation Bar
 navbar:
   logo: # choose [img] or [icon + title]
-    img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+    img: https://i.loli.net/2020/08/02/cB1j23My7NtwTzp.png
     icon:
     title:
   menu:
@@ -180,7 +184,7 @@ layout:
       header: [title, author, category, date, pin]
       footer: [updated, tags, btns, share]
     # 文章页面的侧边栏
-    sidebar: [qrcode, toc]
+    sidebar: [blogger, qrcode, toc]
   # 文章布局，参数继承自 on_page
   on_post:
     # 文章页脚，自动在每一篇文章末尾添加
@@ -415,7 +419,7 @@ footer:
       url: https://github.com/Kaviilee
     - icon: fas fa-headphones-alt
       url: https://music.163.com/#/user/home?id=63035382
-  copyright: '[Copyright © 2017-2020 XXX](/)'
+  copyright: '[Copyright © 2019-2020 Kaviilee](/)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
 
