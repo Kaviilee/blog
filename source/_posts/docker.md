@@ -1,6 +1,9 @@
 ---
 title: docker学习笔记
 tags: docker
+author:
+    name: Kaviilee
+    avatar: https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/custom/papalymo.jpg
 categories:
     - ['技术']
 date: 2020-07-21 00:03:15
