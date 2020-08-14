@@ -35,7 +35,7 @@ date: 2020-07-21 00:03:15
 
 > 之前的虚拟机技术，所有的项目都在同一个环境下运行
 
-![image-20200702102945900](https://imgkr.cn-bj.ufileos.com/57b9859b-3c21-4ea9-a19e-f27510e44f00.png)
+![](https://i.loli.net/2020/08/14/XKaBgUARTQxqc2b.png)
 
 虚拟机的缺点
 
@@ -49,7 +49,7 @@ date: 2020-07-21 00:03:15
 
 `容器化技术不是一个完整的操作系统`
 
-![image-2020070202](https://imgkr.cn-bj.ufileos.com/daafed3e-4939-492a-8d4f-3ccce9b05639.png)
+![image-2020070202](https://i.loli.net/2020/08/14/uYhFIpJeADPOQ5r.png)
 
 比较docker和虚拟机技术的不同
 
@@ -197,8 +197,6 @@ yum remove docker-ce docker-ce-cli containerd.io
 rm -rf /var/lib/docker #docker默认工作路径
 ```
 
-<img src="https://imgkr.cn-bj.ufileos.com/acaa3fe3-2f51-4113-9c4e-6903de24a43a.png" alt="fetch镜像"  />
-
 #### Windows Docker安装（win10）
 
 下载官方docker-desktop安装程序
@@ -214,11 +212,11 @@ win + s
 启用或关闭windows功能
 ```
 
-![](https://imgkr.cn-bj.ufileos.com/30d0b2ed-ecf1-4b3b-bdf2-74e83a814cdb.png)
+![](https://i.loli.net/2020/08/14/kEfpcwAuH7BGl45.png)
 
 选中Hyper-V
 
-![](https://imgkr.cn-bj.ufileos.com/56dbc459-059c-4cf9-9891-d8c44eff802c.png)
+![](https://i.loli.net/2020/08/14/8pywI4dJSsPqVXh.png)
 
 #####  配置镜像加速
 
@@ -232,7 +230,7 @@ Docker是一个C/S结构的系统，Docker的守护进程运行在主机上，�
 
 DockerServer接收到Docker-Client的指令，就会执行这个命令
 
-![docker底层](https://imgkr.cn-bj.ufileos.com/113cec07-74ca-48c5-9519-a5cf869396e3.png)
+![docker底层](https://i.loli.net/2020/08/14/qTZ1yHfGixmYtU2.png)
 
 Docker为什么比VM快
 
@@ -510,8 +508,6 @@ mysql，容器删了，数据丢失. **<mark> 需求：mysql数据可以存储�
 
 目录的挂载,将容器内的目录挂载到Linux上面
 
-![数据卷](https://imgkr.cn-bj.ufileos.com/e0a70bc5-c46c-4ea7-8fa8-c2e6cbc8d367.png)
-
 **总结一句话: 容器的持久化和同步操作! 容器间也可以数据共享的!**
 
 ### 使用数据卷
@@ -563,8 +559,6 @@ local               b448950f96ca2daed2a90cd21e687431653dc9a2f40ccf51e0ce38432f65
 
 # 通过 -v 卷名:容器内路径
 ```
-
-![具名挂载](https://imgkr.cn-bj.ufileos.com/2db3ee8d-6086-4240-a011-d54f1853e1d3.png)
 
 所有的docker容器内的卷,没有指定目录的情况下都是在/var/lib/docker/volumes/卷名/_data
 
@@ -676,13 +670,7 @@ docker build -f <dockerfile文件目录> -t <镜像名:[tag]> .
 # 3. 测试
 ```
 
-对比原生centos：
 
-![](https://wx1.sbimg.cn/2020/07/06/CXvvw.png)
-
-增加之后的镜像：
-
-![](https://imgkr.cn-bj.ufileos.com/b3f9d89c-479b-4d4d-95b8-766d5531675c.png)
 
 > CMD和ENTRYPOINT的区别
 
@@ -860,15 +848,15 @@ CMD /usr/local/apache-tomcat-9.0.33/bin/startup.sh && tail -F /usr/local/apache-
 
 3. 创建命名空间
 
-   ![](https://imgkr.cn-bj.ufileos.com/72823a13-7b12-4474-a3a0-ca63e867a1a3.png)
+   ![](https://i.loli.net/2020/08/14/jFcRduLDS4wpnsY.png)
 
 4. 创建容器镜像
 
-   ![](https://imgkr.cn-bj.ufileos.com/c92eedfe-799f-44f0-828a-b077fed9e2b2.png)
+   ![QQ截图20200814170112.png](https://i.loli.net/2020/08/14/rGJLpDIsCcE49b7.png)
 
 5. 浏览阿里云
 
-   ![](https://imgkr.cn-bj.ufileos.com/06a46121-5736-4977-b671-963bbd817e4b.png)
+   ![QQ截图20200814171154.png](https://i.loli.net/2020/08/14/axQFySgmeY3OTCB.png)
 
 ### 小结
 
