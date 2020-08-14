@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+    - 12
+
+install:
+    - yarn install
+
+script:
+    - hexo generate
+
+deploy:
+    provider: pages
+
+    # target_branch: gh_pages // 默认就是gh_pages
+    on:
+        branch: dev
+
+    skip-cleanup: true
+
+    local_dir: public
+
+    token: $GITHUB_TOKEN
+
+    keep_history: true
+
+    committer_from_gh: true

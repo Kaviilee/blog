@@ -168,7 +168,7 @@ layout:
   # 文章列表（主页、自定义的列表）布局
   on_list:
     # 列表中每一篇文章的meta信息
-    meta: [title, category, date, wordcount, counter, valinecount, pin]
+    meta: [title, category, date, wordcount, valinecount, pin]
     # 列表类页面的侧边栏
     sidebar: [blogger, category, tagcloud, qrcode]
     # read more button
