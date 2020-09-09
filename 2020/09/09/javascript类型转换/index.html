@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,9 +16,11 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：Docker - Kaviilee&#39;s blog</title>
+  <title>JavaScript类型转换 - Kaviilee&#39;s blog</title>
   
 
+  
+    <meta name="description" content="关于 JavaScript 类型转换的一些笔记。">
   
 
   <!-- feed -->
@@ -84,7 +84,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -426,10 +426,10 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">JavaScript类型转换</div>
   <div id="pjax-enable-cover">true</div>
-  <div id="pjax-permalink"></div>
+  <div id="pjax-permalink">https://github.com/Kaviilee/blog.git/2020/09/09/javascript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</div>
   
   <div id="valine-path">none</div>
   <div id="valine-placeholder">none</div>
@@ -463,25 +463,12 @@
       
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -491,11 +478,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/blog/2020/07/21/docker/">
-      Docker学习笔记
+  <h1 class="title">
+    <a href="/blog/2020/09/09/javascript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">
+      JavaScript类型转换
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -505,11 +492,19 @@
           
             
               
+
+
+ 
+
+            
+          
+            
+              
   
   <div class='new-meta-item category'>
-    <a href='/blog/categories/%E6%8A%80%E6%9C%AF/' rel="nofollow">
+    <a href='/blog/categories/javascript/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>技术</p>
+      <p>JavaScript</p>
     </a>
   </div>
 
@@ -520,41 +515,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年7月21日</p>
+    <p>发布于：2020年9月9日</p>
   </a>
 </div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：6.5k字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：27分钟</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/blog/2020/07/21/docker/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/blog/2020/07/21/docker/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
 
             
           
@@ -572,38 +535,411 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这是在看完狂神的 Docker 视频之后做的笔记~存档用</p>
-      
-    </div>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p>关于 JavaScript 类型转换的一些笔记。</p>
+<a id="more"></a>
+
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>将值从一种类型转换到另一种类型通常称为类型转换。</p>
+<h2 id="原始值转布尔值"><a href="#原始值转布尔值" class="headerlink" title="原始值转布尔值"></a>原始值转布尔值</h2><p>JavaScript中，只有 6 种值可以被转换为false，其余都会被转换成 true。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>()) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">false</span>)) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">undefined</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">null</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(+<span class="number">0</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="number">-0</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">NaN</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="string">""</span>)) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="原始值转数字"><a href="#原始值转数字" class="headerlink" title="原始值转数字"></a>原始值转数字</h2><p>使用 <code>Number</code> 函数将值的类型转换成数字类型。</p>
+<p>根据规范，如果有参数，则调用 <code>ToNumber(value)</code> 计算出值返回，否则返回 +0。</p>
+<p>此处的 <code>ToNumber</code> 表示的是一个底层规范上实现的方法，并没有暴露出来。</p>
+<table>
+<thead>
+<tr>
+<th align="center">值类型</th>
+<th align="center">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Undefined</td>
+<td align="center">NaN</td>
+</tr>
+<tr>
+<td align="center">Null</td>
+<td align="center">+0</td>
+</tr>
+<tr>
+<td align="center">Boolean</td>
+<td align="center">如果是 true，返回1；如果是 false，返回0</td>
+</tr>
+<tr>
+<td align="center">Number</td>
+<td align="center">返回与之相等的值</td>
+</tr>
+<tr>
+<td align="center">String</td>
+<td align="center">如下</td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>()) <span class="comment">// +0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="literal">undefined</span>)) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="literal">null</span>)) <span class="comment">// +0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="literal">false</span>)) <span class="comment">// +0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="literal">true</span>)) <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"123"</span>)) <span class="comment">// 123</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"-123"</span>)) <span class="comment">// -123</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"1.2"</span>)) <span class="comment">// 1.2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"000123"</span>)) <span class="comment">// 123</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"-000123"</span>)) <span class="comment">// -123</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"0x11"</span>)) <span class="comment">// 17</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">""</span>)) <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">" "</span>)) <span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"123 123"</span>)) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"foo"</span>)) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"100a"</span>)) <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="原始值转字符"><a href="#原始值转字符" class="headerlink" title="原始值转字符"></a>原始值转字符</h2><p>使用 <code>String</code> 函数将值的类型转换成字符类型。</p>
+<p>根据规范，如果函数有参数，则调用 <code>ToString(value)</code> 计算出值返回，否则返回空字符串。</p>
+<table>
+<thead>
+<tr>
+<th align="center">值类型</th>
+<th align="center">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Undefined</td>
+<td align="center">‘undefined’</td>
+</tr>
+<tr>
+<td align="center">Null</td>
+<td align="center">‘null’</td>
+</tr>
+<tr>
+<td align="center">Boolean</td>
+<td align="center">如果是 true，返回 “true”；如果是 false，返回 “false”</td>
+</tr>
+<tr>
+<td align="center">String</td>
+<td align="center">返回与之相等的值</td>
+</tr>
+<tr>
+<td align="center">Number</td>
+<td align="center">如下</td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>()) <span class="comment">// 空字符串</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">undefined</span>)) <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">null</span>)) <span class="comment">// null</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">false</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">true</span>)) <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="number">0</span>)) <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="number">-0</span>)) <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">NaN</span>)) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">Infinity</span>)) <span class="comment">// Infinity</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(-<span class="literal">Infinity</span>)) <span class="comment">// -Infinity</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="number">1</span>)) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="原始值转对象"><a href="#原始值转对象" class="headerlink" title="原始值转对象"></a>原始值转对象</h2><p>原始值通过调用 String()、Number() 或者 Boolean() 构造函数就能转化为各自的包装对象。</p>
+<p>null 和 undefined，当将它们用在期望是一个对象的地方都会造成一个类型错误 (TypeError) 异常，而不会执行正常的转换。</p>
+<h2 id="对象转布尔值"><a href="#对象转布尔值" class="headerlink" title="对象转布尔值"></a>对象转布尔值</h2><p>所有对象转为布尔值都为 true。</p>
+<h2 id="对象转字符串和数字"><a href="#对象转字符串和数字" class="headerlink" title="对象转字符串和数字"></a>对象转字符串和数字</h2><p>对象转换到字符串或者数字都是调用待转换对象的一个方法来实现的。主要有两个方法 <code>toString()</code> 和 <code>valueOf()</code>。</p>
+<p>所有对象除了 null 和 undefined 之外的任何值都有 <code>toString</code> 方法，通常，它和 String 方法的返回值是一致的。</p>
+<p>JavaScript 根据不同的类各自的特点，定义了更多版本的 <code>toString</code> 方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log((&#123;&#125;).toString()) <span class="comment">// [object Object]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log([].toString()) <span class="comment">// ""</span></span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">0</span>].toString()) <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].toString()) <span class="comment">// 1,2,3</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> a = <span class="number">1</span>;&#125;).toString()) <span class="comment">// function ()&#123;var a = 1;&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="regexp">/\d+/g</span>).toString()) <span class="comment">// /\d+/g</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2010</span>, <span class="number">0</span>, <span class="number">1</span>)).toString()) <span class="comment">// Fri Jan 01 2010 00:00:00 GMT+0800 (CST)</span></span><br></pre></td></tr></table></figure>
+
+<p>另一个转换对象的方法是 <code>valueOf</code>，表示对象的原始值。默认的 <code>valueOf</code> 方法返回这个对象本身。日期是个例外，它会返回它的一个内容表示：1970 年 1 月 1日以来的毫秒数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2020</span>, <span class="number">9</span>, <span class="number">6</span>);</span><br><span class="line"><span class="built_in">console</span>.log(date.valueOf()) <span class="comment">// 1601913600000</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="对象转字符串"><a href="#对象转字符串" class="headerlink" title="对象转字符串"></a>对象转字符串</h3><table>
+<thead>
+<tr>
+<th align="center">值类型</th>
+<th align="center">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Object</td>
+<td align="center">1. primValue = ToPrimitive(input, Number)<br/>2. 返回 ToString(primValue)。</td>
+</tr>
+</tbody></table>
+<h3 id="对象转数字"><a href="#对象转数字" class="headerlink" title="对象转数字"></a>对象转数字</h3><table>
+<thead>
+<tr>
+<th align="center">参数类型</th>
+<th align="center">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Object</td>
+<td align="center">1. primValue = ToPrimitive(input, Number)<br/>2. 返回 ToNumber(primValue)。</td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(&#123;&#125;)) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(&#123;<span class="attr">a</span> : <span class="number">1</span>&#125;)) <span class="comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>([])) <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>([<span class="number">0</span>])) <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> a = <span class="number">1</span>;&#125;)) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="regexp">/\d+/g</span>)) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2010</span>, <span class="number">0</span>, <span class="number">1</span>))) <span class="comment">// 1262275200000</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'a'</span>))) <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+
+<p><code>Number([])</code> 时，先调用了 <code>[]</code> 的 <code>valueOf</code> 方法返回了 <code>[]</code> ，因为不是原始值，继续调用 <code>toString</code> 方法，返回空字符串，继续调用 <code>ToNumber</code>，空字符串返回 0。</p>
+<p><code>Number([1,2,3])</code> 时，先调用了 <code>[1, 2, 3]</code> 的 <code>valueOf</code> 方法返回了 <code>[1, 2, 3]</code>，再调用 <code>toString</code> 方法，返回 <code>1,2,3</code>，调用 <code>ToNumber</code>，返回NaN。</p>
+<h3 id="ToPrimitive"><a href="#ToPrimitive" class="headerlink" title="ToPrimitive"></a>ToPrimitive</h3><p>语法如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ToPrimitive(input[, PreferredType])</span><br></pre></td></tr></table></figure>
+
+<p>第一个参数是 input，表示要处理的输入值。</p>
+<p>第二个参数是 PreferredType，非必填，表示希望转换成的类型，有两个值可以选，Number 或者 String。</p>
+<p>当不传入 PreferredType 时，如果 input 是日期类型，相当于传入 String，否则，都相当于传入 Number。</p>
+<p>如果传入的 input 是 Undefined、Null、Boolean、Number、String 类型，直接返回该值。</p>
+<p>如果是 ToPrimitive(obj, Number)，处理步骤如下：</p>
+<ol>
+<li>如果 obj 为 基本类型，直接返回</li>
+<li>否则，调用 valueOf 方法，如果返回一个原始值，则 JavaScript 将其返回。</li>
+<li>否则，调用 toString 方法，如果返回一个原始值，则 JavaScript 将其返回。</li>
+<li>否则，JavaScript 抛出一个类型错误异常。</li>
+</ol>
+<p>如果是 ToPrimitive(obj, String)，处理步骤如下：</p>
+<ol>
+<li>如果 obj为 基本类型，直接返回</li>
+<li>否则，调用 toString 方法，如果返回一个原始值，则 JavaScript 将其返回。</li>
+<li>否则，调用 valueOf 方法，如果返回一个原始值，则 JavaScript 将其返回。</li>
+<li>否则，JavaScript 抛出一个类型错误异常。</li>
+</ol>
+<blockquote>
+<p>隐式转换场景</p>
+</blockquote>
+<h2 id="一元操作符"><a href="#一元操作符" class="headerlink" title="一元操作符 +"></a>一元操作符 +</h2><p>当 + 运算符作为一元操作符时，会调用 <code>ToNumber</code> 处理该值，相当于 <code>Number(value)</code>。</p>
+<p>如果 value 是对象，会先调用 <code>ToPrimitive(obj, Number)</code> 方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(+[<span class="string">'1'</span>]); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(+[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>]); <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(+&#123;&#125;); <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="二元操作符"><a href="#二元操作符" class="headerlink" title="二元操作符 +"></a>二元操作符 +</h2><p>当计算 value1 + value2 时：</p>
+<ol>
+<li>lprim = ToPrimitive(value1)</li>
+<li>rprim = ToPrimitive(value2)</li>
+<li>如果 lprim 是字符串或者 rprim 是字符串，那么返回 ToString(lprim) 和 ToString(rprim) 的拼接结果</li>
+<li>返回 ToNumber(lprim) 和 ToNumber(rprim) 的运算结果</li>
+</ol>
+<h2 id="相等"><a href="#相等" class="headerlink" title="== 相等"></a>== 相等</h2><table>
+<thead>
+<tr>
+<th align="center">类型 (x)</th>
+<th align="center">类型 (y)</th>
+<th align="center">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">null</td>
+<td align="center">undefined</td>
+<td align="center">true</td>
+</tr>
+<tr>
+<td align="center">undefined</td>
+<td align="center">null</td>
+<td align="center">true</td>
+</tr>
+<tr>
+<td align="center">数值</td>
+<td align="center">字符串</td>
+<td align="center">x == ToNumber(y)</td>
+</tr>
+<tr>
+<td align="center">字符串</td>
+<td align="center">数值</td>
+<td align="center">ToNumber(x) == y</td>
+</tr>
+<tr>
+<td align="center">布尔值</td>
+<td align="center">任何类型</td>
+<td align="center">ToNumber(x) == y</td>
+</tr>
+<tr>
+<td align="center">任何类型</td>
+<td align="center">布尔值</td>
+<td align="center">x = ToNumber(y)</td>
+</tr>
+<tr>
+<td align="center">字符串或数</td>
+<td align="center">对象</td>
+<td align="center">x = ToPrimitive(y)</td>
+</tr>
+<tr>
+<td align="center">对象</td>
+<td align="center">字符串或数</td>
+<td align="center">ToPrimitive(x) == y</td>
+</tr>
+</tbody></table>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://github.com/Kaviilee/blog.git/2020/09/09/javascript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/>https://github.com/Kaviilee/blog.git/2020/09/09/javascript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
     
       
-        <a class= "readmore" href="/blog/2020/07/21/docker/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-09T15:38:12+00:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年9月9日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://github.com/Kaviilee/blog.git/2020/09/09/javascript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/&title=JavaScript类型转换 - Kaviilee's blog&summary=关于 JavaScript 类型转换的一些笔记。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
         </a>
       
     
-  </section>
-</article>
-
-          </div>
-        
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://github.com/Kaviilee/blog.git/2020/09/09/javascript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/&title=JavaScript类型转换 - Kaviilee's blog&summary=关于 JavaScript 类型转换的一些笔记。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
       
     
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://github.com/Kaviilee/blog.git/2020/09/09/javascript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/&title=JavaScript类型转换 - Kaviilee's blog&summary=关于 JavaScript 类型转换的一些笔记。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
   </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/blog/2020/09/03/git-flow/'>
+                <p class='title'>Git Flow<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>之前偶尔看到的一篇文章，是讲 Git Flow 的，谈了分支相关的一些知识。
+
+
+Git Flow分支应用场景根据 Git Flow 的建议，主要的分支有 master、develop、hotf...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
   
     
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
 </div>
 <aside class='l_side'>
   
@@ -664,65 +1000,33 @@
   
 
   
-    
-    
-  
 
-  <section class="widget category shadow desktop">
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/blog/categories/javascript/" href="/blog/categories/javascript/"
-            id="blogcategoriesjavascript"
-            ><div class='name'>JavaScript</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/%E6%8A%80%E6%9C%AF/" href="/blog/categories/%E6%8A%80%E6%9C%AF/"
-            id="blogcategoriesE68A80E69CAF"
-            ><div class='name'>技术</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原始值转布尔值"><span class="toc-text">原始值转布尔值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原始值转数字"><span class="toc-text">原始值转数字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原始值转字符"><span class="toc-text">原始值转字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原始值转对象"><span class="toc-text">原始值转对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象转布尔值"><span class="toc-text">对象转布尔值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象转字符串和数字"><span class="toc-text">对象转字符串和数字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对象转字符串"><span class="toc-text">对象转字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象转数字"><span class="toc-text">对象转数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ToPrimitive"><span class="toc-text">ToPrimitive</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一元操作符"><span class="toc-text">一元操作符 +</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二元操作符"><span class="toc-text">二元操作符 +</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相等"><span class="toc-text">&#x3D;&#x3D; 相等</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/blog/tags/docker/" style="font-size: 14px; color: #999">Docker</a> <a href="/blog/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/blog/tags/%E6%96%87%E6%A1%A3%E6%8E%92%E7%89%88/" style="font-size: 14px; color: #999">文档排版</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
     </div>
