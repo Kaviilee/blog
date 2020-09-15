@@ -1,5 +1,5 @@
 ---
-title: Docker学习笔记
+title: Docker 学习笔记
 tags: Docker
 author:
     name: Kaviilee
@@ -141,18 +141,18 @@ REDHAT_SUPPORT_PRODUCT="centos"
 REDHAT_SUPPORT_PRODUCT_VERSION="7"
 ```
 
-> 安装Docker
+> 安装 Docker
 
 ```shell
 # 一, 卸载旧的版本
-$ sudo yum remove Docker \
-                  Docker-client \
-                  Docker-client-latest \
-                  Docker-common \
-                  Docker-latest \
-                  Docker-latest-logrotate \
-                  Docker-logrotate \
-                  Docker-engine
+$ sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
                  
 # 2, 需要安装的包
 yum install -y yum-utils \
@@ -162,42 +162,42 @@ yum install -y yum-utils \
 #3. 设置镜像仓库
 yum-config-manager \
     --add-repo \
-    https://download.Docker.com/linux/centos/Docker-ce.repo #默认是国外的
+    https://download.docker.com/linux/centos/docker-ce.repo #默认是国外的
 
 yum-config-manager \
     --add-repo \
-    https://mirrors.aliyun.com/Docker-ce/linux/centos/Docker-ce.repo #推荐使用
+    https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo #推荐使用
 #更新yum软件包索引
 yum makecache fast
-#安装Docker    
-sudo yum install Docker-ce Docker-ce-cli containerd.io 
-#启动Docker
-systemctl start Docker
-#查看Docker版本
-Docker version
+#安装 docker    
+sudo yum install docker-ce docker-ce-cli containerd.io 
+#启动 docker
+systemctl start docker
+#查看 docker 版本
+docker version
 ```
 
 > 下载镜像
 >
-> Docker pull [要下载的镜像]
+> docker pull [要下载的镜像]
 
 > 查看下载的镜像
 >
-> Docker images (Docker image ls)
+> docker images (docker image ls)
 
-卸载 Docker
+卸载 docker
 
 ```
-yum remove Docker-ce Docker-ce-cli containerd.io
+yum remove docker-ce docker-ce-cli containerd.io
 
-rm -rf /var/lib/Docker #Docker默认工作路径
+rm -rf /var/lib/docker #docker 默认工作路径
 ```
 
 #### Windows Docker 安装（win10）
 
 下载官方 Docker-desktop 安装程序
 
-> https://www.Docker.com/products/Docker-desktop
+> https://www.docker.com/products/docker-desktop
 
 开启 Hyper-V
 
@@ -233,7 +233,7 @@ Docker 为什么比 VM 快？
 1. Docker 有着比虚拟机更少的抽象层
 2. Dcoker 利用的是宿主机的内核，VM 需要的是 Guest OS
 
-![Docker与虚拟机](http://hongyitong.github.io/img/Docker.png)
+![Docker与虚拟机](http://hongyitong.github.io/img/docker.png)
 
 新建一个容器的时候，Docker 不需要像虚拟机一样重新安装一个操作系统内核，虚拟机是加载 Guest OS，分钟级别的，而 Docker 是利用宿主机的操作系统，省略了这个复杂的过程
 
@@ -244,17 +244,17 @@ Docker 为什么比 VM 快？
 ### 帮助命令
 
 ```
-Docker version #Docker版本
-Docker info #显示Docker的系统信息，包括镜像和容器数量
-Docker [命令] --help #查看某个具体的命令
+docker version #docker版本
+docker info #显示docker的系统信息，包括镜像和容器数量
+docker [命令] --help #查看某个具体的命令
 ```
 
 ### 镜像命令
 
-**Docker images** 查看下载的所有镜像
+**docker images** 查看下载的所有镜像
 
 ```shell
-# Docker images
+# docker images
 REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
 mysql                     5.6                 8de95e6026c3        20 hours ago        302MB
 redis                     latest              36304d3b4540        12 days ago         104MB
@@ -273,10 +273,10 @@ Options:
   -q, --quiet           #只显示镜像ID
 ```
 
-**Docker search** 搜索镜像
+**docker search** 搜索镜像
 
 ```shell
-Docker search mysql
+docker search mysql
 NAME	DESCRIPTION									STARS	OFFICIAL	AUTOMATED	
 mysql	MySQL is a widely used, open-source relation…  9604     [OK]                
 
@@ -284,41 +284,41 @@ mysql	MySQL is a widely used, open-source relation…  9604     [OK]
 --filter=stars=3000 #搜索出来的镜像收藏就是大于3000的
 ```
 
-**Docker pull** 拉取镜像
+**docker pull** 拉取镜像
 
 ```shell
-Docker pull nginx [:tag]
+docker pull nginx [:tag]
 Using default tag: latest #如果不写tag 默认使用最新版本
 latest: Pulling from library/nginx
-8559a31e96f4: Pull complete  #分层下载,Docker image核心 联合文件系统
+8559a31e96f4: Pull complete  #分层下载,docker image核心 联合文件系统
 8d69e59170f7: Pull complete 
 3f9f1ec1d262: Pull complete 
 d1f5ff4f210d: Pull complete 
 1e22bfa8652e: Pull complete 
 Digest: sha256:21f32f6c08406306d822a0e6e8b7dc81f53f336570e852e25fbe1e3e3d0d0133 #签名
 Status: Downloaded newer image for nginx:latest
-Docker.io/library/nginx:latest #真实地址
+docker.io/library/nginx:latest #真实地址
 
-# Docker pull nginx 等价于 dicker pull Docker.io/library/nginx:latest
+# docker pull nginx 等价于 dicker pull docker.io/library/nginx:latest
 ```
 
-**Docker rmi** 删除镜像
+**docker rmi** 删除镜像
 
 ```shell
 # 删除指定的镜像
-$ Docker rmi -f 8de95e6026c3 
+$ docker rmi -f 8de95e6026c3 
 # 删除全部的镜像
-$ Docker rmi -f $(Docker images -ap)
+$ docker rmi -f $(docker images -ap)
 # 清空临时镜像
-$ Docker rmi $(Docker images -q -f dangling=true)
+$ docker rmi $(docker images -q -f dangling=true)
 ```
 
-**Docker build** 使用Dockerfile创建镜像
+**docker build** 使用dockerfile创建镜像
 
 ```shell
-# 使用当前目录的Dockerfile创建镜像 当Dockerfile的命名为Dockerfile就不需要制定文件名 -f
-$ Docker build -t node:10.15-alpine .
-$ Docker build -f /path/to/a/Dockerfile . # /path/to/a
+# 使用当前目录的 dockerfile 创建镜像 当 dockerfile 的命名为 dockerfile 就不需要制定文件名 -f
+$ docker build -t node:10.15-alpine .
+$ docker build -f /path/to/a/dockerfile . # /path/to/a
 ```
 
 
@@ -328,9 +328,9 @@ $ Docker build -f /path/to/a/Dockerfile . # /path/to/a
 **新建容器并启动**
 
 ```shell
-Docker run [options] image
+docker run [options] image
 # options
-# 若image本地没有则会去Docker镜像库拉取
+# 若image本地没有则会去 docker镜像库拉取
 --name=""  容器名字 用于区分容器
 -d         后台方式运行
 -it        使用交互方式运行,进入容器查看内容
@@ -341,14 +341,14 @@ Docker run [options] image
 **列出所有运行的容器**
 
 ```shell
-# Docker ps 命令 列出当前正在运行的容器
+# docker ps 命令 列出当前正在运行的容器
 # options
 -a	 # 列出当前正在运行的容器+历史运行过的容器
 -n=? # 显示最近创建的容器
 -q	 # 只显示容器的编号
-$ Docker ps 
+$ docker ps 
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-$ Docker ps -a 
+$ docker ps -a 
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                    PORTS               NAMES
 919e58ff5521        redis               "Docker-entrypoint.s…"   20 hours ago        Exited (0) 16 hours ago                       redis
 ```
@@ -362,17 +362,17 @@ exit #直接容器停止并退出
 **删除容器**
 
 ```shell
-$ Docker rm 容器id
-$ Docker rm -f $(Docker ps -aq) #删除所有的容器
+$ docker rm 容器id
+$ docker rm -f $(docker ps -aq) #删除所有的容器
 ```
 
 **启动和停止容器**
 
 ```shell
-$ Docker start 容器id or 容器name # 启动一个或多个已经被停止的容器
-$ Docker restart 容器id or 容器name # 重启容器
-$ Docker stop 容器id or 容器name # 停止运行中的容器
-$ Docker kill 容器id or 容器name # 杀掉运行中的容器
+$ docker start 容器id or 容器name # 启动一个或多个已经被停止的容器
+$ docker restart 容器id or 容器name # 重启容器
+$ docker stop 容器id or 容器name # 停止运行中的容器
+$ docker kill 容器id or 容器name # 杀掉运行中的容器
 ```
 
 ### 其他常用命令
@@ -380,19 +380,19 @@ $ Docker kill 容器id or 容器name # 杀掉运行中的容器
 **后台启动容器**
 
 ```shell
-$ Docker run -d 镜像名
+$ docker run -d 镜像名
 ```
 
 **查看容器中进程信息**
 
 ```shell
-$ Docker top 容器id
+$ docker top 容器id
 ```
 
 **查看镜像元数据**
 
 ```shell
-$ Docker inspect 容器id or 容器name
+$ docker inspect 容器id or 容器name
 ```
 
 **进入当前正在运行的容器**
@@ -401,36 +401,36 @@ $ Docker inspect 容器id or 容器name
 #我们通常容器都是使用后台方式运行的,需要进入容器,修改一些配置
 
 #命令
-# 进入容器后开启一个新的终端,可以在里面操作(常用) 退出shell不会导致容器停止运行
-$ Docker exec -it 容器id or name bashshell 默认命令行
+# 进入容器后开启一个新的终端,可以在里面操作(常用) 退出 shell 不会导致容器停止运行
+$ docker exec -it 容器id or name bashshell 默认命令行
 
-# 进入容器正在执行的终端,不会启动新的进程 如果退出shell，容器会停止运行
-$ Docker attach 容器id or 容器name
+# 进入容器正在执行的终端,不会启动新的进程 如果退出 shell，容器会停止运行
+$ docker attach 容器id or 容器name
 ```
 
 **从容器内拷贝文件到主机上**
 
 ```shell
-$ Docker cp 容器id: 容器内路径 目的主机路径
+$ docker cp 容器id: 容器内路径 目的主机路径
 ```
 
-**Docker system命令**
+**docker system命令**
 
 ```shell
-# 查看Docker磁盘占用情况
-$ Docker system df
+# 查看docker磁盘占用情况
+$ docker system df
 # 命令可以用于清理磁盘，删除关闭的容器、无用的数据卷和网络
-$ Docker system prune
--a # 没有容器使用的Docker容器都删除
+$ docker system prune
+-a # 没有容器使用的 docker 容器都删除
 ```
 
-**手动清除Docker镜像/容器/数据卷**
+**手动清除 docker 镜像/容器/数据卷**
 
 ```shell
-# 删除所有dangling镜像(即无tag的镜像)
-$ Docker rmi $(Docker images | grep "^<none>" | awk "{print $3}")
+# 删除所有 dangling 镜像(即无 tag 的镜像)
+$ docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
 # 删除所有 dangling 数据卷(即无用的 volume)
-$ Docker volume rm $(Docker volume ls -qf dangling=true)
+$ docker volume rm $(docker volume ls -qf dangling=true)
 ```
 
 
@@ -445,9 +445,9 @@ $ Docker volume rm $(Docker volume ls -qf dangling=true)
 
 - 从远处仓库下载
 - 拷贝
-- 自己制作一个镜像 Dockerfile
+- 自己制作一个镜像 dockerfile
 
-### Docker镜像加载原理
+### docker 镜像加载原理
 
 > UnionFs (联合文件系统查询)
 
@@ -482,10 +482,10 @@ rootfs(root file system)，在 bootfs 之上，包含的就是典型 Linux 系�
 ### commit 镜像
 
 ```shell
-$ Docker commit 提交容器成为一个新的镜像
+$ docker commit 提交容器成为一个新的镜像
 
 #命令和git原理类似
-$ Docker commit -m="提交的描述信息" -a="作者" 容器ID 目标镜像名:[tag]
+$ docker commit -m="提交的描述信息" -a="作者" 容器ID 目标镜像名:[tag]
 ```
 
 ## 容器数据卷
@@ -511,8 +511,8 @@ MySQL，容器删了，数据丢失. **<mark> 需求：MySQL 数据可以存储�
 > 方法一：直接使用命令来挂载 -v
 
 ```shell
-$ Docker run -it -v 主机目录:容器内目录 -p 主机端口:容器端口
-# 启动起来我们可以使用 Docker inspect 容器id
+$ docker run -it -v 主机目录:容器内目录 -p 主机端口:容器端口
+# 启动起来我们可以使用 docker inspect 容器id
 ```
 
 ![容器信息](https://static01.imgkr.com/temp/d5a266188ba1427596296c38e950f1fc.png)
@@ -521,9 +521,9 @@ $ Docker run -it -v 主机目录:容器内目录 -p 主机端口:容器端口
 
 ```shell
 # 获取镜像
-$ Docker pull mysql:5.7
+$ docker pull mysql:5.7
 # 运行容器,需要做数据挂载! # 安装启动mysql,需要配置密码,这是官方的
-# 官方测试: Docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=密码 -d mysql:tag
+# 官方测试: docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=密码 -d mysql:tag
 
 #启mysql
 -d  后台运行
@@ -532,7 +532,7 @@ $ Docker pull mysql:5.7
 -e  环境配置
 --name 容器名
 
-$ Docker run -d -p 3310:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root --name mysql01 mysql:5.7
+$ docker run -d -p 3310:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root --name mysql01 mysql:5.7
 
 # 启动成功之后，我们在本地使用navicat来测试连接
 #navicat-连接到服务器的3310 --- 3310和容器内的3306映射，这个时候我们就可以连接上了
@@ -545,10 +545,10 @@ $ Docker run -d -p 3310:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysq
 ```shell
 # 匿名挂载
 -v 容器内路径
-$ Docker run -d -p 8080:80 --name nginx01 -v /etc/nginx nginx:alpine
+$ docker run -d -p 8080:80 --name nginx01 -v /etc/nginx nginx:alpine
 
 # 查看所有的volume情况
-$ Docker volume ls
+$ docker volume ls
 DRIVER              VOLUME NAME
 local               b448950f96ca2daed2a90cd21e687431653dc9a2f40ccf51e0ce38432f6564a4
 # 这个就是匿名挂载，-v时只写了容器内路径，没有写
@@ -574,23 +574,23 @@ local               b448950f96ca2daed2a90cd21e687431653dc9a2f40ccf51e0ce38432f65
 # read and write
 
 #一旦设置了容器权限,容器对挂载出来的内容就有限定了!
-Docker -run -P -name nginx01 -v /etc/nginx:ro nginx
-Docker -run -P -name nginx01 -v /etc/nginx:rw nginx
+docker -run -P -name nginx01 -v /etc/nginx:ro nginx
+docker -run -P -name nginx01 -v /etc/nginx:rw nginx
 ro : 只要看到ro就说明这个路径只能通过宿主机来改变,容器内部无法操作
 ```
 
 
 
-## Dockerfile
+## dockerfile
 
-Dockerfile 是用来构建 Docker 镜像的文件，命令参数脚本。
+dockerfile 是用来构建 docker 镜像的文件，命令参数脚本。
 
 构建步骤：
 
-1. 编写一个 Dockerfile 文件
-2. Docker build 构建成为一个镜像
-3. Docker run 镜像
-4. Docker push 发布镜像（DockerHub，阿里云镜像仓库）
+1. 编写一个 dockerfile 文件
+2. docker build 构建成为一个镜像
+3. docker run 镜像
+4. docker push 发布镜像（dockerHub，阿里云镜像仓库）
 
 ![Docker官方镜像file](https://wx2.sbimg.cn/2020/07/05/C4mZV.png)
 
@@ -640,14 +640,14 @@ ENV 	      # 构建的时候设置环境变量
 
 ### 实战测试
 
-Docker Hub 中99%镜像都是从 CentOS 基础镜像过来的,然后配置需要的软件
+docker Hub 中99%镜像都是从 CentOS 基础镜像过来的,然后配置需要的软件
 
 ![](https://wx2.sbimg.cn/2020/07/06/CXWEK.png)
 
 > 创建一个自己的 CentOS
 
-```Dockerfile
-# 1. 编写Dockerfile文件
+```dockerfile
+# 1. 编写 dockerfile 文件
 FROM centos
 MAINTAINER jiawei<jiaweilee95@126.com>
 
@@ -661,7 +661,7 @@ EXPOSE 80
 CMD echo ${MYPATH} && echo "--end--" && /bin/sh
 
 # 2. 通过这个文件构建镜像
-Docker build -f <Dockerfile文件目录> -t <镜像名:[tag]> .
+docker build -f <dockerfile文件目录> -t <镜像名:[tag]> .
 
 # 3. 测试
 ```
@@ -678,20 +678,20 @@ ENTRYPOINT    # 指定这个容器启动的时候要运行的命令,可以追加
 测试 CMD
 
 ```shell
-# 编写Dockerfile文件
-$ vim Dockerfile-cmd-test
+# 编写 dockerfile 文件
+$ vim dockerfile-cmd-test
 
 FROM centos
 CMD ["ls", "-a"]
 
 # 构建镜像
-$ Docker build -f Dockerfile-cmd-test -t centos .
+$ docker build -f dockerfile-cmd-test -t centos .
 
 # run 运行，发现ls -a生效
-$ Docker run 963149b1ac5d
+$ docker run 963149b1ac5d
 .
 ..
-.Dockerenv
+.dockerenv
 bin
 dev
 etc
@@ -713,8 +713,8 @@ usr
 var
 
 # 想要追加一个命令 -l  ls -al
-$ Docker run 963149b1ac5d -l
-Docker: Error response from daemon: OCI runtime create failed: container_linux.go:349: starting container process caused "exec: \"-l\": executable file not found in $PATH": unknown.
+$ docker run 963149b1ac5d -l
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:349: starting container process caused "exec: \"-l\": executable file not found in $PATH": unknown.
 ERRO[0000] error waiting for container: context canceled 
 
 # cmd的情况下 替换了CMD["ls","-a"]命令,-不是命令追加
@@ -723,20 +723,20 @@ ERRO[0000] error waiting for container: context canceled
 ENTRYPOINT 是往命令之后追加
 
 ```shell
-# 编写Dockerfile文件
-$ vim Dockerfile-cmd-test
+# 编写dockerfile文件
+$ vim dockerfile-cmd-test
 
 FROM centos
 ENTRYPOINT ["ls", "-a"]
 
 # 构建镜像
-$ Docker build -f Dockerfile-cmd-test -t centos .
+$ docker build -f dockerfile-cmd-test -t centos .
 
 # run 运行，发现ls -a生效
-$ Docker run 963149b1ac5d
+$ docker run 963149b1ac5d
 .
 ..
-.Dockerenv
+.dockerenv
 bin
 dev
 etc
@@ -758,7 +758,7 @@ usr
 var
 
 # 想要追加一个命令 -l  ls -al
-$ Docker run 963149b1ac5d -l
+$ docker run 963149b1ac5d -l
 # 这里是生效的
 ```
 
@@ -803,7 +803,7 @@ CMD /usr/local/apache-tomcat-9.0.33/bin/startup.sh && tail -F /usr/local/apache-
 4. 构建镜像
 
    ```shell
-   # Docker build -t diytomcat .
+   # docker build -t diytomcat .
    ```
 
 5. 本地测试
@@ -812,20 +812,20 @@ CMD /usr/local/apache-tomcat-9.0.33/bin/startup.sh && tail -F /usr/local/apache-
 
 ### 发布镜像
 
-> Dokcerhub
+> Dockerhub
 
-1. 地址 hub.Docker.com 注册自己的账号!
+1. 地址 hub.docker.com 注册自己的账号!
 
 2. 确定这个账号可以登录
 
 3. 在服务器上提交自己的镜像
 
    ```shell
-   $ Docker login --help
+   $ docker login --help
    
-   Usage:  Docker login [OPTIONS] [SERVER]
+   Usage:  docker login [OPTIONS] [SERVER]
    
-   Log in to a Docker registry.
+   Log in to a docker registry.
    If no server is specified, the default is defined by the daemon.
    
    Options:
@@ -834,7 +834,7 @@ CMD /usr/local/apache-tomcat-9.0.33/bin/startup.sh && tail -F /usr/local/apache-
      -u, --username string   Username
    ```
 
-4. 登录完毕就可以提交镜像了,就是一步 Docker push
+4. 登录完毕就可以提交镜像了,就是一步 docker push
 
 > 提交到阿里云镜像仓库
 
@@ -875,11 +875,11 @@ CMD /usr/local/apache-tomcat-9.0.33/bin/startup.sh && tail -F /usr/local/apache-
 三个网络
 
 ```shell
-# Docker是如何处理容器网络访问的？
+# docker 是如何处理容器网络访问的？
 
-$ Docker run -d -P --name tomcat01 tomcat
-# 查看容器内部网络地址 ip addr 发现容器启动的时候会得到一个eth0@if8 ip地址，Docker分配的
-$ Docker exec -it tomcat01 ip addr
+$ docker run -d -P --name tomcat01 tomcat
+# 查看容器内部网络地址 ip addr 发现容器启动的时候会得到一个eth0@if8 ip地址，docker分配的
+$ docker exec -it tomcat01 ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -895,7 +895,7 @@ $ Docker exec -it tomcat01 ip addr
 
 > 原理
 
-1. 我们每启动一个 Docker 容器，Docker 就会给 Docker 容器分配一个 ip，我们只要安装了 Docker，就会有一个网卡 Docker0
+1. 我们每启动一个 docker 容器，docker 就会给 docker 容器分配一个 ip，我们只要安装了 docker，就会有一个网卡 Docker0
 
    桥接模式，使用的是 veth-pair 技术
 
@@ -943,13 +943,13 @@ Docker 中所有的网络接口都是虚拟的,虚拟的转发效率高（内网
 > 思考一个场景，我们编写了一个微服务，database url = ip；项目不重启，数据库 ip 改变了，我们希望可以处理这个问题，可以通过名字来访问容器吗？
 
 ```shell
-$ Docker exec -it tomcat02 ping tomcat01
+$ docker exec -it tomcat02 ping tomcat01
 ping: tomcat01: Name or service not known
 
 # 通过--link可以解决网络连接问题
-$ Docker run -d -P --name tomcat03 --link tomcat02 tomcat
+$ docker run -d -P --name tomcat03 --link tomcat02 tomcat
 6aedb0ba2e798b184f42f98e4a38ce2a54cb97d47b985d17065b064a7f73d404
-$ Docker exec -it tomcat03 ping tomcat02
+$ docker exec -it tomcat03 ping tomcat02
 PING tomcat02 (172.17.0.3) 56(84) bytes of data.
 64 bytes from tomcat02 (172.17.0.3): icmp_seq=1 ttl=64 time=0.061 ms
 64 bytes from tomcat02 (172.17.0.3): icmp_seq=2 ttl=64 time=0.040 ms
@@ -962,12 +962,12 @@ PING tomcat02 (172.17.0.3) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.039/0.052/0.082/0.018 ms
 
 # 反向是否可以ping通吗
-[root@CZP ~]# Docker exec -it tomcat02 ping tomcat03
+[root@CZP ~]# docker exec -it tomcat02 ping tomcat03
 ```
 
 -link **本质就是在 hosts 中添加映射**
 
-我们现在玩 Docker 已经不建议使用 –link 了!
+我们现在玩 docker 已经不建议使用 –link 了!
 
 自定义网络,不使用 Docker0!
 
@@ -978,7 +978,7 @@ Docker0 问题: 它不支持容器名连接访问!
 > 查看所有的 Docker 网络
 
 ```shell
-$ Docker network ls
+$ docker network ls
 NETWORK ID          NAME                DRIVER              SCOPE
 86c70406cec4        bridge              bridge              local
 e2cd35c81ffb        host                host                local
@@ -987,7 +987,7 @@ c6fe6b78ab62        none                null                local
 
 **网络模式**
 
-bridge: 桥接模式 Docker 搭桥（默认）
+bridge: 桥接模式 docker 搭桥（默认）
 
 none： 不配置网络
 
@@ -996,17 +996,17 @@ host：和宿主机共享网络
 container: 容器内网络连通（用得少，局限很大）
 
 ```shell
-# 直接启动的命令 --net brodge,默认Docker0
-Docker run -d -P --name tomcat01 --net bridge tomcat
+# 直接启动的命令 --net brodge,默认docker0
+docker run -d -P --name tomcat01 --net bridge tomcat
 
-# Docker0的特点: 默认的,域名是不能访问的, --link可以打通连接
+# docker0的特点: 默认的,域名是不能访问的, --link可以打通连接
 
 # 自定义网络
 # --driver bridge
-Docker network create --driver bridge --subnet 192.168.0.0/16 --gateway 192.168.0.1 mynet
+docker network create --driver bridge --subnet 192.168.0.0/16 --gateway 192.168.0.1 mynet
 87d0f163b3a0c857d281bf4e97675d03555486c530969d1cb04950f203133b55
 
-$ Docker network ls
+$ docker network ls
 NETWORK ID          NAME                DRIVER              SCOPE
 86c70406cec4        bridge              bridge              local
 e2cd35c81ffb        host                host                local
@@ -1049,13 +1049,13 @@ $ Docker network inspect mynet
     }
 ]
 
-$ Docker run -d -P --name tomcat-net-01 --net mynet tomcat
+$ docker run -d -P --name tomcat-net-01 --net mynet tomcat
 f8acd6bd8a21c27ca293d4c2d150448299192bd1f58b41d273d61d24cfe7d9a8
 
-$ Docker run -d -P --name tomcat-net-02 --net mynet tomcat
+$ docker run -d -P --name tomcat-net-02 --net mynet tomcat
 84b8b3a4a45c579eb479dfa036bc6e88f2c4ea5a0e8edd0c8f225bddebb2747c
 
-$ Docker network inspect mynet
+$ docker network inspect mynet
 [
     {
         "Name": "mynet",
@@ -1103,7 +1103,7 @@ $ Docker network inspect mynet
 ]
 
 # 再次测试ping连接
-$ Docker exec -it tomcat-net-01 ping 192.168.0.3
+$ docker exec -it tomcat-net-01 ping 192.168.0.3
 PING 192.168.0.3 (192.168.0.3) 56(84) bytes of data.
 64 bytes from 192.168.0.3: icmp_seq=1 ttl=64 time=0.056 ms
 64 bytes from 192.168.0.3: icmp_seq=2 ttl=64 time=0.156 ms
@@ -1114,7 +1114,7 @@ PING 192.168.0.3 (192.168.0.3) 56(84) bytes of data.
 4 packets transmitted, 4 received, 0% packet loss, time 162ms
 rtt min/avg/max/mdev = 0.037/0.083/0.156/0.046 ms
 # 现在不使用--link也可以ping容器名字
-$ Docker exec -it tomcat-net-02 ping 192.168.0.2
+$ docker exec -it tomcat-net-02 ping 192.168.0.2
 PING 192.168.0.2 (192.168.0.2) 56(84) bytes of data.
 64 bytes from 192.168.0.2: icmp_seq=1 ttl=64 time=0.039 ms
 64 bytes from 192.168.0.2: icmp_seq=2 ttl=64 time=0.066 ms
@@ -1124,7 +1124,7 @@ PING 192.168.0.2 (192.168.0.2) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.039/0.052/0.066/0.015 ms
 ```
 
-自定义网络 Docker 都帮我们维护好了对应关系，推荐平时这样使用网络！
+自定义网络 docker 都帮我们维护好了对应关系，推荐平时这样使用网络！
 
 好处:
 
@@ -1138,14 +1138,14 @@ rtt min/avg/max/mdev = 0.039/0.052/0.066/0.015 ms
 
 ```shell
 #测试打通 tomcat01到tomcat-net-01
-$ Docker network connect mynet tomcat01
+$ docker network connect mynet tomcat01
 # 连通之后就是将 tomcat01 放到了mynet网络下
 # 一个容器两个ip   阿里云: 公网ip 私网ip
 ```
 
 ```shell
 # 01 连通ok
-$ Docker exec -it tomcat01 ping tomcat-net-01
+$ docker exec -it tomcat01 ping tomcat-net-01
 PING tomcat-net-01 (192.168.0.2) 56(84) bytes of data.
 64 bytes from tomcat-net-01.mynet (192.168.0.2): icmp_seq=1 ttl=64 time=0.087 ms
 64 bytes from tomcat-net-01.mynet (192.168.0.2): icmp_seq=2 ttl=64 time=0.065 ms
@@ -1155,8 +1155,8 @@ PING tomcat-net-01 (192.168.0.2) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.065/0.076/0.087/0.011 ms
 
 # 02 依旧是连不通的
-$ Docker exec -it tomcat02 ping tomcat-net-01
+$ docker exec -it tomcat02 ping tomcat-net-01
 ping: tomcat-net-01: Name or service not known
 ```
 
-结论：要跨网络操作别人，就需要使用 **Docker network connect** 连通
+结论：要跨网络操作别人，就需要使用 **docker network connect** 连通
