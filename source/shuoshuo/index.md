@@ -23,10 +23,7 @@ meta:
   #pubShuo {
     margin-right: 4px;
   }
-  #shanchur {
-    padding: 10px 0;
-  }
-  #shuoshuo-modal {
+  #shanchur, #shuoshuo-modal, #userinfo, #shanchu {
     padding: 10px 0;
   }
   #shuoshuo-modal p {
