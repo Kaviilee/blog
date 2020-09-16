@@ -59,7 +59,14 @@
         var color3="<%=  theme.plugins.Artitalk.color3  %>";
     <% } %>
   </script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk@2.4.2"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk"></script>
+  <script>
+    console.log(appID, appKEY)
+    new Artitalk({
+      appId: appID,
+      appKey: appKEY
+    })
+  </script>
 <% } %>
 
 <% if (theme.plugins.instant_page) { %>
