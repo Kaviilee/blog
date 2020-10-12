@@ -8,57 +8,57 @@
     </url>
     
     <url>
-        <loc>https://github.com/Kaviilee/blog.git/mylist/</loc>
-        <lastmod>2020-09-24T14:04:55.109Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://github.com/Kaviilee/blog.git/shuoshuo/</loc>
-        <lastmod>2020-09-24T14:04:55.109Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://github.com/Kaviilee/blog.git/tags/</loc>
-        <lastmod>2020-09-24T14:04:55.109Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
         <loc>https://github.com/Kaviilee/blog.git/404.html</loc>
-        <lastmod>2020-09-24T14:04:55.105Z</lastmod>
+        <lastmod>2020-10-12T16:22:19.977Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://github.com/Kaviilee/blog.git/about/</loc>
-        <lastmod>2020-09-24T14:04:55.105Z</lastmod>
+        <lastmod>2020-10-12T16:22:19.977Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://github.com/Kaviilee/blog.git/categories/</loc>
-        <lastmod>2020-09-24T14:04:55.105Z</lastmod>
+        <lastmod>2020-10-12T16:22:19.977Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://github.com/Kaviilee/blog.git/essays/</loc>
-        <lastmod>2020-09-24T14:04:55.105Z</lastmod>
+        <lastmod>2020-10-12T16:22:19.977Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>https://github.com/Kaviilee/blog.git/friends/</loc>
-        <lastmod>2020-09-24T14:04:55.105Z</lastmod>
+        <lastmod>2020-10-12T16:22:19.977Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://github.com/Kaviilee/blog.git/mylist/</loc>
+        <lastmod>2020-10-12T16:22:19.977Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://github.com/Kaviilee/blog.git/shuoshuo/</loc>
+        <lastmod>2020-10-12T16:22:19.977Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://github.com/Kaviilee/blog.git/tags/</loc>
+        <lastmod>2020-10-12T16:22:19.977Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
