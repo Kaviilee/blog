@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>约定式提交 (Conventional Commits)</title>
+      <link href="/blog/2020/10/13/conventional-commits/"/>
+      <url>/blog/2020/10/13/conventional-commits/</url>
+      
+        <content type="html"><![CDATA[<p>关于约定式提交的规范内容。</p><a id="more"></a><h1 id="约定式提交"><a href="#约定式提交" class="headerlink" title="约定式提交"></a>约定式提交</h1><blockquote><p>一种用于给提交信息增加人机可读含义的规范。</p></blockquote><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>约定式提交规范是一种基于提交消息的轻量级约定。 它提供了一组用于创建清晰的提交历史的简单规则； 这使得编写基于规范的自动化工具变得更容易。在提交信息中描述新特性、bug 修复和破坏性变更。</p><p>提交说明的结构如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;类型&gt;[可选的作用域]: &lt;描述&gt;</span><br><span class="line">[可选的正文]</span><br><span class="line">[可选的脚注]</span><br></pre></td></tr></table></figure><p>提交说明包含了下面的结构化元素，以向类库使用者表明其意图：</p><ol><li><strong>fix</strong>: 类型为 <code>fix</code> 的提交表示在代码库中修复了一个 bug。</li><li><strong>feat</strong>: 类型为 <code>feat</code> 的提交表示在代码库中新增了一个功能。</li><li><strong>BREAKING CHANGE</strong>: 在可选的正文或脚注的起始位置带有 <code>BREAKING CHANGE:</code> 的提交，表示引入了破坏性 API 变更。破坏性变更可以是任意 *类型 *提交的一部分。</li><li><strong>其它情况:</strong> 除 <code>fix:</code> 和 <code>feat:</code> 之外的提交 <em>类型</em> 也是被允许的，例如 <a href="https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional">@commitlint/config-conventional</a>（基于 <a href="https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines">Angular 约定</a>）中推荐的 <code>chore:</code>、<code>docs:</code>、<code>style:</code>、<code>refactor:</code>、<code>perf:</code>、<code>test:</code> 及其他标签。 我们也推荐使用<code>improvement</code>，用于对当前实现进行改进而没有添加新功能或修复错误的提交。 请注意，这些标签在约定式提交规范中并不是强制性的。并且在语义化版本中没有隐式的影响（除非他们包含 BREAKING CHANGE）。 可以为提交类型添加一个围在圆括号内的作用域，以为其提供额外的上下文信息。例如 <code>feat(parser): adds ability to parse arrays.</code>。</li></ol><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="包含了描述以及正文内有破坏性变更的提交说明"><a href="#包含了描述以及正文内有破坏性变更的提交说明" class="headerlink" title="包含了描述以及正文内有破坏性变更的提交说明"></a>包含了描述以及正文内有破坏性变更的提交说明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">feat: allow provided config object to extend other configs</span><br><span class="line"></span><br><span class="line">BREAKING CHANGE: &#96;extends&#96; key in config file is now used for extending other config files</span><br></pre></td></tr></table></figure><h3 id="不包含正文的提交说明"><a href="#不包含正文的提交说明" class="headerlink" title="不包含正文的提交说明"></a>不包含正文的提交说明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docs: correct spelling of CHANGELOG</span><br></pre></td></tr></table></figure><h3 id="包含作用域的提交说明"><a href="#包含作用域的提交说明" class="headerlink" title="包含作用域的提交说明"></a>包含作用域的提交说明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">feat(lang): add polish language</span><br></pre></td></tr></table></figure><h3 id="为-fix-编写的提交说明，包含（可选的）-issue-编号"><a href="#为-fix-编写的提交说明，包含（可选的）-issue-编号" class="headerlink" title="为 fix 编写的提交说明，包含（可选的） issue 编号"></a>为 fix 编写的提交说明，包含（可选的） issue 编号</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fix: correct minor typos in code</span><br><span class="line"></span><br><span class="line">see the issue for details on the typos fixed</span><br><span class="line"></span><br><span class="line">closes issue #12</span><br></pre></td></tr></table></figure><h2 id="约定式提交规范"><a href="#约定式提交规范" class="headerlink" title="约定式提交规范"></a>约定式提交规范</h2><ol><li>每个提交都<strong>必须</strong>使用类型字段前缀，它由一个名词组成，诸如 <code>feat</code> 或 <code>fix</code> ，其后接一个<strong>可选的</strong>作用域字段，以及一个<strong>必要的</strong>冒号（英文半角）和空格。</li><li>当一个提交为应用或类库实现了新特性时，<strong>必须</strong>使用 <code>feat</code> 类型。</li><li>当一个提交为应用修复了 bug 时，<strong>必须</strong>使用 <code>fix</code> 类型。</li><li>作用域字段<strong>可以</strong>跟随在类型字段后面。作用域<strong>必须</strong>是一个描述某部分代码的名词，并用圆括号包围，例如： <code>fix(parser):</code></li><li>描述字段<strong>必须</strong>紧接在类型/作用域前缀的空格之后。描述指的是对代码变更的简短总结，例如： <em>fix: array parsing issue when multiple spaces were contained in string.</em></li><li>在简短描述之后，<strong>可以</strong>编写更长的提交正文，为代码变更提供额外的上下文信息。正文<strong>必须</strong>起始于描述字段结束的一个空行后。</li><li>在正文结束的一个空行之后，<strong>可以</strong>编写一行或多行脚注。脚注<strong>必须</strong>包含关于提交的元信息，例如：关联的合并请求、Reviewer、破坏性变更，每条元信息一行。</li><li>破坏性变更<strong>必须</strong>标示在正文区域最开始处，或脚注区域中某一行的开始。一个破坏性变更<strong>必须</strong>包含大写的文本 <code>BREAKING CHANGE</code>，后面紧跟冒号和空格。</li><li>在 <code>BREAKING CHANGE:</code>之后<strong>必须</strong>提供描述，以描述对 API 的变更。例如： <em>BREAKING CHANGE: environment variables now take precedence over config files.</em></li><li>在提交说明中，<strong>可以</strong>使用 <code>feat</code> 和 <code>fix</code> 之外的类型。</li><li>工具的实现<strong>必须不</strong>区分大小写地解析构成约定式提交的信息单元，只有 <code>BREAKING CHANGE</code> <strong>必须</strong>是大写的。</li><li><strong>可以</strong>在类型/作用域前缀之后，<code>:</code> 之前，附加 <code>!</code> 字符，以进一步提醒注意破坏性变更。当有 <code>!</code> 前缀时，正文或脚注内<strong>必须</strong>包含 <code>BREAKING CHANGE: description</code></li></ol><br /><blockquote><p>更多内容在 <a href="https://www.conventionalcommits.org/" target="_blank" rel="noopener">conventionalcommits</a></p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> 规范 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JavaScript类型转换</title>
       <link href="/blog/2020/09/09/javascript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/"/>
       <url>/blog/2020/09/09/javascript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</url>
@@ -35,6 +56,8 @@
             
             <tag> git </tag>
             
+            <tag> 规范 </tag>
+            
         </tags>
       
     </entry>
@@ -52,7 +75,7 @@
       
         <tags>
             
-            <tag> 文档排版 </tag>
+            <tag> 规范 </tag>
             
         </tags>
       
