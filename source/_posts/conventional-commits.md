@@ -83,4 +83,20 @@ closes issue #12
 
 <br />
 
-> 更多内容在 [conventionalcommits](https://www.conventionalcommits.org/)
+具体类型含义如下：
+
+| 类型        | 说明                                                         |
+| ----------- | ------------------------------------------------------------ |
+| `feat:`     | 新增功能                                                     |
+| `fix:`      | 修复 bug                                                     |
+| `docs:`     | 仅修改文档                                                   |
+| `style:`    | 样式不会影响代码含义的更改，如 **空白符**、**格式**、**分号补全**、**错别字修改等** |
+| `refactor:` | 既不修复错误也不增加功能的代码修改                           |
+| `perf:`     | 本次代码的更改可提高性能                                     |
+| `test:`     | 添加或修改测试内容                                           |
+| `build:`    | 影响构建系统或外部依赖的更改 (**Example scopes:** `webpack`, `npm`) |
+| `ci:`       | 对 CI 配置文件和脚本的更改 (**Example scopes:** `travis`)    |
+| `chore`     | 其他不会修改 src 或测试文件的更改，如 `.gitignore`,`package.json`、`yarn.json` 等 |
+| `revert`    | 回退旧版本                                                   |
+
+更多内容参见：[约定式提交](https://www.conventionalcommits.org/)
