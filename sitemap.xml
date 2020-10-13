@@ -3,13 +3,13 @@
 
 
     <sitemap>
-        <loc>https://github.com/Kaviilee/blog.git/post-sitemap.xml</loc>
-        <lastmod>2020-10-13T07:03:48.244Z</lastmod>
+        <loc>https://github.com/Kaviilee/blog/post-sitemap.xml</loc>
+        <lastmod>2020-10-13T09:13:10.952Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://github.com/Kaviilee/blog.git/page-sitemap.xml</loc>
-        <lastmod>2020-10-13T07:03:48.244Z</lastmod>
+        <loc>https://github.com/Kaviilee/blog/page-sitemap.xml</loc>
+        <lastmod>2020-10-13T09:13:10.952Z</lastmod>
     </sitemap>
 
 </sitemapindex>
