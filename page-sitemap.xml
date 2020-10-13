@@ -2,63 +2,63 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://github.com/Kaviilee/blog</loc>
+        <loc>https://kaviilee.github.io/blog</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
     
     <url>
-        <loc>https://github.com/Kaviilee/blog/about/</loc>
-        <lastmod>2020-10-13T09:13:10.952Z</lastmod>
+        <loc>https://kaviilee.github.io/blog/404.html</loc>
+        <lastmod>2020-10-13T09:25:52.692Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://github.com/Kaviilee/blog/categories/</loc>
-        <lastmod>2020-10-13T09:13:10.952Z</lastmod>
+        <loc>https://kaviilee.github.io/blog/about/</loc>
+        <lastmod>2020-10-13T09:25:52.692Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://github.com/Kaviilee/blog/essays/</loc>
-        <lastmod>2020-10-13T09:13:10.952Z</lastmod>
+        <loc>https://kaviilee.github.io/blog/categories/</loc>
+        <lastmod>2020-10-13T09:25:52.692Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://github.com/Kaviilee/blog/friends/</loc>
-        <lastmod>2020-10-13T09:13:10.952Z</lastmod>
+        <loc>https://kaviilee.github.io/blog/essays/</loc>
+        <lastmod>2020-10-13T09:25:52.692Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://github.com/Kaviilee/blog/mylist/</loc>
-        <lastmod>2020-10-13T09:13:10.952Z</lastmod>
+        <loc>https://kaviilee.github.io/blog/friends/</loc>
+        <lastmod>2020-10-13T09:25:52.692Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://github.com/Kaviilee/blog/shuoshuo/</loc>
-        <lastmod>2020-10-13T09:13:10.952Z</lastmod>
+        <loc>https://kaviilee.github.io/blog/mylist/</loc>
+        <lastmod>2020-10-13T09:25:52.692Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://github.com/Kaviilee/blog/tags/</loc>
-        <lastmod>2020-10-13T09:13:10.952Z</lastmod>
+        <loc>https://kaviilee.github.io/blog/shuoshuo/</loc>
+        <lastmod>2020-10-13T09:25:52.692Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://github.com/Kaviilee/blog/404.html</loc>
-        <lastmod>2020-10-13T09:13:10.948Z</lastmod>
+        <loc>https://kaviilee.github.io/blog/tags/</loc>
+        <lastmod>2020-10-13T09:25:52.692Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
