@@ -323,6 +323,7 @@ table {
   display: inline-block;
   max-width: 100%;
   margin-right: 0.4rem;
+  margin-bottom: 0.8rem;
   vertical-align: text-top;
 }
 table::-webkit-scrollbar {
@@ -3402,7 +3403,7 @@ div.gallery.stretch>p img {
   content: '';
   display: block;
   margin-top: -80px;
-  height: 80px;
+  height: 48px;
   visibility: hidden;
   pointer-events: none;
 }
@@ -4550,6 +4551,7 @@ div.hoverbox:hover >div.target {
   max-height: 64px;
   white-space: normal;
   flex-shrink: 1;
+  font-weight: 600;
 }
 .l_header .switcher {
   display: none;
