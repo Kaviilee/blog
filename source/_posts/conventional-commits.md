@@ -3,6 +3,8 @@ title: 约定式提交 (Conventional Commits)
 tags:
   - git
   - 规范
+categories:
+    - ['技术']
 date: 2020-10-13 00:19:25
 ---
 
