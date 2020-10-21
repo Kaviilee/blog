@@ -322,8 +322,8 @@ table {
   overflow: auto;
   display: inline-block;
   max-width: 100%;
-  margin-right: 0.4rem;
-  margin-bottom: 0.8rem;
+  margin-right: 0.9rem;
+  margin-bottom: 1.8rem;
   vertical-align: text-top;
 }
 table::-webkit-scrollbar {
@@ -431,7 +431,7 @@ th {
 .article div.btns,
 .article div.btns p,
 .article div.btns a {
-  font-size: 0.8125rem;
+  font-size: 0.92rem;
   color: #555;
 }
 .article div.btns b {
@@ -864,7 +864,7 @@ div.dropmenu .list-v .list-v {
 details {
   display: block;
   padding: 16px;
-  margin: 0.4rem 0;
+  margin: 0.9rem 0;
   border-radius: 4px;
   background: #fff;
   font-size: 0.9375rem;
@@ -1016,7 +1016,7 @@ details[open] >div.content > details:last-child {
   margin-bottom: 0;
 }
 .article a.link-card {
-  margin: 0.2rem auto;
+  margin: 0.45rem auto;
   background: #f6f6f6;
   display: inline-flex;
   align-items: center;
@@ -1077,7 +1077,7 @@ details[open] >div.content > details:last-child {
 .article a.link-card p.url {
   flex-shrink: 0;
   color: rgba(68,68,68,0.65);
-  font-size: 0.8125rem;
+  font-size: 0.92rem;
 }
 audio,
 video {
@@ -1104,7 +1104,7 @@ div.videos {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-end;
-  margin: 0.4rem -4px;
+  margin: 0.9rem -4px;
 }
 div.videos .video,
 div.videos iframe {
@@ -1146,13 +1146,13 @@ div.videos[col='4'] iframe {
 }
 div.note {
   position: relative;
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
   padding: 16.1px 16px 16px 16px;
   padding-left: calc(16px + 16px);
   border-radius: 4px;
-  background: #ecfbf7;
-  border-left: 4px solid #44d7b6;
+  background: #ecf8f2;
+  border-left: 4px solid #42b983;
 }
 div.note h2,
 div.note h3,
@@ -1170,8 +1170,8 @@ div.note ol,
 div.note blockquote,
 div.note img {
   font-size: 0.9375rem;
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
 }
 div.note::before {
   position: absolute;
@@ -1186,7 +1186,7 @@ div.note::before {
   font-family: 'Font Awesome 5 Free';
 }
 div.note::before {
-  color: #44d7b6;
+  color: #42b983;
   content: '\f054';
 }
 div.note::before {
@@ -1336,10 +1336,10 @@ p.p.subtitle {
   font-weight: bold;
   color: #44d7b6;
   font-size: 1rem !important;
-  padding-top: 0.8rem;
+  padding-top: 1.8rem;
 }
 p.p.subtitle:first-child {
-  padding-top: 0.4rem;
+  padding-top: 0.9rem;
 }
 span.p.logo,
 p.p.logo {
@@ -1402,32 +1402,32 @@ span.p.h1,
 p.p.h1 {
   font-size: 1.625rem;
   color: #444;
-  padding-top: 0.8rem;
+  padding-top: 1.8rem;
 }
 span.p.h2,
 p.p.h2 {
   font-size: 1.375rem;
   color: #444;
-  padding-top: 0.8rem;
+  padding-top: 1.8rem;
   border-bottom: 1px solid rgba(68,68,68,0.1);
 }
 span.p.h3,
 p.p.h3 {
   font-size: 1.25rem;
   color: #444;
-  padding-top: 0.8rem;
+  padding-top: 1.8rem;
 }
 span.p.h4,
 p.p.h4 {
   font-size: 1.125rem;
   color: #444;
-  padding-top: 0.8rem;
+  padding-top: 1.8rem;
 }
 span.p.h5,
 p.p.h5 {
   font-size: 1rem;
   color: #444;
-  padding-top: 0.6rem;
+  padding-top: 1.35rem;
 }
 span.p.red,
 p.p.red {
@@ -1456,8 +1456,8 @@ p.p.gray {
 div.tabs {
   display: block;
   position: relative;
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
   border-radius: 4px;
   background: #fff;
   border: 1px solid rgba(85,85,85,0.2);
@@ -1469,8 +1469,8 @@ div.tabs ul,
 div.tabs ol,
 div.tabs div.note,
 div.tabs details {
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
 }
 div.tabs ul.nav-tabs {
   display: flex;
@@ -1739,10 +1739,10 @@ pre {
 .highlight {
   position: relative;
   width: 100%;
-  margin: 0.4rem 0;
+  margin: 0.9rem 0;
   display: block;
   background: #fff7ea;
-  font-size: 0.8125rem;
+  font-size: 0.92rem;
   font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
   border-radius: 4px;
   border: 1px solid transparent;
@@ -2307,7 +2307,7 @@ pre {
   background: #21232f !important;
 }
 div.gallery {
-  margin: 0.4rem 0;
+  margin: 0.9rem 0;
   overflow: hidden;
 }
 div.gallery >.fancybox,
@@ -2423,9 +2423,9 @@ div.gallery.stretch>p img {
   overflow: hidden;
 }
 .fancybox .image-caption {
-  font-size: 0.8125rem;
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
+  font-size: 0.92rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
   color: rgba(68,68,68,0.65);
 }
 .article mjx-container {
@@ -2745,10 +2745,10 @@ div.gallery.stretch>p img {
   text-decoration: underline;
 }
 .l_main #comments #valine_container .vcards .vcontent blockquote {
-  padding-top: 0.4rem;
-  padding-bottom: 0.4rem;
-  background: #ecfbf7;
-  border-left: 4px solid #44d7b6;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+  background: #ecf8f2;
+  border-left: 4px solid #42b983;
   border-radius: 4px;
   transition: all 0.28s ease;
   -moz-transition: all 0.28s ease;
@@ -2779,8 +2779,8 @@ div.gallery.stretch>p img {
 }
 .l_main #comments #valine_container .vcards .vcontent p {
   color: #555;
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
   line-height: inherit;
 }
 .l_main #comments #valine_container .vcards .vcontent .vemoji {
@@ -2914,7 +2914,7 @@ div.gallery.stretch>p img {
 #archive-page .archive .all-tags ul li {
   list-style: none;
   background: #f6f6f6;
-  margin: 0.4rem 4px;
+  margin: 0.9rem 4px;
   border-radius: 4px;
   overflow: hidden;
   display: flex;
@@ -2995,7 +2995,7 @@ div.gallery.stretch>p img {
 .article h4:first-child,
 .article h5:first-child,
 .article h6:first-child {
-  margin-top: 0.4rem;
+  margin-top: 0.9rem;
   padding-top: 0;
 }
 .article h1.title,
@@ -3054,7 +3054,7 @@ div.gallery.stretch>p img {
   text-align: center;
 }
 .article .aplayer {
-  margin: 0.4rem 0;
+  margin: 0.9rem 0;
   display: inline-block;
   width: 400px;
   max-width: 100%;
@@ -3173,14 +3173,14 @@ div.gallery.stretch>p img {
   margin-right: 5px;
 }
 .article blockquote {
-  background: #ecfbf7;
-  border-left: 4px solid #44d7b6;
+  background: #ecf8f2;
+  border-left: 4px solid #42b983;
   border-radius: 4px;
 }
 .article blockquote {
   position: relative;
   width: 100%;
-  padding: 16.1px 16px 16px 16px;
+  padding: 10px 15px;
   transition: all 0.28s ease;
   -moz-transition: all 0.28s ease;
   -webkit-transition: all 0.28s ease;
@@ -3193,15 +3193,15 @@ div.gallery.stretch>p img {
   text-align: left;
   word-wrap: normal;
   font-size: 0.9375rem;
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
 }
 .article blockquote footer {
   padding: 0;
   text-align: justify;
   color: inherit;
   font-style: italic;
-  margin: 0.4rem 0;
+  margin: 0.9rem 0;
 }
 .article blockquote footer cite {
   color: rgba(68,68,68,0.65);
@@ -3213,7 +3213,7 @@ div.gallery.stretch>p img {
 }
 .article blockquote.pullquote.right {
   border-left: none;
-  border-right: 4px solid #44d7b6;
+  border-right: 4px solid #42b983;
 }
 .article blockquote.pullquote.right p {
   text-align: right;
@@ -3222,11 +3222,11 @@ div.gallery.stretch>p img {
   display: block;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
   overflow: auto;
   background: #fff7ea;
-  font-size: 0.8125rem;
+  font-size: 0.92rem;
   font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
   border: 1px solid #ffebcb;
   padding: 16px;
@@ -3246,10 +3246,12 @@ div.gallery.stretch>p img {
 }
 .article code {
   font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
+  background: #f8f8f8;
+  padding: 3px 5px;
 }
 .article code:not([class]) {
-  font-size: 0.8125rem;
-  color: #d56d28;
+  font-size: 0.92rem;
+  color: #e96900;
   border-radius: 2px;
 }
 @media screen and (max-width: 500px) {
@@ -3264,7 +3266,7 @@ div.gallery.stretch>p img {
 }
 .article .widget {
   background: transparent;
-  margin: 0.4rem 0;
+  margin: 0.9rem 0;
   box-shadow: none;
   border-radius: 4px;
   cursor: auto;
@@ -3362,7 +3364,7 @@ div.gallery.stretch>p img {
   margin-bottom: 4px;
 }
 .article .article_footer {
-  margin-top: 64px;
+  margin-top: 48px;
 }
 .article .widget-blur {
   backdrop-filter: none;
@@ -3835,7 +3837,7 @@ footer {
 }
 footer,
 footer p {
-  font-size: 0.8125rem;
+  font-size: 0.92rem;
 }
 footer .licenses {
   color: fade(, 50%);
@@ -3970,7 +3972,7 @@ footer .copyright p {
   margin: 0;
 }
 .article.article-entry.l_friends .friends-group .friend-content .friend-card .friend-right p.friend-name {
-  font-size: 0.8125rem;
+  font-size: 0.92rem;
   padding-top: 4px;
   font-weight: bold;
 }
@@ -4102,14 +4104,14 @@ footer .copyright p {
 .l_main .widget .content table,
 .l_main .widget .content .tabs,
 .l_main .widget .content details {
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
 }
 .l_main .widget .content .post {
   padding-top: 0;
   padding-bottom: 0;
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
 }
 .l_main .widget.grid .content .grid.fixed a {
   width: calc(100%/8 - 0 * 16px);
@@ -4218,7 +4220,7 @@ footer .copyright p {
 }
 .l_main .post section.meta .title p.h1,
 .l_main .post section.meta .title p.h2 {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   border-bottom: none;
 }
 .l_main .post section.meta .title p.h1 {
@@ -4251,7 +4253,7 @@ footer .copyright p {
 .l_main .post section.meta .new-meta-box,
 .l_main .post section.meta .new-meta-box p,
 .l_main .post section.meta .new-meta-box i {
-  font-size: 0.8125rem;
+  font-size: 0.92rem;
 }
 .l_main .post section.meta .new-meta-box .new-meta-item {
   color: rgba(68,68,68,0.65);
@@ -4446,13 +4448,13 @@ div.hoverbox:hover >div.target {
 }
 .comments .article p[ct] {
   margin-top: 0;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.9rem;
   font-size: 1.125rem;
   color: #444;
 }
 .comments .article p[cst] {
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
   font-size: 0.875rem;
 }
 .white-box {
@@ -5429,7 +5431,7 @@ ul.list-v.rightmenu li.navigation .nav:last-child {
   overflow: hidden;
   word-break: break-all;
   text-overflow: ellipsis;
-  font-size: 0.8125rem;
+  font-size: 0.92rem;
   color: rgba(68,68,68,0.65);
 }
 #u-search .modal-body .modal-results .result .icon {
@@ -5551,8 +5553,8 @@ ul.list-v.rightmenu li.navigation .nav:last-child {
   padding: 8px 0;
 }
 .widget >.content p {
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin-top: 0.9rem;
+  margin-bottom: 0.9rem;
 }
 .widget >.content ul>li a {
   color: rgba(68,68,68,0.65);
@@ -5639,7 +5641,7 @@ ul.list-v.rightmenu li.navigation .nav:last-child {
   width: 128px;
   height: 128px;
   margin-top: 32px;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.9rem;
 }
 .widget.blogger .content >.avatar.circle img {
   display: block;

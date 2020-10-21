@@ -509,7 +509,7 @@
 </blockquote>
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>约定式提交规范是一种基于提交消息的轻量级约定。 它提供了一组用于创建清晰的提交历史的简单规则； 这使得编写基于规范的自动化工具变得更容易。在提交信息中描述新特性、bug 修复和破坏性变更。</p>
 <p>提交说明的结构如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;类型&gt;[可选的作用域]: &lt;描述&gt;</span><br><span class="line">[可选的正文]</span><br><span class="line">[可选的脚注]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;类型&gt;[可选的作用域]: &lt;描述&gt;</span><br><span class="line">[可选的正文]</span><br><span class="line">[可选的脚注]</span><br></pre></td></tr></table></figure>
 
 <p>提交说明包含了下面的结构化元素，以向类库使用者表明其意图：</p>
 <ol>
@@ -518,13 +518,13 @@
 <li><strong>BREAKING CHANGE</strong>: 在可选的正文或脚注的起始位置带有 <code>BREAKING CHANGE:</code> 的提交，表示引入了破坏性 API 变更。破坏性变更可以是任意 *类型 *提交的一部分。</li>
 <li><strong>其它情况:</strong> 除 <code>fix:</code> 和 <code>feat:</code> 之外的提交 <em>类型</em> 也是被允许的，例如 <a href="https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional" target="_blank" rel="noopener">@commitlint/config-conventional</a>（基于 <a href="https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines" target="_blank" rel="noopener">Angular 约定</a>）中推荐的 <code>chore:</code>、<code>docs:</code>、<code>style:</code>、<code>refactor:</code>、<code>perf:</code>、<code>test:</code> 及其他标签。 我们也推荐使用<code>improvement</code>，用于对当前实现进行改进而没有添加新功能或修复错误的提交。 请注意，这些标签在约定式提交规范中并不是强制性的。并且在语义化版本中没有隐式的影响（除非他们包含 BREAKING CHANGE）。 可以为提交类型添加一个围在圆括号内的作用域，以为其提供额外的上下文信息。例如 <code>feat(parser): adds ability to parse arrays.</code>。</li>
 </ol>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="包含了描述以及正文内有破坏性变更的提交说明"><a href="#包含了描述以及正文内有破坏性变更的提交说明" class="headerlink" title="包含了描述以及正文内有破坏性变更的提交说明"></a>包含了描述以及正文内有破坏性变更的提交说明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">feat: allow provided config object to extend other configs</span><br><span class="line"></span><br><span class="line">BREAKING CHANGE: &#96;extends&#96; key in config file is now used for extending other config files</span><br></pre></td></tr></table></figure>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="包含了描述以及正文内有破坏性变更的提交说明"><a href="#包含了描述以及正文内有破坏性变更的提交说明" class="headerlink" title="包含了描述以及正文内有破坏性变更的提交说明"></a>包含了描述以及正文内有破坏性变更的提交说明</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">feat: allow provided config object to extend other configs</span><br><span class="line"></span><br><span class="line">BREAKING CHANGE: &#96;extends&#96; key in config file is now used for extending other config files</span><br></pre></td></tr></table></figure>
 
-<h3 id="不包含正文的提交说明"><a href="#不包含正文的提交说明" class="headerlink" title="不包含正文的提交说明"></a>不包含正文的提交说明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docs: correct spelling of CHANGELOG</span><br></pre></td></tr></table></figure>
+<h3 id="不包含正文的提交说明"><a href="#不包含正文的提交说明" class="headerlink" title="不包含正文的提交说明"></a>不包含正文的提交说明</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">docs: correct spelling of CHANGELOG</span><br></pre></td></tr></table></figure>
 
-<h3 id="包含作用域的提交说明"><a href="#包含作用域的提交说明" class="headerlink" title="包含作用域的提交说明"></a>包含作用域的提交说明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">feat(lang): add polish language</span><br></pre></td></tr></table></figure>
+<h3 id="包含作用域的提交说明"><a href="#包含作用域的提交说明" class="headerlink" title="包含作用域的提交说明"></a>包含作用域的提交说明</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">feat(lang): add polish language</span><br></pre></td></tr></table></figure>
 
-<h3 id="为-fix-编写的提交说明，包含（可选的）-issue-编号"><a href="#为-fix-编写的提交说明，包含（可选的）-issue-编号" class="headerlink" title="为 fix 编写的提交说明，包含（可选的） issue 编号"></a>为 fix 编写的提交说明，包含（可选的） issue 编号</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fix: correct minor typos in code</span><br><span class="line"></span><br><span class="line">see the issue for details on the typos fixed</span><br><span class="line"></span><br><span class="line">closes issue #12</span><br></pre></td></tr></table></figure>
+<h3 id="为-fix-编写的提交说明，包含（可选的）-issue-编号"><a href="#为-fix-编写的提交说明，包含（可选的）-issue-编号" class="headerlink" title="为 fix 编写的提交说明，包含（可选的） issue 编号"></a>为 fix 编写的提交说明，包含（可选的） issue 编号</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fix: correct minor typos in code</span><br><span class="line"></span><br><span class="line">see the issue for details on the typos fixed</span><br><span class="line"></span><br><span class="line">closes issue #12</span><br></pre></td></tr></table></figure>
 
 <h2 id="约定式提交规范"><a href="#约定式提交规范" class="headerlink" title="约定式提交规范"></a>约定式提交规范</h2><ol>
 <li>每个提交都<strong>必须</strong>使用类型字段前缀，它由一个名词组成，诸如 <code>feat</code> 或 <code>fix</code> ，其后接一个<strong>可选的</strong>作用域字段，以及一个<strong>必要的</strong>冒号（英文半角）和空格。</li>
@@ -642,34 +642,6 @@
 
   
 
-  
-    
-    
-
-<section class="widget qrcode  desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
-        
-          height='64px'
-        ></div>
-      
-    
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
-        
-          height='64px'
-        ></div>
-      
-    
-  </div>
-</section>
-
-  
-
 
               
             </div>
@@ -683,10 +655,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-20T16:01:41+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-21T08:49:02+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年10月20日</p>
+    <p>更新于：2020年10月21日</p>
   </a>
 </div>
 
