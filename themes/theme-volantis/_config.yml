@@ -36,7 +36,7 @@ style:
     h3: 24px # Spacing above H3 (only px unit)
     h4: 16px # Spacing above H4 (only px unit)
     paragraph: .6rem # Paragraph spacing between paragraphs
-    row: .4rem # Paragraph spacing between other elements
+    row: .9rem # Paragraph spacing between other elements
     line_height: 1.65 # normal, 1.5, 1.75, 2 ...
   border_radius:
     card: 8px
@@ -54,7 +54,7 @@ style:
     body: .9375rem
     list: .9375rem
     meta: .875rem
-    code: .8125rem
+    code: .92rem
     footnote: .75rem
   fontfamily:
     logofont:
@@ -76,7 +76,7 @@ style:
       url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf
       weight: normal
       style: normal
-  # color:
+  color:
   #   site: '#21232F' # Website background color
   #   site_inner: '#fff' # Text color inside the website background
   #   site_footer: '#666' # Footer text color inside the website background
@@ -87,8 +87,9 @@ style:
   #   hover: '#ff5722' # Link highlight color
   #   inner: '#333' # Text color inside the button
   #   block: '#555' # Block color
-  #   inlinecode: '#555' # Inline code color
-  #   codeblock: '#555' # Codeblock color
+    inlinecode: '#e96900' # Inline code color
+    blockquote: '#42b983'
+    # codeblock: '#f6f6f6' # Codeblock color
   #   p: '#ccc' # Paragraph color
 
 
@@ -170,7 +171,7 @@ layout:
     # 列表中每一篇文章的meta信息
     meta: [title, category, date, wordcount, valinecount, pin]
     # 列表类页面的侧边栏
-    sidebar: [blogger, category, tagcloud, qrcode]
+    sidebar: [blogger, category, tagcloud]
     # read more button
     readmore: 阅读全文 <i class="fas fa-chevron-right"></i>
   # 页面布局
@@ -188,7 +189,7 @@ layout:
   # 文章布局，参数继承自 on_page
   on_post:
     # 文章页脚，自动在每一篇文章末尾添加
-    article_footer: [references, related_repos, copyright, donate]
+    article_footer: [references, related_repos, copyright]
   # 其他的页面布局暂时等于 on_list
 
 
