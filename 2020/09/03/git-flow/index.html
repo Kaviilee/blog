@@ -517,22 +517,22 @@
 <h2 id="分支提交与合并"><a href="#分支提交与合并" class="headerlink" title="分支提交与合并"></a>分支提交与合并</h2><p><strong>如果 feature 需要 develop 的功能，不要将 develop 分支 merge 到 feature 分支，应该使用 feature rebase develop</strong></p>
 <p>分支提交使用 rebase 或 merge 方式都可以，一般来说commit 少的场景我会比较喜欢 rebase，但如果commit攒的多了，rebase 解决冲突会很累。</p>
 <h3 id="rebase-操作"><a href="#rebase-操作" class="headerlink" title="rebase 操作"></a>rebase 操作</h3><p>例如，开始开发时，分支是这样的</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">* -- * -- A (develop)</span><br><span class="line">           \</span><br><span class="line">            * (dev_xxx)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* -- * -- A (develop)</span><br><span class="line">           \</span><br><span class="line">            * (dev_xxx)</span><br></pre></td></tr></table></figure>
 
 <p>开发完成，准备提交时：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">* -- * -- A -- B -- C -- D -- E (develop)</span><br><span class="line">           \</span><br><span class="line">            * -- X -- Y -- Z (dev_xxx)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* -- * -- A -- B -- C -- D -- E (develop)</span><br><span class="line">           \</span><br><span class="line">            * -- X -- Y -- Z (dev_xxx)</span><br></pre></td></tr></table></figure>
 
 <p>命令行步骤如下（GUI参考命令行执行对应操作）</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line"></span><br><span class="line">git commit -m "xxx"</span><br><span class="line"></span><br><span class="line">git pull  //用于更新远端分支(git fetch 也可以)</span><br><span class="line"></span><br><span class="line">git rebase origin/develop //将当前分支base变为develop 的最新 commit</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line"></span><br><span class="line">git commit -m "xxx"</span><br><span class="line"></span><br><span class="line">git pull  //用于更新远端分支(git fetch 也可以)</span><br><span class="line"></span><br><span class="line">git rebase origin/develop //将当前分支base变为develop 的最新 commit</span><br></pre></td></tr></table></figure>
 
 <p>这一步的实际原理是，git会从develop新开一个分支，将你当前的dev_xxx 分支的 commit 按照提交顺序挨个 cherry-pick 到新开分支上</p>
 <p>这一步执行过程中如果 develop 的 B C D E等commit 与 X Y Z 冲突，则需要依次解决冲突</p>
 <p>解决冲突以后，执行 <code>git rebase --continue</code> 或者 <code>git rebase --skip</code> 继续执行接下来的 rebase</p>
 <p>rebase 结束后，分支结构将变为：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">* -- * -- A -- B -- C -- D -- E (develop)</span><br><span class="line">                               \</span><br><span class="line">                                 -- * -- X -- Y -- Z (dev_xxx)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* -- * -- A -- B -- C -- D -- E (develop)</span><br><span class="line">                               \</span><br><span class="line">                                 -- * -- X -- Y -- Z (dev_xxx)</span><br></pre></td></tr></table></figure>
 
 <p>然后需要执行</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git push -f // 必须加 -f 强制推送，否则由于本地分支的base与远端不一致，会报需要 git pull 无法提交</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f // 必须加 -f 强制推送，否则由于本地分支的base与远端不一致，会报需要 git pull 无法提交</span><br></pre></td></tr></table></figure>
 
 <p>提交完成后去 gitlab 创建 merge request，走正常 review 流程，合并代码。</p>
 <br />
@@ -597,7 +597,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-21T08:49:02+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-21T09:22:18+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年10月21日</p>
