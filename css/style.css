@@ -3420,10 +3420,10 @@ div.gallery.stretch>p img {
   margin-bottom: 0.6rem;
 }
 .article .article-entry> h3:before {
-  margin-top: -56px;
+  margin-top: -40px;
 }
 .article .article-entry> h4:before {
-  margin-top: -64px;
+  margin-top: -48px;
 }
 .article .article-entry> h5 {
   font-weight: bold;
