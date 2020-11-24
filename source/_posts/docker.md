@@ -592,9 +592,7 @@ dockerfile 是用来构建 docker 镜像的文件，命令参数脚本。
 3. docker run 镜像
 4. docker push 发布镜像（dockerHub，阿里云镜像仓库）
 
-![Docker官方镜像file](https://wx2.sbimg.cn/2020/07/05/C4mZV.png)
-
-很多官方镜像都是基础包，很多功能都是没有的，我们通常自己打造自己的镜像
+很多官方镜像都是基础包，很多功能都是没有的，我们通常自己创建自己的镜像。
 
 ### Dockerfile的构建过程
 
@@ -641,8 +639,6 @@ ENV 	      # 构建的时候设置环境变量
 ### 实战测试
 
 docker Hub 中99%镜像都是从 CentOS 基础镜像过来的,然后配置需要的软件
-
-![](https://wx2.sbimg.cn/2020/07/06/CXWEK.png)
 
 > 创建一个自己的 CentOS
 
@@ -844,15 +840,15 @@ CMD /usr/local/apache-tomcat-9.0.33/bin/startup.sh && tail -F /usr/local/apache-
 
 3. 创建命名空间
 
-   ![](https://i.loli.net/2020/08/14/jFcRduLDS4wpnsY.png)
+   ![创建命名空间](https://i.loli.net/2020/08/14/jFcRduLDS4wpnsY.png)
 
 4. 创建容器镜像
 
-   ![QQ截图20200814170112.png](https://i.loli.net/2020/08/14/rGJLpDIsCcE49b7.png)
+   ![创建容器镜像](https://i.loli.net/2020/08/14/rGJLpDIsCcE49b7.png)
 
 5. 浏览阿里云
 
-   ![QQ截图20200814171154.png](https://i.loli.net/2020/08/14/axQFySgmeY3OTCB.png)
+   ![浏览阿里云](https://i.loli.net/2020/08/14/axQFySgmeY3OTCB.png)
 
 ### 小结
 
@@ -1132,9 +1128,9 @@ rtt min/avg/max/mdev = 0.039/0.052/0.066/0.015 ms
 
 ### 网络连通
 
-![image-20200720164144037](https://i.loli.net/2020/07/20/DKgzSZ2xc4LXoqY.png)
+![](https://i.loli.net/2020/07/20/DKgzSZ2xc4LXoqY.png)
 
-![image-20200720164243586](https://i.loli.net/2020/07/20/lrGh3epJAs1ntXx.png)
+![](https://i.loli.net/2020/07/20/lrGh3epJAs1ntXx.png)
 
 ```shell
 #测试打通 tomcat01到tomcat-net-01
