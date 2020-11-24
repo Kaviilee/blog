@@ -738,8 +738,7 @@
 <li>docker run 镜像</li>
 <li>docker push 发布镜像（dockerHub，阿里云镜像仓库）</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://wx2.sbimg.cn/2020/07/05/C4mZV.png" alt="Docker官方镜像file"></p>
-<p>很多官方镜像都是基础包，很多功能都是没有的，我们通常自己打造自己的镜像</p>
+<p>很多官方镜像都是基础包，很多功能都是没有的，我们通常自己创建自己的镜像。</p>
 <h3 id="Dockerfile的构建过程"><a href="#Dockerfile的构建过程" class="headerlink" title="Dockerfile的构建过程"></a>Dockerfile的构建过程</h3><p><strong>基础知识</strong>：</p>
 <ol>
 <li>每个保留关键字(指令)都必须是大写字母</li>
@@ -758,7 +757,6 @@
 
 <p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://wx1.sbimg.cn/2020/07/06/CXzSa.png" alt="Dockerfile命令"></p>
 <h3 id="实战测试"><a href="#实战测试" class="headerlink" title="实战测试"></a>实战测试</h3><p>docker Hub 中99%镜像都是从 CentOS 基础镜像过来的,然后配置需要的软件</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://wx2.sbimg.cn/2020/07/06/CXWEK.png" alt=""></p>
 <blockquote>
 <p>创建一个自己的 CentOS</p>
 </blockquote>
@@ -817,13 +815,13 @@
 <li><p>找到容器镜像服务</p>
 </li>
 <li><p>创建命名空间</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://i.loli.net/2020/08/14/jFcRduLDS4wpnsY.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://i.loli.net/2020/08/14/jFcRduLDS4wpnsY.png" alt="创建命名空间"></p>
 </li>
 <li><p>创建容器镜像</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://i.loli.net/2020/08/14/rGJLpDIsCcE49b7.png" alt="QQ截图20200814170112.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://i.loli.net/2020/08/14/rGJLpDIsCcE49b7.png" alt="创建容器镜像"></p>
 </li>
 <li><p>浏览阿里云</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://i.loli.net/2020/08/14/axQFySgmeY3OTCB.png" alt="QQ截图20200814171154.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://i.loli.net/2020/08/14/axQFySgmeY3OTCB.png" alt="浏览阿里云"></p>
 </li>
 </ol>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://static.packt-cdn.com/products/9781787120532/graphics/B06157_10_04-1.png" alt=""></p>
@@ -891,8 +889,8 @@
 <p>自定义网络 docker 都帮我们维护好了对应关系，推荐平时这样使用网络！</p>
 <p>好处:</p>
 <p>不同的集群使用不同的集群，保证集群之间是安全和健康的</p>
-<h3 id="网络连通"><a href="#网络连通" class="headerlink" title="网络连通"></a>网络连通</h3><p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://i.loli.net/2020/07/20/DKgzSZ2xc4LXoqY.png" alt="image-20200720164144037"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://i.loli.net/2020/07/20/lrGh3epJAs1ntXx.png" alt="image-20200720164243586"></p>
+<h3 id="网络连通"><a href="#网络连通" class="headerlink" title="网络连通"></a>网络连通</h3><p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://i.loli.net/2020/07/20/DKgzSZ2xc4LXoqY.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://i.loli.net/2020/07/20/lrGh3epJAs1ntXx.png" alt=""></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">测试打通 tomcat01到tomcat-net-01</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker network connect mynet tomcat01</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 连通之后就是将 tomcat01 放到了mynet网络下</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 一个容器两个ip   阿里云: 公网ip 私网ip</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 01 连通ok</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker <span class="built_in">exec</span> -it tomcat01 ping tomcat-net-01</span></span><br><span class="line">PING tomcat-net-01 (192.168.0.2) 56(84) bytes of data.</span><br><span class="line">64 bytes from tomcat-net-01.mynet (192.168.0.2): icmp_seq=1 ttl=64 time=0.087 ms</span><br><span class="line">64 bytes from tomcat-net-01.mynet (192.168.0.2): icmp_seq=2 ttl=64 time=0.065 ms</span><br><span class="line">^C</span><br><span class="line">--- tomcat-net-01 ping statistics ---</span><br><span class="line">2 packets transmitted, 2 received, 0% packet loss, time 71ms</span><br><span class="line">rtt min/avg/max/mdev = 0.065/0.076/0.087/0.011 ms</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 02 依旧是连不通的</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> docker <span class="built_in">exec</span> -it tomcat02 ping tomcat-net-01</span></span><br><span class="line">ping: tomcat-net-01: Name or service not known</span><br></pre></td></tr></table></figure>
@@ -957,10 +955,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-21T09:22:18+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-24T02:53:18+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年10月21日</p>
+    <p>更新于：2020年11月24日</p>
   </a>
 </div>
 
