@@ -16,13 +16,11 @@
 
   <!-- 页面元数据 -->
   
-  <title>RESTful API 简介与实践 - Kaviilee&#39;s blog</title>
-  
-    <meta name="keywords" content="规范">
+  <title>使用background-image画虚线 - Kaviilee&#39;s blog</title>
   
 
   
-    <meta name="description" content="RESTful API 相关">
+    <meta name="description" content="在知道可以用 background-image 的渐变来定义虚线之前我都是用 border-bottom: 1px dashed #ccc 的。是新的知识，耶！">
   
 
   <!-- feed -->
@@ -397,9 +395,9 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">RESTful API 简介与实践</div>
+  <div id="pjax-pageTitle">使用background-image画虚线</div>
   <div id="pjax-enable-cover">true</div>
-  <div id="pjax-permalink">https://kaviilee.github.io/blog/2020/10/21/restful/</div>
+  <div id="pjax-permalink">https://kaviilee.github.io/blog/2020/12/14/%E4%BD%BF%E7%94%A8background-image%E7%94%BB%E8%99%9A%E7%BA%BF/</div>
   
   <div id="valine-path">none</div>
   <div id="valine-placeholder">none</div>
@@ -449,8 +447,8 @@
         
           
   <h1 class="title">
-    <a href="/blog/2020/10/21/restful/">
-      RESTful API 简介与实践
+    <a href="/blog/2020/12/14/%E4%BD%BF%E7%94%A8background-image%E7%94%BB%E8%99%9A%E7%BA%BF/">
+      使用background-image画虚线
     </a>
   </h1>
 
@@ -470,14 +468,6 @@
           
             
               
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/%E6%8A%80%E6%9C%AF/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>技术</p>
-    </a>
-  </div>
-
 
             
           
@@ -485,7 +475,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年10月21日</p>
+    <p>发布于：2020年12月14日</p>
   </a>
 </div>
 
@@ -509,84 +499,21 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <p>RESTful API 相关</p>
+          <p>在知道可以用 <code>background-image</code> 的渐变来定义虚线之前我都是用 <code>border-bottom: 1px dashed #ccc</code> 的。是新的知识，耶！</p>
 <a id="more"></a>
 
-<blockquote>
-<p><strong>REST</strong> 全称 <strong>Representational State Transfer</strong>，即「表现层状态转化」。符合 REST 原则的架构，就被称为 RESTful 架构。</p>
-</blockquote>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="一、资源-Resources"><a href="#一、资源-Resources" class="headerlink" title="一、资源 (Resources)"></a>一、资源 (Resources)</h3><p>REST 的名称「表现层状态转化」的主语其实是指的是「资源」(Resources)，即 “资源表现层状态转化”。</p>
-<p><strong>资源</strong>，就是网络上的一个实体，或者说是网络上的一个具体信息。可以是文本，图片，歌曲，服务等等。我们可以用一个 <strong>URI</strong> 指向它，每种资源对应一个特定的 <strong>URI</strong>。要获得这个资源，访问这个 URI就可以，因此 <strong>URI</strong> 也就成了每个资源的地址或者独一无二的标识符。</p>
-<h3 id="二、表现层-Representation"><a href="#二、表现层-Representation" class="headerlink" title="二、表现层 (Representation)"></a>二、表现层 (Representation)</h3><p>「资源」是一种信息实体，它可以有多种外在表现形式。<strong>我们把「资源」具体呈现出来的形式，叫做它的「表现层」(Representation)</strong>。</p>
-<p>比如，文本可以用 txt 格式表现，也可以用 HTML，XML，JSON等格式表现，图片可以用 JPG 格式表现，也可以用 PNG 格式表现。</p>
-<p><strong>URI</strong> 只代表资源的实体，不代表表现形式。具体的表现格式，就属于「表现层」的范畴，而URI应该只代表「资源」的位置。它的具体表现形式，应该在HTTP请求的头信息中用 Accept 和 Content-Type 字段指定，这两个字段才是对「表现层」的描述。</p>
-<h3 id="三、状态转化-State-Transfer"><a href="#三、状态转化-State-Transfer" class="headerlink" title="三、状态转化 (State Transfer)"></a>三、状态转化 (State Transfer)</h3><p>访问一个状态，就代表了客户端和服务端的一个互动过程。在这个过程中，必然涉及到数据和状态的变化。</p>
-<p>互联网通讯协议 HTTP 协议，是一个无状态协议。也就是说，所有的状态都保存在服务器端。因此，<strong>客户端想要操作服务器，就必须通过某种手段，使服务器发生「状态转化」(State Transfer)。而这种转化是建立在表现层上的，也就是「表现层状态转化」。</strong></p>
-<p>在 HTTP 协议中，四个表示操作方式的动词：<strong>GET，POST，PUT，DELETE</strong>。他们分别对应四种基本操作：<strong>GET 获取资源，POST 新建资源(也可以更新资源)，PUT 更新资源，DELETE 删除资源</strong>。</p>
-<h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><p>总结一下 RESTful 架构：</p>
-<ol>
-<li>每一个 <strong>URI</strong> 代表一种资源；</li>
-<li>客户端和服务器之间，传递这种资源的表现层；</li>
-<li>客户端通过四个 HTTP 动词，对服务端资源进行操作，实现「表现层状态转化」。</li>
-</ol>
-<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><h3 id="一、URL设计"><a href="#一、URL设计" class="headerlink" title="一、URL设计"></a>一、URL设计</h3><h4 id="1-1-动词-宾语"><a href="#1-1-动词-宾语" class="headerlink" title="1.1 动词 + 宾语"></a>1.1 动词 + 宾语</h4><p>RESTful 的核心思想就是，客户端发出的数据操作指令都是「动词 + 宾语」的结构。比如，<code>GET /todos</code> 这个命令，<code>GET</code> 是动词，<code>/todos</code> 是宾语。</p>
-<p>动词通常就是五种 HTTP 方法，对应 CRUD 操作。</p>
-<blockquote>
-<ul>
-<li>GET：读取（Read）</li>
-<li>POST：新建（Create）</li>
-<li>PUT：更新（Update）</li>
-<li>PATCH：更新（Update），通常是部分更新</li>
-<li>DELETE：删除（Delete）</li>
-</ul>
-</blockquote>
-<h4 id="1-2-动词的覆盖"><a href="#1-2-动词的覆盖" class="headerlink" title="1.2 动词的覆盖"></a>1.2 动词的覆盖</h4><p>有些客户端只能使用 <code>GET</code> 和 <code>POST</code> 方法。服务器必须接受 <code>POST</code> 模拟其他三个方法(<code>PUT</code>，<code>PATCH</code>，<code>DELETE</code>) 。</p>
-<p>此时，客户端发出的 HTTP 请求，要加上 <code>X-HTTP-Method-Override</code> 属性，告诉服务器应该使用哪个动词来覆盖 <code>POST</code> 方法。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST &#x2F;api&#x2F;todos&#x2F;4 HTTP&#x2F;1.1</span><br><span class="line">X-HTTP-Method-Override: PUT</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>background-image<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="1-3-宾语必须是名词"><a href="#1-3-宾语必须是名词" class="headerlink" title="1.3 宾语必须是名词"></a>1.3 宾语必须是名词</h4><p>宾语就是 <strong>API</strong> 的 <strong>URL</strong>，是 <strong>HTTP</strong> 动词作用的对象。它应该是名词，不能是动词。</p>
-<h4 id="1-4-复数-URL"><a href="#1-4-复数-URL" class="headerlink" title="1.4 复数 URL"></a>1.4 复数 URL</h4><p>既然 URL 是名词，那么应该使用复数，还是单数？</p>
-<p>这没有统一的规定，但是常见的操作是读取一个集合，比如 <code>GET /articles</code>（读取所有文章），这里明显应该是复数。</p>
-<p>为了统一起见，建议都使用复数 URL，比如 <code>GET /articles/2</code> 要好于 <code>GET /article/2</code>。</p>
-<h4 id="1-5-避免多级-URL"><a href="#1-5-避免多级-URL" class="headerlink" title="1.5 避免多级 URL"></a>1.5 避免多级 URL</h4><p>常见的情况是，资源需要多级分类，因此很容易写出多级的 URL，比如获取某个作者的某一类文章。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /authors/12/categories/2</span><br></pre></td></tr></table></figure>
+<h2 id="传统的-border"><a href="#传统的-border" class="headerlink" title="传统的 border"></a>传统的 border</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-class">.item</span> &#123;</span><br><span class="line">        <span class="attribute">padding</span>: <span class="number">16px</span>;</span><br><span class="line">        <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用 border 的效果如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://i.loli.net/2020/12/14/dHDhBA2OSG7cy9u.png" alt="border-bottom.png"></p>
+<h2 id="使用-background-image"><a href="#使用-background-image" class="headerlink" title="使用 background-image"></a>使用 background-image</h2><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-class">.item</span> &#123;</span><br><span class="line">        <span class="attribute">padding</span>: <span class="number">16px</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="selector-tag">&amp;</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">            <span class="attribute">position</span>: absolute;</span><br><span class="line">            <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">1px</span>;</span><br><span class="line">            <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="comment">// important</span></span><br><span class="line">            <span class="attribute">background-image</span>: linear-gradient(to right, <span class="number">#ccc</span> <span class="number">0%</span>, <span class="number">#ccc</span> <span class="number">50%</span>, transparent <span class="number">50%</span>);</span><br><span class="line">            <span class="comment">// 设置图片宽度与高度</span></span><br><span class="line">            <span class="attribute">background-size</span>: <span class="number">20px</span> <span class="number">1px</span>;</span><br><span class="line">            <span class="attribute">background-repeat</span>: repeat-x;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>改成查询字符串更好</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /authors/12?categories=2</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://i.loli.net/2020/12/14/mqUpH1GbIjc54Ru.png" alt="background-image.png"></p>
+<p>使用 <code>background-image</code> 就可以通过改变 <code>background-size</code> 来改变虚线的间距。</p>
+<p>如果要改变虚线的方向，需要修改 width，height，background-image 和 background-repeat。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">&amp;</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">1px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">background-image</span>: linear-gradient(to bottom, <span class="number">#ccc</span> <span class="number">0%</span>, <span class="number">#ccc</span> <span class="number">50%</span>, transparent <span class="number">50%</span>);</span><br><span class="line">    <span class="attribute">background-repeat</span>: repeat-yu;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="二、状态码"><a href="#二、状态码" class="headerlink" title="二、状态码"></a>二、状态码</h3><h4 id="2-1-状态码必须精确"><a href="#2-1-状态码必须精确" class="headerlink" title="2.1 状态码必须精确"></a>2.1 状态码必须精确</h4><p>客户端的每一次请求，服务器都必须给出回应。回应包含 HTTP 状态码和数据两部分。</p>
-<p>HTTP 状态码就是一个三位数，分成五个类别。</p>
-<blockquote>
-<ul>
-<li><code>1xx</code>：相关信息</li>
-<li><code>2xx</code>：操作成功</li>
-<li><code>3xx</code>：重定向</li>
-<li><code>4xx</code>：客户端错误</li>
-<li><code>5xx</code>：服务器错误</li>
-</ul>
-</blockquote>
-<p>API 不需要 <code>1xx</code> 状态码</p>
-<h4 id="2-2-状态码具体意义"><a href="#2-2-状态码具体意义" class="headerlink" title="2.2 状态码具体意义"></a>2.2 状态码具体意义</h4><p>服务器向用户返回的状态码和提示信息，常见的有以下一些（方括号中是该状态码对应的 HTTP 动词）。</p>
-<blockquote>
-<ul>
-<li>200 OK - [GET]：服务器成功返回用户请求的数据，该操作是幂等的（Idempotent）。</li>
-<li>201 CREATED - [POST/PUT/PATCH]：用户新建或修改数据成功。</li>
-<li>202 Accepted - [*]：表示一个请求已经进入后台排队（异步任务）</li>
-<li>204 NO CONTENT - [DELETE]：用户删除数据成功。</li>
-<li>400 INVALID REQUEST - [POST/PUT/PATCH]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作，该操作是幂等的。</li>
-<li>401 Unauthorized - [*]：表示用户没有权限（令牌、用户名、密码错误）。</li>
-<li>403 Forbidden - [*] 表示用户得到授权（与401错误相对），但是访问是被禁止的。</li>
-<li>404 NOT FOUND - [*]：用户发出的请求针对的是不存在的记录，服务器没有进行操作，该操作是幂等的。</li>
-<li>406 Not Acceptable - [GET]：用户请求的格式不可得（比如用户请求JSON格式，但是只有XML格式）。</li>
-<li>410 Gone -[GET]：用户请求的资源被永久删除，且不会再得到的。</li>
-<li>422 Unprocesable entity - [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误。</li>
-<li>500 INTERNAL SERVER ERROR - [*]：服务器发生错误，用户将无法判断发出的请求是否成功。</li>
-<li>503 Service Unavailable: 服务器无法处理请求，一般用于网站维护状态</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>本文摘自阮一峰老师的 <a href="http://www.ruanyifeng.com/blog/2011/09/restful.html" target="_blank" rel="noopener">理解RESTful架构</a> 和 <a href="http://www.ruanyifeng.com/blog/2014/05/restful_api.html" target="_blank" rel="noopener">RESTful API 最佳实践</a></p>
-</blockquote>
 
           
             <div class='article_footer'>
@@ -623,7 +550,7 @@
           
         
           
-            <p>本文永久链接是：<a href=https://kaviilee.github.io/blog/2020/10/21/restful/>https://kaviilee.github.io/blog/2020/10/21/restful/</a></p>
+            <p>本文永久链接是：<a href=https://kaviilee.github.io/blog/2020/12/14/%E4%BD%BF%E7%94%A8background-image%E7%94%BB%E8%99%9A%E7%BA%BF/>https://kaviilee.github.io/blog/2020/12/14/%E4%BD%BF%E7%94%A8background-image%E7%94%BB%E8%99%9A%E7%BA%BF/</a></p>
           
         
       </blockquote>
@@ -657,9 +584,6 @@
       
         
           
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/%E8%A7%84%E8%8C%83/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>规范</p></a></div>
-
 
         
       
@@ -676,7 +600,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://kaviilee.github.io/blog/2020/10/21/restful/&title=RESTful API 简介与实践 - Kaviilee's blog&summary=RESTful API 相关"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://kaviilee.github.io/blog/2020/12/14/%E4%BD%BF%E7%94%A8background-image%E7%94%BB%E8%99%9A%E7%BA%BF/&title=使用background-image画虚线 - Kaviilee's blog&summary=在知道可以用 background-image 的渐变来定义虚线之前我都是用 border-bottom: 1px dashed #ccc 的。是新的知识，耶！"
           
           >
           
@@ -688,7 +612,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://kaviilee.github.io/blog/2020/10/21/restful/&title=RESTful API 简介与实践 - Kaviilee's blog&summary=RESTful API 相关"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://kaviilee.github.io/blog/2020/12/14/%E4%BD%BF%E7%94%A8background-image%E7%94%BB%E8%99%9A%E7%BA%BF/&title=使用background-image画虚线 - Kaviilee's blog&summary=在知道可以用 background-image 的渐变来定义虚线之前我都是用 border-bottom: 1px dashed #ccc 的。是新的知识，耶！"
           
           >
           
@@ -700,7 +624,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://kaviilee.github.io/blog/2020/10/21/restful/&title=RESTful API 简介与实践 - Kaviilee's blog&summary=RESTful API 相关"
+          href="http://service.weibo.com/share/share.php?url=https://kaviilee.github.io/blog/2020/12/14/%E4%BD%BF%E7%94%A8background-image%E7%94%BB%E8%99%9A%E7%BA%BF/&title=使用background-image画虚线 - Kaviilee's blog&summary=在知道可以用 background-image 的渐变来定义虚线之前我都是用 border-bottom: 1px dashed #ccc 的。是新的知识，耶！"
           
           >
           
@@ -724,24 +648,13 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/blog/2020/12/09/antd-form-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%A1%E9%AA%8C%E7%9B%B8%E5%85%B3%E9%94%99%E8%AF%AF%E9%97%AE%E9%A2%98/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>antd form 自定义校验相关错误问题</p>
+            
+              <a class='next' href='/blog/2020/12/09/antd-form-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%A1%E9%AA%8C%E7%9B%B8%E5%85%B3%E9%94%99%E8%AF%AF%E9%97%AE%E9%A2%98/'>
+                <p class='title'>antd form 自定义校验相关错误问题<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>在使用 ant design form 组件自定义校验，进行远程校验数据唯一性的时候，遇到的一些问题以及解决方法。
 
 
 问题背景使用 ant design form 设计表单时，某些字段需要进行...</p>
-              </a>
-            
-            
-              <a class='next' href='/blog/2020/10/13/conventional-commits/'>
-                <p class='title'>约定式提交 (Conventional Commits)<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>关于约定式提交的规范内容。
-
-
-约定式提交
-一种用于给提交信息增加人机可读含义的规范。
-
-概述约定式提交规范是一种基于提交消息的轻量级约定。 它提供了一组用于创建清晰的提交历史的简单规则； 这使...</p>
               </a>
             
           </div>
@@ -851,7 +764,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、资源-Resources"><span class="toc-text">一、资源 (Resources)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、表现层-Representation"><span class="toc-text">二、表现层 (Representation)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、状态转化-State-Transfer"><span class="toc-text">三、状态转化 (State Transfer)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、总结"><span class="toc-text">四、总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实践"><span class="toc-text">实践</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、URL设计"><span class="toc-text">一、URL设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-动词-宾语"><span class="toc-text">1.1 动词 + 宾语</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-动词的覆盖"><span class="toc-text">1.2 动词的覆盖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-宾语必须是名词"><span class="toc-text">1.3 宾语必须是名词</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-复数-URL"><span class="toc-text">1.4 复数 URL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-避免多级-URL"><span class="toc-text">1.5 避免多级 URL</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、状态码"><span class="toc-text">二、状态码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-状态码必须精确"><span class="toc-text">2.1 状态码必须精确</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-状态码具体意义"><span class="toc-text">2.2 状态码具体意义</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#传统的-border"><span class="toc-text">传统的 border</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-background-image"><span class="toc-text">使用 background-image</span></a></li></ol>
     </div>
   </section>
 
