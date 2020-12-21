@@ -2,7 +2,9 @@
 title: linear-gradient笔记
 tags:
   - CSS
+date: 2020-12-21 15:15:25
 ---
+
 
 之前用 `background-image` 的 `linear-gradient` 画了下划线，觉得很神奇，就去认真学习了一下。做了些小笔记，备忘。
 
