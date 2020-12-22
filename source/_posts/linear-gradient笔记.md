@@ -1,7 +1,9 @@
 ---
 title: linear-gradient笔记
-tags:
+tag:
   - CSS
+categories:
+  - [CSS]
 date: 2020-12-21 15:15:25
 ---
 

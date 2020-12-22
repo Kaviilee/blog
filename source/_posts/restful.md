@@ -3,7 +3,7 @@ title: RESTful API 简介与实践
 tags:
   - 规范
 categories:
-  - - 技术
+  - [技术]
 date: 2020-10-21 17:02:37
 ---
 
