@@ -515,7 +515,7 @@
           <p>js获取视口和文档高度</p>
 <a id="more"></a>
 
-<h4 id="js获取视口和文档高度"><a href="#js获取视口和文档高度" class="headerlink" title="js获取视口和文档高度"></a>js获取视口和文档高度</h4><table>
+<table>
 <thead>
 <tr>
 <th align="center">项目</th>
@@ -536,12 +536,12 @@
 </tr>
 </tbody></table>
 <blockquote>
-<p>body和html分别表示document.body和document.documentElement</p>
+<p>body 和 html 分别表示 document.body 和 document.documentElement</p>
 </blockquote>
-<p>html.clientHeight 返回视口高度<br>html.offsetHeight 返回 <html> 元素的高度，在没有给 <html> 元素设置height时，可以理解为文档高度。<strong><em>ie6-8返回视口高度</em></strong><br>html.scrollHeight    总是返回文档高度。<strong><em>在 firefox，opera，ie8 中，返回文档高度和视口高度中较大的那个</em></strong><br>body.clientHeight和body.offsetHeight    返回<body>元素的高度（近似于文档高度），如果 <body> 设置 height，则返回设定的值（ie6 仍然返回<body> 内元素的总高度）。<br>body.scrollHeight    总是返回文档高度。<strong><em>在 webkit 中，返回文档高度和视口高度中较大的那个。</em></strong></p>
-<p>总之，获取视口高度用 html.clientHeight ,IE6-8 还可以用 html.offsetHeight。获取文档高度可以用 html.scrollHeight 或 body.scrollHeight。</p>
+<p><code>html.clientHeight</code> 返回视口高度<br><code>html.offsetHeight</code> 返回 <code>&lt;html&gt;</code> 元素的高度，在没有给 <code>&lt;html&gt;</code> 元素设置height时，可以理解为文档高度。<strong>ie6-8返回视口高度</strong><br><code>html.scrollHeight</code> 总是返回文档高度。<strong>在 firefox，opera，ie8 中，返回文档高度和视口高度中较大的那个</strong>。<br><code>body.clientHeight</code> 和 <code>body.offsetHeight</code> 返回 <code>&lt;body&gt;</code> 元素的高度（近似于文档高度），如果 <code>&lt;body&gt;</code> 设置 height，则返回设定的值（ie6 仍然返回 <code>&lt;body&gt;</code> 内元素的总高度）。<br><code>body.scrollHeight</code> 总是返回文档高度。<strong>在 webkit 中，返回文档高度和视口高度中较大的那个。</strong></p>
+<p>总之，获取视口高度用 <strong>html.clientHeight</strong> ,IE6-8 还可以用 <strong>html.offsetHeight</strong>。获取文档高度可以用 <strong>html.scrollHeight</strong> 或 <strong>body.scrollHeight</strong>。</p>
 <p>另外，​​现代浏览器中还有一个属性 window.innerHeight 可以用来获取视口高度，IE9+ 才开始支持。得到的高度有时候会多十几个像素，innerHeight 把滚动条的高度也计算在内。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取视口高度</span></span><br><span class="line"><span class="keyword">let</span> viewportH = <span class="built_in">window</span>.innerHeight || <span class="built_in">document</span>.documentElement.clientHeight;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取文档高度</span></span><br><span class="line"><span class="keyword">let</span> docH = <span class="built_in">document</span>.body.scrollHeight;</span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line"><span class="keyword">let</span> docH = <span class="built_in">document</span>.documentElement.scrollHeight</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取视口高度</span></span><br><span class="line"><span class="keyword">const</span> viewportH = <span class="built_in">window</span>.innerHeight || <span class="built_in">document</span>.documentElement.clientHeight;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取文档高度</span></span><br><span class="line"><span class="keyword">const</span> docH = <span class="built_in">document</span>.body.scrollHeight;</span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line"><span class="keyword">const</span> docH = <span class="built_in">document</span>.documentElement.scrollHeight</span><br></pre></td></tr></table></figure>
 
           
             <div class='article_footer'>
@@ -601,10 +601,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-21T07:54:58+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-25T01:47:02+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年12月21日</p>
+    <p>更新于：2020年12月25日</p>
   </a>
 </div>
 
@@ -782,20 +782,6 @@ Docker 概述Docekr 为什么会出现一款产品有开发和生产两套环境
     
 
 
-
-  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#js获取视口和文档高度"><span class="toc-text">js获取视口和文档高度</span></a></li></ol>
-    </div>
-  </section>
 
 
   
@@ -1216,6 +1202,13 @@ Docker 概述Docekr 为什么会出现一款产品有开发和生产两套环境
 
 
 
+
+
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": 6eb9bd92c4ea4f398074c919d679a70e}'></script>
+  <!-- End Cloudflare Web Analytics -->
 
 
     
