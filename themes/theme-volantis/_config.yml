@@ -705,3 +705,7 @@ info:
   cdn:
     js:
     css:
+
+############################### Web Analytics ###############################
+analytics:
+  cloudflare: 6eb9bd92c4ea4f398074c919d679a70e
