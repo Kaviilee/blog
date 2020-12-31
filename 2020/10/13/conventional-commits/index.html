@@ -523,7 +523,7 @@
 <ol>
 <li><strong>fix</strong>: 类型为 <code>fix</code> 的提交表示在代码库中修复了一个 bug。</li>
 <li><strong>feat</strong>: 类型为 <code>feat</code> 的提交表示在代码库中新增了一个功能。</li>
-<li><strong>BREAKING CHANGE</strong>: 在可选的正文或脚注的起始位置带有 <code>BREAKING CHANGE:</code> 的提交，表示引入了破坏性 API 变更。破坏性变更可以是任意 *类型 *提交的一部分。</li>
+<li><strong>BREAKING CHANGE</strong>: 在可选的正文或脚注的起始位置带有 <code>BREAKING CHANGE:</code> 的提交，表示引入了破坏性 API 变更。破坏性变更可以是任意 <em>类型</em> 提交的一部分。</li>
 <li><strong>其它情况:</strong> 除 <code>fix:</code> 和 <code>feat:</code> 之外的提交 <em>类型</em> 也是被允许的，例如 <a href="https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional" target="_blank" rel="noopener">@commitlint/config-conventional</a>（基于 <a href="https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines" target="_blank" rel="noopener">Angular 约定</a>）中推荐的 <code>chore:</code>、<code>docs:</code>、<code>style:</code>、<code>refactor:</code>、<code>perf:</code>、<code>test:</code> 及其他标签。 我们也推荐使用<code>improvement</code>，用于对当前实现进行改进而没有添加新功能或修复错误的提交。 请注意，这些标签在约定式提交规范中并不是强制性的。并且在语义化版本中没有隐式的影响（除非他们包含 BREAKING CHANGE）。 可以为提交类型添加一个围在圆括号内的作用域，以为其提供额外的上下文信息。例如 <code>feat(parser): adds ability to parse arrays.</code>。</li>
 </ol>
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="包含了描述以及正文内有破坏性变更的提交说明"><a href="#包含了描述以及正文内有破坏性变更的提交说明" class="headerlink" title="包含了描述以及正文内有破坏性变更的提交说明"></a>包含了描述以及正文内有破坏性变更的提交说明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">feat: allow provided config object to extend other configs</span><br><span class="line"></span><br><span class="line">BREAKING CHANGE: &#96;extends&#96; key in config file is now used for extending other config files</span><br></pre></td></tr></table></figure>
@@ -663,7 +663,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-31T03:29:48+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-31T03:41:01+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月31日</p>
