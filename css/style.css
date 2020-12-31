@@ -2782,6 +2782,7 @@ div.gallery.stretch>p img {
   margin-top: 0.9rem;
   margin-bottom: 0.9rem;
   line-height: inherit;
+  text-align: unset;
 }
 .l_main #comments #valine_container .vcards .vcontent .vemoji {
   max-height: 24px;
