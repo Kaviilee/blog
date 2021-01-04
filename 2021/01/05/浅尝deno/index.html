@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#3.0-beta2'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>浅尝 deno - Kaviilee&#39;s blog</title>
+  
+
+  
+    <meta name="description" content="新的一年新的开始！新的东西，学起！(扶朕起来，朕还可以再学">
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Kaviilee's blog">
+  
+
+  <!-- import meta -->
+  
+    
+      <meta name="msapplication-TileColor" content="#ffffff">
+    
+      <meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/favicon/browserconfig.xml">
+    
+      <meta name="theme-color" content="#ffffff">
+    
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+  
+  <link rel="apple-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/favicon/apple-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/favicon/favicon.ico">
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+
+  
+  
+</head>
+
+<body>
+  
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post' style="display: none;">
+      <div class='cover-body'>
+  <div class='a'>
+    
+      <img no-lazy class='logo' src='https://i.loli.net/2020/08/02/kt7G6RHwvgTYzc2.png'/>
+    
+    
+    
+  </div>
+  <div class='b'>
+    <div class='menu navigation dock'>
+      <div class='list-h'>
+        
+          
+            <a href="/blog/"
+              
+              
+              id="blog">
+              <i class='fas fa-home faa-vertical fa-fw'  style='color: #20c997'></i><p>首页</p>
+            </a>
+          
+            <a href="/blog/tags/"
+              
+              
+              id="blogtags">
+              <i class='fas fa-tags faa-tada fa-fw'  style='color: #2196f3'></i><p>标签</p>
+            </a>
+          
+            <a href="/blog/archives/"
+              
+              
+              id="blogarchives">
+              <i class='fas fa-archive fa-fw'  style='color: #ff9800'></i><p>归档</p>
+            </a>
+          
+            <a href="/blog/about/"
+              
+              
+              id="blogabout">
+              <i class='fas fa-info-circle fa-fw'  style='color: #734ae6'></i><p>关于</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+    </cover>
+    <header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/blog/'>
+          
+            <img no-lazy class='logo' src='https://i.loli.net/2020/08/03/FPRjeB3p52c4Kvy.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box" href=/blog/
+                  
+                  
+                  
+                    id="blog"
+                  >
+                  <i class='fas fa-home fa-fw'></i>首页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box" href=/blog/categories/
+                  
+                  
+                  
+                    id="blogcategories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box" href=/blog/tags/
+                  
+                  
+                  
+                    id="blogtags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box" href=/blog/archives/
+                  
+                  
+                  
+                    id="blogarchives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box" href=/blog/shuoshuo/
+                  
+                  
+                  
+                    id="blogshuoshuo"
+                  >
+                  <i class='fas fa-comment fa-fw'></i>说说
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box" href=/blog/about/
+                  
+                  
+                  
+                    id="blogabout"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box" href=/blog/
+                  
+                  
+                  
+                    id="blog"
+                  >
+                  <i class='fas fa-home fa-fw'></i>首页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box" href=/blog/categories/
+                  
+                  
+                  
+                    id="blogcategories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box" href=/blog/tags/
+                  
+                  
+                  
+                    id="blogtags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box" href=/blog/archives/
+                  
+                  
+                  
+                    id="blogarchives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box" href=/blog/shuoshuo/
+                  
+                  
+                  
+                    id="blogshuoshuo"
+                  >
+                  <i class='fas fa-comment fa-fw'></i>说说
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box" href=/blog/about/
+                  
+                  
+                  
+                    id="blogabout"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  </div>
+  
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper' id="pjax-container">
+      
+        <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">浅尝 deno</div>
+  <div id="pjax-enable-cover">true</div>
+  <div id="pjax-permalink">https://kaviilee.github.io/blog/2021/01/05/%E6%B5%85%E5%B0%9Ddeno/</div>
+  
+  <div id="valine-path">none</div>
+  <div id="valine-placeholder">none</div>
+  
+  
+</div>
+
+
+<script>
+  // 处理封面 此时 jquery 还没加载
+  if ("none" == "none") { // 移除封面
+    document.getElementsByClassName('cover')[0].style.display = "none";
+    document.getElementsByClassName('l_body')[0].classList.add("nocover");
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+  } else {
+    if ("none" == "blog") { // 半屏
+      document.getElementsByClassName('cover')[0].classList.remove("full");
+      document.getElementsByClassName('cover')[0].classList.add("half");
+      document.getElementsByClassName('scroll-down')[0].style.display = "none";
+    } else if ("none" == "docs") { // 全屏
+      document.getElementsByClassName('cover')[0].classList.remove("half");
+      document.getElementsByClassName('cover')[0].classList.add("full");
+      document.getElementsByClassName('scroll-down')[0].style.display = "";
+    }
+    document.getElementsByClassName('cover')[0].style.display = "";
+    document.getElementsByClassName('l_body', 'show')[0].classList.remove("nocover");
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+  }
+</script>
+
+      
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/blog/2021/01/05/%E6%B5%85%E5%B0%9Ddeno/">
+      浅尝 deno
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+
+
+ 
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年1月5日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p>新的一年新的开始！新的东西，学起！(扶朕起来，朕还可以再学</p>
+<a id="more"></a>
+
+<blockquote>
+<p>它是 Node.js 的替代品。有了它，将来可能就不需要 Node.js 了。  ———— 阮一峰《Deno 运行时入门教程：Node.js 的替代品》</p>
+</blockquote>
+<h2 id="Deno-简介"><a href="#Deno-简介" class="headerlink" title="Deno 简介"></a>Deno 简介</h2><p>Deno 是使用 V8 并内置于 Rust 的 JavaScript 和 TypeScript 的简单，现代且安全的运行时。Deno 是一个跨平台的运行时，即基于 Google V8 引擎的运行时环境，该运行时环境是使用 Rust 语言开发的，并使用 Tokio 库来构建事件循环系统。Deno 有以下优点：</p>
+<ul>
+<li>默认安全。除非显式启用，否则不能访问文件，网络或环境</li>
+<li>开箱即用的 TypeScript 支持</li>
+<li>只分发一个可执行文件</li>
+<li>具有内置的工具箱，比如依赖项检查工具（deno info）和 代码格式化工具（deno fmt）</li>
+<li>拥有一组保证能够与 Deno 一起使用的经过审查的标准模块：<code>deno.land/std</code></li>
+<li>脚本可以打包到一个 JavaScript 文件中</li>
+</ul>
+<h3 id="一些命令"><a href="#一些命令" class="headerlink" title="一些命令"></a>一些命令</h3><p>执行 <code>deno -h</code> 或 <code>deno --help</code> 就能够显示 Deno 支持的子命令，以下列举一些主要使用的命令</p>
+<blockquote>
+<ul>
+<li>deno bundle：deno bundle [options] <source_file> [out_file]  将脚本和依赖打包</li>
+<li>deno fmt：代码格式化</li>
+<li>deno info：显示本地的依赖缓存</li>
+<li>deno install：将脚本安装为可执行文件</li>
+<li>deno repl：进入 REPL 环境</li>
+<li>deno run：运行脚本</li>
+</ul>
+</blockquote>
+<h2 id="与-Node-js-的区别"><a href="#与-Node-js-的区别" class="headerlink" title="与 Node.js 的区别"></a>与 Node.js 的区别</h2><p>其实一开始看到 Deno，我脑壳一痛，心想不会又是什么神奇的轮子吧？我真的学不动了，但是看了一下，发现还是有那么一点东西的。那么，Deno 既然是 Node.js 的 ”替代品“，究竟解决了 Node.js 的哪些痛点呢？</p>
+<h3 id="模块引入的方式"><a href="#模块引入的方式" class="headerlink" title="模块引入的方式"></a>模块引入的方式</h3><h4 id="Node-模块引入"><a href="#Node-模块引入" class="headerlink" title="Node 模块引入"></a>Node 模块引入</h4><p>Node 内置 API 通过模块引入的方式引入。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line">fs.readFileSync(<span class="string">'demo.txt'</span>)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Deno-全局对象"><a href="#Deno-全局对象" class="headerlink" title="Deno 全局对象"></a>Deno 全局对象</h4><p>在 Deno 中则是一个全局对象 <code>Deno</code> 的属性和方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Deno.readFileSync(<span class="string">'demo.txt'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="模块系统"><a href="#模块系统" class="headerlink" title="模块系统"></a>模块系统</h3><p>在模块系统方面，这是 Deno 和 Node.js 差别最大的地方。</p>
+<h4 id="Node-js-CommonJS-规范"><a href="#Node-js-CommonJS-规范" class="headerlink" title="Node.js CommonJS 规范"></a>Node.js CommonJS 规范</h4><p>Node.js 采用的是 <code>CommonJS</code> 模块规范。具体规范见 <a href="https://javascript.ruanyifeng.com/nodejs/module.html#" target="_blank" rel="noopener">CommonJS规范</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'demo'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Deno-的模块规范"><a href="#Deno-的模块规范" class="headerlink" title="Deno 的模块规范"></a>Deno 的模块规范</h4><p>不同于 Node.js 的规范，Deno 所采用的模块规范是 <a href="https://es6.ruanyifeng.com/#docs/module" target="_blank" rel="noopener">ES Module 规范</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>  <span class="keyword">as</span> fs <span class="keyword">from</span> <span class="string">"https//deno.land/std/fs/mod.ts"</span></span><br><span class="line"><span class="keyword">import</span> &#123; Application &#125; <span class="keyword">from</span> <span class="string">"./initApp.js"</span></span><br><span class="line"><span class="keyword">import</span> creatApp <span class="keyword">from</span> <span class="string">"./creatApp.ts"</span></span><br></pre></td></tr></table></figure>
+
+<p>在 Deno 中，可以直接 import url 来引用线上的资源，并且资源的扩展名和文件名不可以省略。</p>
+<h3 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h3><p>Deno 简介就有提到 <code>默认安全</code>，说实话，这个东西就我目前应用来说，Node 不安全也没体验到。这个安全主要体现在 Deno 的操作很多都需要提供权限，比如：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// demo.ts</span></span><br><span class="line"><span class="keyword">const</span> file = <span class="keyword">await</span> Deno.creat(<span class="string">"./bar.txt"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`create file: bar.txt`</span>)</span><br></pre></td></tr></table></figure>
+
+<p>我们执行这段代码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ deno run .\demo.ts</span><br><span class="line">Check file:///C:/Users/lee/Desktop/demo.ts</span><br><span class="line">error: Uncaught (<span class="keyword">in</span> promise) PermissionDenied: <span class="built_in">read</span> access to <span class="string">"bar.txt"</span>, run again with the --allow-read flag</span><br><span class="line">    at processResponse (deno:core/core.js:223:11)</span><br><span class="line">    at Object.jsonOpAsync (deno:core/core.js:240:12)</span><br><span class="line">    at async open (deno:runtime/js/30_files.js:44:17)</span><br><span class="line">    at async file:///C:/Users/lee/Desktop/demo.ts:1:14</span><br></pre></td></tr></table></figure>
+
+<p>这会告诉我们没有给予它 <code>--allow-read</code> 的权限，当我们给予它权限后，就能成功创建文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ deno run --allow-read --allow-write .\demo.ts</span><br><span class="line">create file: bar.txt</span><br></pre></td></tr></table></figure>
+
+<p>除了 <code>read</code>、<code>write</code> 之外还有 <code>net</code>、 <code>env</code> 等权限，在需要权限的地方需要带上权限允许才能进行相关操作。当然也可以偷懒：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deno run --allow-all xxx</span><br></pre></td></tr></table></figure>
+
+<p>以上的操作肯定是与 Deno 的安全概念相违背的，这点开发者心中要有数。</p>
+<h3 id="支持-TypeScript"><a href="#支持-TypeScript" class="headerlink" title="支持 TypeScript"></a>支持 TypeScript</h3><p>Deno 原生支持 TS，这点对于作为一个 TS 使用者的我来说实在是太赞了。Node.js 中要使用 TypeScript 的话还需要 <code>ts-node</code> 之类的工具的支持。</p>
+<h3 id="无-node-modules"><a href="#无-node-modules" class="headerlink" title="无 node_modules"></a>无 node_modules</h3><p>不同于 Node.js，Deno 并没有 node_modules 来进行包管理。但是 Deno 在每次初执行时，会进行依赖的下载和编译，我们可以通过 <code>deno info</code> 来查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ deno info [file_name]</span><br><span class="line">DENO_DIR location: <span class="string">"C:\\Users\\lee\\AppData\\Local\\deno"</span></span><br><span class="line">Remote modules cache: <span class="string">"C:\\Users\\lee\\AppData\\Local\\deno\\deps"</span></span><br><span class="line">TypeScript compiler cache: <span class="string">"C:\\Users\\lee\\AppData\\Local\\deno\\gen"</span></span><br></pre></td></tr></table></figure>
+
+<p>其实这就相当于是进行了包管理，编译后的文件，远程模块缓存都会放在相应的位置。</p>
+<h3 id="异步操作"><a href="#异步操作" class="headerlink" title="异步操作"></a>异步操作</h3><p>Node 用回调的方式处理异步操作，而 Deno 则使用的是 Promise</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// node</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line">fs.readFile(<span class="string">'./demo.txt'</span>, (err, data) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="keyword">throw</span>(err)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// deno</span></span><br><span class="line"><span class="keyword">const</span> data = <span class="keyword">await</span> Deno.readFile(<span class="string">'./demo.txt'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(data)</span><br></pre></td></tr></table></figure>
+
+<h2 id="这是实战"><a href="#这是实战" class="headerlink" title="这是实战"></a>这是实战</h2><blockquote>
+<p>项目采用的框架是 <code>oak</code>，应该是对应了 Node.js 的 <code>Koa</code>，如果之前使用过 <code>Koa</code> 的话，使用 <code>oak</code> 这个框架应该会很熟悉。</p>
+</blockquote>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>因为笔者是用的 VSCode 在开发，所以在开始写 Deno 项目前我们先做好相关设置。</p>
+<p>在 <code>.vscode/settings.json</code> 中写入设置</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"deno.enable"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"deno.import_intellisense_origins"</span>: &#123;</span><br><span class="line">    <span class="attr">"https://deno.land"</span>: <span class="literal">true</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"deno.lint"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"[typescript]"</span>: &#123;</span><br><span class="line">    <span class="attr">"editor.defaultFormatter"</span>: <span class="string">"denoland.vscode-deno"</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"[typescriptreact]"</span>: &#123;</span><br><span class="line">    <span class="attr">"editor.defaultFormatter"</span>: <span class="string">"denoland.vscode-deno"</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使得编辑器在写 deno 时能够进行代码提示。</p>
+<h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">└── deno-demo</span><br><span class="line">  ├── configs.ts <span class="comment"># 配置信息文件</span></span><br><span class="line">  ├── db <span class="comment"># 数据库目录</span></span><br><span class="line">  ├── controllers <span class="comment"># 控制器目录</span></span><br><span class="line">  ├── app.ts <span class="comment"># 入口文件</span></span><br><span class="line">  ├── middlewares <span class="comment"># 中间件目录</span></span><br><span class="line">  ├── models <span class="comment"># 模型定义目录</span></span><br><span class="line">  ├── routes.ts <span class="comment"># 路由文件</span></span><br><span class="line">  └── services <span class="comment"># 服务层程序目录</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="入口文件"><a href="#入口文件" class="headerlink" title="入口文件"></a>入口文件</h3><p><strong>app.ts</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Application &#125; <span class="keyword">from</span> <span class="string">"https://deno.land/x/oak/mod.ts"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HOST, PORT &#125; <span class="keyword">from</span> <span class="string">"./configs.ts"</span>;</span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">"./routes.ts"</span>;</span><br><span class="line"><span class="keyword">import</span> notFound <span class="keyword">from</span> <span class="string">"./controllers/notFound.ts"</span>;</span><br><span class="line"><span class="keyword">import</span> errorMiddleware <span class="keyword">from</span> <span class="string">"./middlewares/error.ts"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Application();</span><br><span class="line"></span><br><span class="line">app.use(errorMiddleware);</span><br><span class="line">app.use(router.routes());</span><br><span class="line">app.use(router.allowedMethods());</span><br><span class="line">app.use(notFound);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`Listening on <span class="subst">$&#123;PORT&#125;</span>...`</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"> <span class="keyword">await</span> app.listen(<span class="string">`<span class="subst">$&#123;HOST&#125;</span>:<span class="subst">$&#123;PORT&#125;</span>`</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line"> <span class="built_in">console</span>.log(e)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>从以上的代码来看，整个流程跟 Node.js 使用 Koa 开发几乎一样。</p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p><strong>configs.ts</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> env = Deno.env.toObject();</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> HOST = env.HOST || <span class="string">"127.0.0.1"</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> PORT = env.PORT || <span class="number">3000</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> DB = env.DB || <span class="string">"./db/todos.json"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在配置文件中配置 <code>HOST</code>、<code>PORT</code>、<code>DB</code> 等参数。</p>
+<h3 id="路由配置"><a href="#路由配置" class="headerlink" title="路由配置"></a>路由配置</h3><p><strong>routes.ts</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Router &#125; <span class="keyword">from</span> <span class="string">"https://deno.land/x/oak/mod.ts"</span>;</span><br><span class="line"><span class="keyword">import</span> getTodos <span class="keyword">from</span> <span class="string">"./controllers/getTodos.ts"</span>;</span><br><span class="line"><span class="keyword">import</span> createTodo <span class="keyword">from</span> <span class="string">"./controllers/createTodo.ts"</span>;</span><br><span class="line"><span class="keyword">import</span> updateTodo <span class="keyword">from</span> <span class="string">"./controllers/updateTodo.ts"</span>;</span><br><span class="line"><span class="keyword">import</span> deleteTodo <span class="keyword">from</span> <span class="string">"./controllers/deleteTodo.ts"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> Router();</span><br><span class="line"></span><br><span class="line">router</span><br><span class="line"> .get(<span class="string">"/todos"</span>, getTodos)</span><br><span class="line"> .post(<span class="string">"/todos"</span>, createTodo)</span><br><span class="line"> .put(<span class="string">"/todos/:id"</span>, updateTodo)</span><br><span class="line"> .delete(<span class="string">"/todos/:id"</span>, deleteTodo);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> router;</span><br></pre></td></tr></table></figure>
+
+<p>路由文件也和使用 <code>Koa-router</code> 时的代码差不多。</p>
+<h3 id="定义模型（model）"><a href="#定义模型（model）" class="headerlink" title="定义模型（model）"></a>定义模型（model）</h3><p>定义模型在本项目中体现为定义了一个接口</p>
+<p><strong>model/todo.ts</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> Todo &#123;</span><br><span class="line"> id: <span class="built_in">string</span>;</span><br><span class="line"> userId: <span class="built_in">number</span>;</span><br><span class="line"> title: <span class="built_in">string</span>;</span><br><span class="line"> status: <span class="built_in">boolean</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h3><p><strong>service/db.ts</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; DB &#125; <span class="keyword">from</span> <span class="string">"../configs.ts"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Todo &#125; <span class="keyword">from</span> <span class="string">"../models/todo.ts"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取 Todo 数据</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> fetchTodo = <span class="keyword">async</span> (): <span class="built_in">Promise</span>&lt;Todo[]&gt; =&gt; &#123;</span><br><span class="line"> <span class="keyword">const</span> data = <span class="keyword">await</span> Deno.readFile(DB);</span><br><span class="line"> <span class="keyword">const</span> decoder = <span class="keyword">new</span> TextDecoder();</span><br><span class="line"> <span class="keyword">const</span> decodedData = decoder.decode(data);</span><br><span class="line"></span><br><span class="line"> <span class="keyword">return</span> <span class="built_in">JSON</span>.parse(decodedData);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 写入 Todo 数据</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> persistTodo = <span class="keyword">async</span> (data: Todo[]): <span class="built_in">Promise</span>&lt;<span class="built_in">void</span>&gt; =&gt; &#123;</span><br><span class="line"> <span class="keyword">const</span> encoder = <span class="keyword">new</span> TextEncoder();</span><br><span class="line"> <span class="keyword">await</span> Deno.writeFile(DB, encoder.encode(<span class="built_in">JSON</span>.stringify(data)));</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据的增删改查"><a href="#数据的增删改查" class="headerlink" title="数据的增删改查"></a>数据的增删改查</h3><p>详情见项目的 <code>controllers</code> 下的文件</p>
+<h3 id="Not-Found"><a href="#Not-Found" class="headerlink" title="Not Found"></a>Not Found</h3><p>当 api 不能匹配到对应的路由时，返回 <code>Not Found</code> 信息</p>
+<p><strong>controllers/notFound.ts</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Response &#125; <span class="keyword">from</span> <span class="string">"https://deno.land/x/oak/mod.ts"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (&#123; response &#125;: &#123; response: Response &#125;) =&gt; &#123;</span><br><span class="line"> response.status = <span class="number">404</span>;</span><br><span class="line"> response.body = &#123; message: <span class="string">"Not Found"</span> &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="中间件-Middlewares"><a href="#中间件-Middlewares" class="headerlink" title="中间件 Middlewares"></a>中间件 <code>Middlewares</code></h3><p>我们定义了一个中间件 <code>error.ts</code> 来处理读不到数据的错误</p>
+<p><strong>moddlewares/error.ts</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Response &#125; <span class="keyword">from</span> <span class="string">"https://deno.land/x/oak/mod.ts"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">async</span> (</span><br><span class="line"> &#123; response &#125;: &#123; response: Response &#125;,</span><br><span class="line"> next: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">Promise</span>&lt;<span class="built_in">void</span>&gt;,</span><br><span class="line">) =&gt; &#123;</span><br><span class="line"> <span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">await</span> next();</span><br><span class="line"> &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">  response.status = <span class="number">500</span>;</span><br><span class="line">  response.body = &#123; message: err.message &#125;;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>在进行以上代码的写入后，我们就可以进行 <code>run</code> 整个项目了</p>
+<p>注意 <code>run</code> 的时候要带上 <code>-A</code> 或 <code>--allow-all</code>，意思是给予全部权限给当前项目。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deno run -A ./app.ts</span><br><span class="line"></span><br><span class="line">Check file:///D:/DenoDemo/app.ts</span><br><span class="line">Listening on 3000...</span><br></pre></td></tr></table></figure>
+
+<p>ok！整个项目就跑起来啦。这次 deno 的初体验也就完成了。完整代码的地址是 <a href="https://github.com/Kaviilee/deno-demo" target="_blank" rel="noopener">deno-demo</a>。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li>不能开代理。否则无法运行</li>
+</ol>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://kaviilee.github.io/blog/2021/01/05/%E6%B5%85%E5%B0%9Ddeno/>https://kaviilee.github.io/blog/2021/01/05/%E6%B5%85%E5%B0%9Ddeno/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-04T16:11:50+00:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年1月4日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://kaviilee.github.io/blog/2021/01/05/%E6%B5%85%E5%B0%9Ddeno/&title=浅尝 deno - Kaviilee's blog&summary=新的一年新的开始！新的东西，学起！(扶朕起来，朕还可以再学"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://kaviilee.github.io/blog/2021/01/05/%E6%B5%85%E5%B0%9Ddeno/&title=浅尝 deno - Kaviilee's blog&summary=新的一年新的开始！新的东西，学起！(扶朕起来，朕还可以再学"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://kaviilee.github.io/blog/2021/01/05/%E6%B5%85%E5%B0%9Ddeno/&title=浅尝 deno - Kaviilee's blog&summary=新的一年新的开始！新的东西，学起！(扶朕起来，朕还可以再学"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/blog/2020/12/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%96%87%E5%AD%97%E6%8B%B7%E8%B4%9D/'>
+                <p class='title'>记一次文字拷贝<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>Clipboard API，“船新”的浏览器与系统剪贴板交互的异步 API。
+
+
+小小的碎碎念恰巧前段时间要做 复制到剪贴板 这个功能，就去查了一下实现方式，大致都是 document.exec...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/blog/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/custom/papalymo.jpg'/>
+        </a>
+      
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/blog/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:jiaweilee95@126.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/Kaviilee"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=92087776"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
+
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Deno-简介"><span class="toc-text">Deno 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一些命令"><span class="toc-text">一些命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#与-Node-js-的区别"><span class="toc-text">与 Node.js 的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模块引入的方式"><span class="toc-text">模块引入的方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Node-模块引入"><span class="toc-text">Node 模块引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Deno-全局对象"><span class="toc-text">Deno 全局对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块系统"><span class="toc-text">模块系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Node-js-CommonJS-规范"><span class="toc-text">Node.js CommonJS 规范</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Deno-的模块规范"><span class="toc-text">Deno 的模块规范</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全"><span class="toc-text">安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#支持-TypeScript"><span class="toc-text">支持 TypeScript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无-node-modules"><span class="toc-text">无 node_modules</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异步操作"><span class="toc-text">异步操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#这是实战"><span class="toc-text">这是实战</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目结构"><span class="toc-text">项目结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#入口文件"><span class="toc-text">入口文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件"><span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由配置"><span class="toc-text">路由配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义模型（model）"><span class="toc-text">定义模型（model）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据操作"><span class="toc-text">数据操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据的增删改查"><span class="toc-text">数据的增删改查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Not-Found"><span class="toc-text">Not Found</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中间件-Middlewares"><span class="toc-text">中间件 Middlewares</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意事项"><span class="toc-text">注意事项</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+    </div>
+    
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2019-2020 Kaviilee</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <div>
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/blog/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-6k83ol.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-dgl52l.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/images/custom/cover/wallhaven-kwjg5m.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-r2k7wm.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/images/custom/cover/wallhaven-ymy5gd.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+<!-- 评论 （PS：只对 valine 做了 Pjax 兼容） -->
+
+  
+  
+<script src="/blog/js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    var valinePath = $.trim($('#valine-path').text()) === "none" ?
+            window.location.pathname : $.trim($('#valine-path').text());
+
+    var valinePlaceholder = $.trim($('#valine-placeholder').text()) === "none" ?
+            "快来评论吧~" : $.trim($('#valine-placeholder').text());
+
+    var ALLPATH = '';
+    if(ALLPATH != '') valinePath = ALLPATH;
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: valinePlaceholder,
+      path: valinePath,
+      appId: "qswS5xPGXiMFNvCGgGtBtNUu-gzGzoHsz",
+      appKey: "1wcj1z7DAvqsTSF3aKBVX4Sa",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+<!-- darkmodejs -->
+
+  
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5/lib/darkmode-js.min.js" aysc></script>
+
+  <script type="text/javascript">
+	function getClientHeight(){
+	  var clientHeight=0;
+	  if(document.body.clientHeight&&document.documentElement.clientHeight){
+	  var clientHeight = (document.body.clientHeight<document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+	  }else{
+	  var clientHeight = (document.body.clientHeight>document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+	  }
+	  return clientHeight;
+	}
+	function supportCss3(style) {
+		var prefix = ['webkit', 'Moz', 'ms', 'o'],
+		i,
+		humpString = [],
+		htmlStyle = document.documentElement.style,
+		_toHumb = function (string) {
+		return string.replace(/-(\w)/g, function ($0, $1) {
+		return $1.toUpperCase();
+		});
+		};
+		for (i in prefix)
+		humpString.push(_toHumb(prefix[i] + '-' + style));
+		humpString.push(_toHumb(style));
+		for (i in humpString)
+		if (humpString[i] in htmlStyle) return true;
+		return false;
+	};
+	//配置信息
+	var options = {
+	  bottom: '32px',
+	  right: 'unset',
+	  left: '16px',
+	  time: '0s',
+	  mixColor: '#f4f4f4',
+	  backgroundColor: '#f4f4f4',
+	  buttonColorDark: '#100f2c',
+	  buttonColorLight: '#f4f4f4',
+	  saveInCookies: true,
+	  label: '🌓',
+	  autoMatchOsTheme: true
+	};
+	// 卡片兼容处理 mix-blend-mode 与 effect: [shadow, floatable, blur] 冲突???
+	function pjax_darkmodejs(){
+		
+	}
+	// mix-blend-mode support?
+	if(supportCss3('mix-blend-mode')){
+		const darkmode = new Darkmode(options);
+		darkmode.showWidget();
+		pjax_darkmodejs();
+	}
+  </script>
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+<!-- scrollreveal -->
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    function pjax_scrollrebeal() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '32px',
+        duration: '800',
+        interval: '20',
+        scale: '1',
+        easing: 'ease-out'
+      });
+    }
+
+    $(function () {
+      pjax_scrollrebeal();
+    });
+  </script>
+
+<!-- ******************************** -->
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+<!-- ******************************** -->
+
+
+  
+<script src="/blog/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/blog/js/search.js"></script>
+
+  
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "6eb9bd92c4ea4f398074c919d679a70e"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = ["/blog/shuoshuo/"];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+      
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.nav-main').find('.list-v').not('.menu-phone').css("display","none"); // 移除小尾巴
+      $('.menu-phone.list-v').css("display","none"); // 移除小尾巴
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      $('.s-top').unbind('click');   // 解绑
+      $('.menu a').unbind('click');  // 解绑
+      $(window).unbind('resize');    // 解绑
+      $(window).unbind('scroll');    // 解绑
+      $(document).unbind('scroll');  // 解绑
+      $(document).unbind('click');   // 解绑
+      $('body').unbind('click');     // 解绑
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+
+      try{
+        pjax_fancybox();
+        
+          
+          if ('.cover') {
+            $('.cover').backstretch("resize");
+          } else {
+            $.backstretch("resize");
+          }
+        
+        
+        
+          pjax_scrollrebeal();
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+          pjax_darkmodejs();
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: true,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],e=void 0,0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>
