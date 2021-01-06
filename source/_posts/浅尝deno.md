@@ -61,7 +61,7 @@ Deno.readFileSync('demo.txt')
 
 #### Node.js CommonJS 规范
 
-Node.js 采用的是 `CommonJS` 模块规范。具体规范见 [CommonJS规范](https://javascript.ruanyifeng.com/nodejs/module.html#)
+Node.js 采用的是 `CommonJS` 模块规范。具体规范见 [CommonJS 规范](https://javascript.ruanyifeng.com/nodejs/module.html#)
 
 ```js
 const fs = require('fs')
@@ -112,13 +112,26 @@ $ deno run --allow-read --allow-write .\demo.ts
 create file: bar.txt
 ```
 
-除了 `read`、`write` 之外还有 `net`、 `env` 等权限，在需要权限的地方需要带上权限允许才能进行相关操作。当然也可以偷懒：
+#### Deno 的权限列表
+- -A, --allow-all 允许所有权限，这将禁用所有安全限制。
+- --allow-env 允许环境访问，例如读取和设置环境变量。
+- --allow-hrtime 允许高精度时间测量，高精度时间能够在计时攻击和特征识别中使用。
+- --allow-net=<allow-net> 允许网络访问。您可以指定一系列用逗号分隔的域名，来提供域名白名单。
+- --allow-plugin 允许加载插件。请注意：这是一个不稳定功能。
+- --allow-read=<allow-read> 允许读取文件系统。您可以指定一系列用逗号分隔的目录或文件，来提供文件系统白名单。
+- --allow-run 允许运行子进程。请注意，子进程不在沙箱中运行，因此没有与 deno 进程相同的安全限制，请谨慎使用。
+- --allow-write=<allow-write> 允许写入文件系统。您可以指定一系列用逗号分隔的目录或文件，来提供文件系统白名单。
+
+这里插一句不属于权限但是属于 `run` 的时候可以传入的选项 `--unstable`，传递这个选项将允许在运行时使用不稳定的 API。
+
+#### 白名单
+
+Deno 还可以设置白名单来控制权限的粒度。
 
 ```bash
-deno run --allow-all xxx
+deno run --allow-read=/etc https://deno.land/std@$STD_VERSION/examples/main.ts /etc/passwd
 ```
-
-以上的操作肯定是与 Deno 的安全概念相违背的，这点开发者心中要有数。
+可以使得文件系统能够访问 `/etc` 目录。
 
 ### 支持 TypeScript
 
@@ -183,6 +196,9 @@ console.log(data)
 ```
 
 使得编辑器在写 deno 时能够进行代码提示。
+
+虽然 Deno 说自己没有像 [npmjs](https://npmjs.com) 那样的包管理中心，但其实他还是有属于自己的 [Deno标准库](https://deno.land/std@0.83.0)，目前版本是 `0.83.0`。
+当我们要使用一些标准模块，比如 `path`，我们就要去引入标准库。
 
 ### 项目结构
 
