@@ -8,9 +8,15 @@
       <link href="/blog/2021/01/13/%E5%85%B3%E4%BA%8Eantd%E6%A1%86%E6%9E%B6%E4%B8%8Bcascader%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E9%80%89%E9%A1%B9%E7%9A%84%E9%97%AE%E9%A2%98/"/>
       <url>/blog/2021/01/13/%E5%85%B3%E4%BA%8Eantd%E6%A1%86%E6%9E%B6%E4%B8%8Bcascader%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E9%80%89%E9%A1%B9%E7%9A%84%E9%97%AE%E9%A2%98/</url>
       
-        <content type="html"><![CDATA[<p>近日在使用 Ant Design 的 Cascader 初始化传值遇到的问题，记录一下。</p><a id="more"></a><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用 Cascader 组件的动态加载数据时，由于需要传入初始值来初始化当前的选择，但是此时组件内并不存在对应的数据。<br>假设我们使用 <code>id</code>，一个 <code>number</code> 字段来作为 Cascader 的 value 值，那么如果贸然传入数字类型的数组，就会出现初始化不正常的问题。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>既然不能简单的传入数字类型的数组来初始化组件，那么我们可以传入对象数组或者是字符串数组来初始化组件。</p><p>具体的代码就不在此展示了</p><p>具体可以查看 <a href="https://codesandbox.io/s/dongtaijiazaixuanxiang-antd4102-forked-whwnc" target="_blank" rel="noopener">动态加载选项初始化组件</a></p>]]></content>
+        <content type="html"><![CDATA[<p>近日在使用 Ant Design 的 Cascader 初始化传值遇到的问题，记录一下。</p><a id="more"></a><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用 Cascader 组件的动态加载数据时，由于需要传入初始值来初始化当前的选择，但是此时组件内并不存在对应的数据。<br>假设我们使用一个 <code>Number</code> 类型的字段来作为 Cascader 的 value 值，那么如果贸然传入数字类型的数组，就会出现初始化不正常的问题。</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>既然不能简单的传入数字类型的数组来初始化组件，那么我们可以传入对象数组或者是字符串数组，利用 Cascader 的 displayRender 属性来渲染。</p><p>并利用 <code>fetched</code> 来控制是否已经进行异步加载，当进行异步加载之后，渲染就变为选择的值。</p><p>具体可以查看 <a href="https://codesandbox.io/s/dongtaijiazaixuanxiang-antd4102-forked-whwnc" target="_blank" rel="noopener">动态加载选项初始化组件</a></p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Antd v4 </tag>
+            
+        </tags>
       
     </entry>
     
