@@ -72,7 +72,7 @@ categories:
 	width: 1px;
     height: 100%;
     background-image: linear-gradient(to bottom, #ccc 0%, #ccc 50%, transparent 50%);
-    background-repeat: repeat-yu;
+    background-repeat: repeat-y;
 }
 ```
 
