@@ -65,7 +65,7 @@ categories:
 
 使用 `background-image` 就可以通过改变 `background-size` 来改变虚线的间距。
 
-如果要改变虚线的方向，需要修改 width，height，background-image 和 background-repeat。
+如果要改变虚线的方向，需要修改 width，height，background-image， background-repeat 和 background-size。
 
 ```less
 &::after {
@@ -73,6 +73,7 @@ categories:
     height: 100%;
     background-image: linear-gradient(to bottom, #ccc 0%, #ccc 50%, transparent 50%);
     background-repeat: repeat-y;
+    background-size: 1px 10px;
 }
 ```
 
