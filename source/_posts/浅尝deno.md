@@ -12,7 +12,7 @@ tags:
 
 ## Deno 简介
 
-Deno 是使用 V8 并内置于 Rust 的 JavaScript 和 TypeScript 的简单，现代且安全的运行时。Deno 是一个跨平台的运行时，即基于 Google V8 引擎的运行时环境，该运行时环境是使用 Rust 语言开发的，并使用 Tokio 库来构建事件循环系统。Deno 有以下优点：
+Deno 是一个跨平台的运行时，即基于 Google V8 引擎的运行时环境，该运行时环境是使用 Rust 语言开发的，并使用 Tokio 库来构建事件循环系统。Deno 有以下优点：
 
 - 默认安全。除非显式启用，否则不能访问文件，网络或环境
 - 开箱即用的 TypeScript 支持
@@ -34,7 +34,7 @@ Deno 是使用 V8 并内置于 Rust 的 JavaScript 和 TypeScript 的简单，�
 
 ## 与 Node.js 的区别
 
-其实一开始看到 Deno，我脑壳一痛，心想不会又是什么神奇的轮子吧？我真的学不动了，但是看了一下，发现还是有那么一点东西的。那么，Deno 既然是 Node.js 的 ”替代品“，究竟解决了 Node.js 的哪些痛点呢？
+Deno 既然是 Node.js 的 ”替代品“，究竟解决了 Node.js 的哪些痛点呢？
 
 ### 模块引入的方式
 
@@ -85,7 +85,7 @@ import creatApp from "./creatApp.ts"
 
 ### 安全
 
-Deno 简介就有提到 `默认安全`，说实话，这个东西就我目前应用来说，Node 不安全也没体验到。这个安全主要体现在 Deno 的操作很多都需要提供权限，比如：
+这个安全主要体现在 Deno 的操作很多都需要提供权限，比如：
 
 ```typescript
 // demo.ts
@@ -113,14 +113,14 @@ create file: bar.txt
 ```
 
 #### Deno 的权限列表
-- -A, --allow-all 允许所有权限，这将禁用所有安全限制。
-- --allow-env 允许环境访问，例如读取和设置环境变量。
-- --allow-hrtime 允许高精度时间测量，高精度时间能够在计时攻击和特征识别中使用。
-- --allow-net=<allow-net> 允许网络访问。您可以指定一系列用逗号分隔的域名，来提供域名白名单。
-- --allow-plugin 允许加载插件。请注意：这是一个不稳定功能。
-- --allow-read=<allow-read> 允许读取文件系统。您可以指定一系列用逗号分隔的目录或文件，来提供文件系统白名单。
-- --allow-run 允许运行子进程。请注意，子进程不在沙箱中运行，因此没有与 deno 进程相同的安全限制，请谨慎使用。
-- --allow-write=<allow-write> 允许写入文件系统。您可以指定一系列用逗号分隔的目录或文件，来提供文件系统白名单。
+- `-A, --allow-all` 允许所有权限，这将禁用所有安全限制。
+- `--allow-env` 允许环境访问，例如读取和设置环境变量。
+- `--allow-hrtime` 允许高精度时间测量，高精度时间能够在计时攻击和特征识别中使用。
+- `--allow-net=<allow-net>` 允许网络访问。您可以指定一系列用逗号分隔的域名，来提供域名白名单。
+- `--allow-plugin` 允许加载插件。请注意：这是一个不稳定功能。
+- `--allow-read=<allow-read>` 允许读取文件系统。您可以指定一系列用逗号分隔的目录或文件，来提供文件系统白名单。
+- `--allow-run` 允许运行子进程。请注意，子进程不在沙箱中运行，因此没有与 deno 进程相同的安全限制，请谨慎使用。
+- `--allow-write=<allow-write>` 允许写入文件系统。您可以指定一系列用逗号分隔的目录或文件，来提供文件系统白名单。
 
 这里插一句不属于权限但是属于 `run` 的时候可以传入的选项 `--unstable`，传递这个选项将允许在运行时使用不稳定的 API。
 
@@ -135,7 +135,7 @@ deno run --allow-read=/etc https://deno.land/std@$STD_VERSION/examples/main.ts /
 
 ### 支持 TypeScript
 
-Deno 原生支持 TS，这点对于作为一个 TS 使用者的我来说实在是太赞了。Node.js 中要使用 TypeScript 的话还需要 `ts-node` 之类的工具的支持。
+Deno 原生支持 TS，这点对于一个 TS 使用者来说实在是太赞了。Node.js 中要使用 TypeScript 的话还需要 `ts-node` 之类的工具的支持。
 
 ### 无 node_modules
 
