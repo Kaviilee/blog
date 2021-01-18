@@ -505,7 +505,7 @@
 <blockquote>
 <p>它是 Node.js 的替代品。有了它，将来可能就不需要 Node.js 了。  ———— 阮一峰《Deno 运行时入门教程：Node.js 的替代品》</p>
 </blockquote>
-<h2 id="Deno-简介"><a href="#Deno-简介" class="headerlink" title="Deno 简介"></a>Deno 简介</h2><p>Deno 是使用 V8 并内置于 Rust 的 JavaScript 和 TypeScript 的简单，现代且安全的运行时。Deno 是一个跨平台的运行时，即基于 Google V8 引擎的运行时环境，该运行时环境是使用 Rust 语言开发的，并使用 Tokio 库来构建事件循环系统。Deno 有以下优点：</p>
+<h2 id="Deno-简介"><a href="#Deno-简介" class="headerlink" title="Deno 简介"></a>Deno 简介</h2><p>Deno 是一个跨平台的运行时，即基于 Google V8 引擎的运行时环境，该运行时环境是使用 Rust 语言开发的，并使用 Tokio 库来构建事件循环系统。Deno 有以下优点：</p>
 <ul>
 <li>默认安全。除非显式启用，否则不能访问文件，网络或环境</li>
 <li>开箱即用的 TypeScript 支持</li>
@@ -525,7 +525,7 @@
 <li>deno run：运行脚本</li>
 </ul>
 </blockquote>
-<h2 id="与-Node-js-的区别"><a href="#与-Node-js-的区别" class="headerlink" title="与 Node.js 的区别"></a>与 Node.js 的区别</h2><p>其实一开始看到 Deno，我脑壳一痛，心想不会又是什么神奇的轮子吧？我真的学不动了，但是看了一下，发现还是有那么一点东西的。那么，Deno 既然是 Node.js 的 ”替代品“，究竟解决了 Node.js 的哪些痛点呢？</p>
+<h2 id="与-Node-js-的区别"><a href="#与-Node-js-的区别" class="headerlink" title="与 Node.js 的区别"></a>与 Node.js 的区别</h2><p>Deno 既然是 Node.js 的 ”替代品“，究竟解决了 Node.js 的哪些痛点呢？</p>
 <h3 id="模块引入的方式"><a href="#模块引入的方式" class="headerlink" title="模块引入的方式"></a>模块引入的方式</h3><h4 id="Node-模块引入"><a href="#Node-模块引入" class="headerlink" title="Node 模块引入"></a>Node 模块引入</h4><p>Node 内置 API 通过模块引入的方式引入。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line">fs.readFileSync(<span class="string">'demo.txt'</span>)</span><br></pre></td></tr></table></figure>
 
@@ -540,7 +540,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>  <span class="keyword">as</span> fs <span class="keyword">from</span> <span class="string">"https//deno.land/std/fs/mod.ts"</span></span><br><span class="line"><span class="keyword">import</span> &#123; Application &#125; <span class="keyword">from</span> <span class="string">"./initApp.js"</span></span><br><span class="line"><span class="keyword">import</span> creatApp <span class="keyword">from</span> <span class="string">"./creatApp.ts"</span></span><br></pre></td></tr></table></figure>
 
 <p>在 Deno 中，可以直接 import url 来引用线上的资源，并且资源的扩展名和文件名不可以省略。</p>
-<h3 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h3><p>Deno 简介就有提到 <code>默认安全</code>，说实话，这个东西就我目前应用来说，Node 不安全也没体验到。这个安全主要体现在 Deno 的操作很多都需要提供权限，比如：</p>
+<h3 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h3><p>这个安全主要体现在 Deno 的操作很多都需要提供权限，比如：</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// demo.ts</span></span><br><span class="line"><span class="keyword">const</span> file = <span class="keyword">await</span> Deno.creat(<span class="string">"./bar.txt"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`create file: bar.txt`</span>)</span><br></pre></td></tr></table></figure>
 
 <p>我们执行这段代码</p>
@@ -550,20 +550,20 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ deno run --allow-read --allow-write .\demo.ts</span><br><span class="line">create file: bar.txt</span><br></pre></td></tr></table></figure>
 
 <h4 id="Deno-的权限列表"><a href="#Deno-的权限列表" class="headerlink" title="Deno 的权限列表"></a>Deno 的权限列表</h4><ul>
-<li>-A, –allow-all 允许所有权限，这将禁用所有安全限制。</li>
-<li>–allow-env 允许环境访问，例如读取和设置环境变量。</li>
-<li>–allow-hrtime 允许高精度时间测量，高精度时间能够在计时攻击和特征识别中使用。</li>
-<li>–allow-net=<allow-net> 允许网络访问。您可以指定一系列用逗号分隔的域名，来提供域名白名单。</li>
-<li>–allow-plugin 允许加载插件。请注意：这是一个不稳定功能。</li>
-<li>–allow-read=<allow-read> 允许读取文件系统。您可以指定一系列用逗号分隔的目录或文件，来提供文件系统白名单。</li>
-<li>–allow-run 允许运行子进程。请注意，子进程不在沙箱中运行，因此没有与 deno 进程相同的安全限制，请谨慎使用。</li>
-<li>–allow-write=<allow-write> 允许写入文件系统。您可以指定一系列用逗号分隔的目录或文件，来提供文件系统白名单。</li>
+<li><code>-A, --allow-all</code> 允许所有权限，这将禁用所有安全限制。</li>
+<li><code>--allow-env</code> 允许环境访问，例如读取和设置环境变量。</li>
+<li><code>--allow-hrtime</code> 允许高精度时间测量，高精度时间能够在计时攻击和特征识别中使用。</li>
+<li><code>--allow-net=&lt;allow-net&gt;</code> 允许网络访问。您可以指定一系列用逗号分隔的域名，来提供域名白名单。</li>
+<li><code>--allow-plugin</code> 允许加载插件。请注意：这是一个不稳定功能。</li>
+<li><code>--allow-read=&lt;allow-read&gt;</code> 允许读取文件系统。您可以指定一系列用逗号分隔的目录或文件，来提供文件系统白名单。</li>
+<li><code>--allow-run</code> 允许运行子进程。请注意，子进程不在沙箱中运行，因此没有与 deno 进程相同的安全限制，请谨慎使用。</li>
+<li><code>--allow-write=&lt;allow-write&gt;</code> 允许写入文件系统。您可以指定一系列用逗号分隔的目录或文件，来提供文件系统白名单。</li>
 </ul>
 <p>这里插一句不属于权限但是属于 <code>run</code> 的时候可以传入的选项 <code>--unstable</code>，传递这个选项将允许在运行时使用不稳定的 API。</p>
 <h4 id="白名单"><a href="#白名单" class="headerlink" title="白名单"></a>白名单</h4><p>Deno 还可以设置白名单来控制权限的粒度。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deno run --allow-read=/etc https://deno.land/std@<span class="variable">$STD_VERSION</span>/examples/main.ts /etc/passwd</span><br></pre></td></tr></table></figure>
 <p>可以使得文件系统能够访问 <code>/etc</code> 目录。</p>
-<h3 id="支持-TypeScript"><a href="#支持-TypeScript" class="headerlink" title="支持 TypeScript"></a>支持 TypeScript</h3><p>Deno 原生支持 TS，这点对于作为一个 TS 使用者的我来说实在是太赞了。Node.js 中要使用 TypeScript 的话还需要 <code>ts-node</code> 之类的工具的支持。</p>
+<h3 id="支持-TypeScript"><a href="#支持-TypeScript" class="headerlink" title="支持 TypeScript"></a>支持 TypeScript</h3><p>Deno 原生支持 TS，这点对于一个 TS 使用者来说实在是太赞了。Node.js 中要使用 TypeScript 的话还需要 <code>ts-node</code> 之类的工具的支持。</p>
 <h3 id="无-node-modules"><a href="#无-node-modules" class="headerlink" title="无 node_modules"></a>无 node_modules</h3><p>不同于 Node.js，Deno 并没有 node_modules 来进行包管理。但是 Deno 在每次初执行时，会进行依赖的下载和编译，我们可以通过 <code>deno info</code> 来查看</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ deno info [file_name]</span><br><span class="line">DENO_DIR location: <span class="string">"C:\\Users\\lee\\AppData\\Local\\deno"</span></span><br><span class="line">Remote modules cache: <span class="string">"C:\\Users\\lee\\AppData\\Local\\deno\\deps"</span></span><br><span class="line">TypeScript compiler cache: <span class="string">"C:\\Users\\lee\\AppData\\Local\\deno\\gen"</span></span><br></pre></td></tr></table></figure>
 
@@ -677,10 +677,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-13T15:08:04+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-18T11:40:49+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年1月13日</p>
+    <p>更新于：2021年1月18日</p>
   </a>
 </div>
 
