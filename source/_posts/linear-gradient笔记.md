@@ -14,7 +14,7 @@ date: 2020-12-21 15:15:25
 
 ## 渐变线的构成
 
-> CSS linear-gradient() 函数用于创建一个表示两种或多种颜色线性渐变的图片。其结果属于 <gradient> 数据类型，是一种特别的 <image> 数据类型。
+> CSS linear-gradient() 函数用于创建一个表示两种或多种颜色线性渐变的图片。其结果属于 `<gradient>` 数据类型，是一种特别的 `<image>` 数据类型。
 
 以上是 mdn 关于 `linear-gradient` 的定义。语法如下
 
