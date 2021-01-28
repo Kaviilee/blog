@@ -16,11 +16,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>JavaScript类型转换 - Kaviilee&#39;s blog</title>
+  <title>一些TS中的运算符 - Kaviilee&#39;s blog</title>
+  
+    <meta name="keywords" content="TypeScript">
   
 
   
-    <meta name="description" content="关于 JavaScript 类型转换的一些笔记。">
+    <meta name="description" content="近来用到了不少的 TypeScript 的运算符，但是也有很多是没用过的，本着学到就是赚到的想法，记录一下。">
   
 
   <!-- feed -->
@@ -395,9 +397,9 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">JavaScript类型转换</div>
+  <div id="pjax-pageTitle">一些TS中的运算符</div>
   <div id="pjax-enable-cover">true</div>
-  <div id="pjax-permalink">https://kaviilee.github.io/blog/2020/09/09/javascript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</div>
+  <div id="pjax-permalink">https://kaviilee.github.io/blog/2021/01/28/%E4%B8%80%E4%BA%9Bts%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/</div>
   
   <div id="valine-path">none</div>
   <div id="valine-placeholder">none</div>
@@ -447,8 +449,8 @@
         
           
   <h1 class="title">
-    <a href="/blog/2020/09/09/javascript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">
-      JavaScript类型转换
+    <a href="/blog/2021/01/28/%E4%B8%80%E4%BA%9Bts%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/">
+      一些TS中的运算符
     </a>
   </h1>
 
@@ -468,14 +470,6 @@
           
             
               
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/javascript/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>JavaScript</p>
-    </a>
-  </div>
-
 
             
           
@@ -483,7 +477,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年9月9日</p>
+    <p>发布于：2021年1月28日</p>
   </a>
 </div>
 
@@ -507,206 +501,55 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <p>关于 JavaScript 类型转换的一些笔记。</p>
+          <p>近来用到了不少的 TypeScript 的运算符，但是也有很多是没用过的，本着学到就是赚到的想法，记录一下。</p>
 <a id="more"></a>
 
+<h3 id="非空断言操作符"><a href="#非空断言操作符" class="headerlink" title="非空断言操作符 !"></a>非空断言操作符 !</h3><p><code>!</code> 是一个后缀表达式操作符，可以用于断言操作对象是非 null 和非 undefined 类型。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> func = <span class="function">(<span class="params">str: <span class="built_in">string</span> | <span class="literal">null</span> | <span class="literal">undefined</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// Type 'string | null | undefined' is not assignable to type 'string'.</span></span><br><span class="line">  <span class="comment">// Type 'undefined' is not assignable to type 'string'.(2322)</span></span><br><span class="line">  <span class="keyword">let</span> onlyStr: <span class="built_in">string</span> = str; <span class="comment">// error</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> ignoredNullOrUndefined: <span class="built_in">string</span> = str!; <span class="comment">// ok</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>将值从一种类型转换到另一种类型通常称为类型转换。</p>
-<h2 id="原始值转布尔值"><a href="#原始值转布尔值" class="headerlink" title="原始值转布尔值"></a>原始值转布尔值</h2><p>JavaScript中，只有 6 种值可以被转换为false，其余都会被转换成 true。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>()) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">false</span>)) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">undefined</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">null</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(+<span class="number">0</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="number">-0</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">NaN</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="string">""</span>)) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="?. 运算符"></a>?. 运算符</h3><p><code>?.</code> 可选链，在我们遇到可能是 null 或 undefined 时就可以停止表达式的运行。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = b?.c</span><br></pre></td></tr></table></figure>
+<p>上述 TypeScript 代码在编译之后</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = b === <span class="literal">null</span> || b === <span class="keyword">void</span> <span class="number">0</span> ? <span class="keyword">void</span> <span class="number">0</span> : b.c;</span><br></pre></td></tr></table></figure>
 
-
-
-<h2 id="原始值转数字"><a href="#原始值转数字" class="headerlink" title="原始值转数字"></a>原始值转数字</h2><p>使用 <code>Number</code> 函数将值的类型转换成数字类型。</p>
-<p>根据规范，如果有参数，则调用 <code>ToNumber(value)</code> 计算出值返回，否则返回 +0。</p>
-<p>此处的 <code>ToNumber</code> 表示的是一个底层规范上实现的方法，并没有暴露出来。</p>
-<table>
-<thead>
-<tr>
-<th align="center">值类型</th>
-<th align="center">结果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Undefined</td>
-<td align="center">NaN</td>
-</tr>
-<tr>
-<td align="center">Null</td>
-<td align="center">+0</td>
-</tr>
-<tr>
-<td align="center">Boolean</td>
-<td align="center">如果是 true，返回1；如果是 false，返回0</td>
-</tr>
-<tr>
-<td align="center">Number</td>
-<td align="center">返回与之相等的值</td>
-</tr>
-<tr>
-<td align="center">String</td>
-<td align="center">如下</td>
-</tr>
-</tbody></table>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>()) <span class="comment">// +0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="literal">undefined</span>)) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="literal">null</span>)) <span class="comment">// +0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="literal">false</span>)) <span class="comment">// +0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="literal">true</span>)) <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"123"</span>)) <span class="comment">// 123</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"-123"</span>)) <span class="comment">// -123</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"1.2"</span>)) <span class="comment">// 1.2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"000123"</span>)) <span class="comment">// 123</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"-000123"</span>)) <span class="comment">// -123</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"0x11"</span>)) <span class="comment">// 17</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">""</span>)) <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">" "</span>)) <span class="comment">// 0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"123 123"</span>)) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"foo"</span>)) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="string">"100a"</span>)) <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="原始值转字符"><a href="#原始值转字符" class="headerlink" title="原始值转字符"></a>原始值转字符</h2><p>使用 <code>String</code> 函数将值的类型转换成字符类型。</p>
-<p>根据规范，如果函数有参数，则调用 <code>ToString(value)</code> 计算出值返回，否则返回空字符串。</p>
-<table>
-<thead>
-<tr>
-<th align="center">值类型</th>
-<th align="center">结果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Undefined</td>
-<td align="center">‘undefined’</td>
-</tr>
-<tr>
-<td align="center">Null</td>
-<td align="center">‘null’</td>
-</tr>
-<tr>
-<td align="center">Boolean</td>
-<td align="center">如果是 true，返回 “true”；如果是 false，返回 “false”</td>
-</tr>
-<tr>
-<td align="center">String</td>
-<td align="center">返回与之相等的值</td>
-</tr>
-<tr>
-<td align="center">Number</td>
-<td align="center">如下</td>
-</tr>
-</tbody></table>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>()) <span class="comment">// 空字符串</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">undefined</span>)) <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">null</span>)) <span class="comment">// null</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">false</span>)) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">true</span>)) <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="number">0</span>)) <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="number">-0</span>)) <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">NaN</span>)) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="literal">Infinity</span>)) <span class="comment">// Infinity</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(-<span class="literal">Infinity</span>)) <span class="comment">// -Infinity</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(<span class="number">1</span>)) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="原始值转对象"><a href="#原始值转对象" class="headerlink" title="原始值转对象"></a>原始值转对象</h2><p>原始值通过调用 String()、Number() 或者 Boolean() 构造函数就能转化为各自的包装对象。</p>
-<p>null 和 undefined，当将它们用在期望是一个对象的地方都会造成一个类型错误 (TypeError) 异常，而不会执行正常的转换。</p>
-<h2 id="对象转布尔值"><a href="#对象转布尔值" class="headerlink" title="对象转布尔值"></a>对象转布尔值</h2><p>所有对象转为布尔值都为 true。</p>
-<h2 id="对象转字符串和数字"><a href="#对象转字符串和数字" class="headerlink" title="对象转字符串和数字"></a>对象转字符串和数字</h2><p>对象转换到字符串或者数字都是调用待转换对象的一个方法来实现的。主要有两个方法 <code>toString()</code> 和 <code>valueOf()</code>。</p>
-<p>所有对象除了 null 和 undefined 之外的任何值都有 <code>toString</code> 方法，通常，它和 String 方法的返回值是一致的。</p>
-<p>JavaScript 根据不同的类各自的特点，定义了更多版本的 <code>toString</code> 方法。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log((&#123;&#125;).toString()) <span class="comment">// [object Object]</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log([].toString()) <span class="comment">// ""</span></span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">0</span>].toString()) <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].toString()) <span class="comment">// 1,2,3</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> a = <span class="number">1</span>;&#125;).toString()) <span class="comment">// function ()&#123;var a = 1;&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="regexp">/\d+/g</span>).toString()) <span class="comment">// /\d+/g</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2010</span>, <span class="number">0</span>, <span class="number">1</span>)).toString()) <span class="comment">// Fri Jan 01 2010 00:00:00 GMT+0800 (CST)</span></span><br></pre></td></tr></table></figure>
-
-<p>另一个转换对象的方法是 <code>valueOf</code>，表示对象的原始值。默认的 <code>valueOf</code> 方法返回这个对象本身。日期是个例外，它会返回它的一个内容表示：1970 年 1 月 1日以来的毫秒数。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2020</span>, <span class="number">9</span>, <span class="number">6</span>);</span><br><span class="line"><span class="built_in">console</span>.log(date.valueOf()) <span class="comment">// 1601913600000</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="对象转字符串"><a href="#对象转字符串" class="headerlink" title="对象转字符串"></a>对象转字符串</h3><table>
-<thead>
-<tr>
-<th align="center">值类型</th>
-<th align="center">结果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Object</td>
-<td align="center">1. primValue = ToPrimitive(input, Number)<br/>2. 返回 ToString(primValue)。</td>
-</tr>
-</tbody></table>
-<h3 id="对象转数字"><a href="#对象转数字" class="headerlink" title="对象转数字"></a>对象转数字</h3><table>
-<thead>
-<tr>
-<th align="center">参数类型</th>
-<th align="center">结果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Object</td>
-<td align="center">1. primValue = ToPrimitive(input, Number)<br/>2. 返回 ToNumber(primValue)。</td>
-</tr>
-</tbody></table>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(&#123;&#125;)) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(&#123;<span class="attr">a</span> : <span class="number">1</span>&#125;)) <span class="comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>([])) <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>([<span class="number">0</span>])) <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">var</span> a = <span class="number">1</span>;&#125;)) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="regexp">/\d+/g</span>)) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2010</span>, <span class="number">0</span>, <span class="number">1</span>))) <span class="comment">// 1262275200000</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'a'</span>))) <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
-
-<p><code>Number([])</code> 时，先调用了 <code>[]</code> 的 <code>valueOf</code> 方法返回了 <code>[]</code> ，因为不是原始值，继续调用 <code>toString</code> 方法，返回空字符串，继续调用 <code>ToNumber</code>，空字符串返回 0。</p>
-<p><code>Number([1,2,3])</code> 时，先调用了 <code>[1, 2, 3]</code> 的 <code>valueOf</code> 方法返回了 <code>[1, 2, 3]</code>，再调用 <code>toString</code> 方法，返回 <code>1,2,3</code>，调用 <code>ToNumber</code>，返回NaN。</p>
-<h3 id="ToPrimitive"><a href="#ToPrimitive" class="headerlink" title="ToPrimitive"></a>ToPrimitive</h3><p>语法如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ToPrimitive(input[, PreferredType])</span><br></pre></td></tr></table></figure>
-
-<p>第一个参数是 input，表示要处理的输入值。</p>
-<p>第二个参数是 PreferredType，非必填，表示希望转换成的类型，有两个值可以选，Number 或者 String。</p>
-<p>当不传入 PreferredType 时，如果 input 是日期类型，相当于传入 String，否则，都相当于传入 Number。</p>
-<p>如果传入的 input 是 Undefined、Null、Boolean、Number、String 类型，直接返回该值。</p>
-<p>如果是 ToPrimitive(obj, Number)，处理步骤如下：</p>
-<ol>
-<li>如果 obj 为 基本类型，直接返回</li>
-<li>否则，调用 valueOf 方法，如果返回一个原始值，则 JavaScript 将其返回。</li>
-<li>否则，调用 toString 方法，如果返回一个原始值，则 JavaScript 将其返回。</li>
-<li>否则，JavaScript 抛出一个类型错误异常。</li>
-</ol>
-<p>如果是 ToPrimitive(obj, String)，处理步骤如下：</p>
-<ol>
-<li>如果 obj为 基本类型，直接返回</li>
-<li>否则，调用 toString 方法，如果返回一个原始值，则 JavaScript 将其返回。</li>
-<li>否则，调用 valueOf 方法，如果返回一个原始值，则 JavaScript 将其返回。</li>
-<li>否则，JavaScript 抛出一个类型错误异常。</li>
-</ol>
+<p>所以使用 <code>?.</code> 运算符就可以自动检查对象 b 是否为 null 或 undefined，如果是就返回 undefined。<br>使用 <code>?.</code> 可以代替 <code>&amp;&amp;</code> 执行空检查。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = b &amp;&amp; b.c</span><br><span class="line"></span><br><span class="line"><span class="comment">// equal to</span></span><br><span class="line"><span class="keyword">const</span> a = b?.c</span><br></pre></td></tr></table></figure>
+<p>值得注意的是，<code>?.</code> 只检查 null 和 undefined，对于空字串和 0，它是不会检查的。</p>
 <blockquote>
-<p>隐式转换场景</p>
+<p>可选链还可以和函数调用一起使用</p>
 </blockquote>
-<h2 id="一元操作符"><a href="#一元操作符" class="headerlink" title="一元操作符 +"></a>一元操作符 +</h2><p>当 + 运算符作为一元操作符时，会调用 <code>ToNumber</code> 处理该值，相当于 <code>Number(value)</code>。</p>
-<p>如果 value 是对象，会先调用 <code>ToPrimitive(obj, Number)</code> 方法。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(+[<span class="string">'1'</span>]); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(+[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>]); <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(+&#123;&#125;); <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> res = obj.func?.()</span><br></pre></td></tr></table></figure>
+<p>编译之后</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> res = (_a = obj.func) === <span class="literal">null</span> || _a === <span class="keyword">void</span> <span class="number">0</span> ? <span class="keyword">void</span> <span class="number">0</span> : _a.call(obj);</span><br></pre></td></tr></table></figure>
 
-<h2 id="二元操作符"><a href="#二元操作符" class="headerlink" title="二元操作符 +"></a>二元操作符 +</h2><p>当计算 value1 + value2 时：</p>
-<ol>
-<li>lprim = ToPrimitive(value1)</li>
-<li>rprim = ToPrimitive(value2)</li>
-<li>如果 lprim 是字符串或者 rprim 是字符串，那么返回 ToString(lprim) 和 ToString(rprim) 的拼接结果</li>
-<li>返回 ToNumber(lprim) 和 ToNumber(rprim) 的运算结果</li>
-</ol>
-<h2 id="相等"><a href="#相等" class="headerlink" title="== 相等"></a>== 相等</h2><table>
-<thead>
-<tr>
-<th align="center">类型 (x)</th>
-<th align="center">类型 (y)</th>
-<th align="center">结果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">null</td>
-<td align="center">undefined</td>
-<td align="center">true</td>
-</tr>
-<tr>
-<td align="center">undefined</td>
-<td align="center">null</td>
-<td align="center">true</td>
-</tr>
-<tr>
-<td align="center">数值</td>
-<td align="center">字符串</td>
-<td align="center">x == ToNumber(y)</td>
-</tr>
-<tr>
-<td align="center">字符串</td>
-<td align="center">数值</td>
-<td align="center">ToNumber(x) == y</td>
-</tr>
-<tr>
-<td align="center">布尔值</td>
-<td align="center">任何类型</td>
-<td align="center">ToNumber(x) == y</td>
-</tr>
-<tr>
-<td align="center">任何类型</td>
-<td align="center">布尔值</td>
-<td align="center">x = ToNumber(y)</td>
-</tr>
-<tr>
-<td align="center">字符串或数</td>
-<td align="center">对象</td>
-<td align="center">x = ToPrimitive(y)</td>
-</tr>
-<tr>
-<td align="center">对象</td>
-<td align="center">字符串或数</td>
-<td align="center">ToPrimitive(x) == y</td>
-</tr>
-</tbody></table>
+<p>如果 obj 不存在 func 这个方法，就回返回 undefined.</p>
+<p>注意事项：</p>
+<ul>
+<li>如果 func 不存在于 obj，上面代码会产生一个 <code>TypeError</code> 异常</li>
+<li>可选链的运算行为被局限在属性的访问，调用和元素的访问，不会延伸到后续的表达式，也就是说可选调用不会阻止 a?.b / someMethod() 表达式中的除法运算或 someMethod 的方法调用</li>
+</ul>
+<h3 id="空值合并运算符"><a href="#空值合并运算符" class="headerlink" title="?? 空值合并运算符"></a>?? 空值合并运算符</h3><blockquote>
+<p>当左侧操作数为 null 或 undefined时，返回右侧的操作数，否则返回左边的操作符</p>
+</blockquote>
+<p>与 || 运算符不同，<code>??</code> 也是只判断 null 和 undefined，其他的 falsy 它是不会返回右侧的。</p>
+<h3 id="可选属性"><a href="#可选属性" class="headerlink" title="?: 可选属性"></a>?: 可选属性</h3><p>这个运算符一般用在定义类型的时候</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">  age?: <span class="built_in">number</span>;</span><br><span class="line">  <span class="comment">// equal to</span></span><br><span class="line">  <span class="comment">// age: number | undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Partial"><a href="#Partial" class="headerlink" title="Partial"></a>Partial<T></h4><p>把某个接口的属性变成可选属性</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* type CopyPerson = &#123;</span></span><br><span class="line"><span class="comment">  name?: string;</span></span><br><span class="line"><span class="comment">  age?: number;</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> CopyPerson = Partial&lt;Person&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="Required"><a href="#Required" class="headerlink" title="Required"></a>Required<T></h4><p>使用 <code>Required</code> 可以把可选属性转为必选属性。</p>
+<h3 id="amp-运算符"><a href="#amp-运算符" class="headerlink" title="&amp; 运算符"></a>&amp; 运算符</h3><p>在 TypeScript 中使用 <code>&amp;</code> 运算符可以将多个类型叠加成为一种类型。</p>
+<blockquote>
+<ul>
+<li>同名基础类型合并，如果存在相同的成员，那么该成员的类型会变成 never</li>
+<li>同名非基础类型合并，是可以合并的</li>
+</ul>
+</blockquote>
+<h3 id="分隔符"><a href="#分隔符" class="headerlink" title="| 分隔符"></a>| 分隔符</h3><blockquote>
+<p>在 TypeScript 中联合类型（Union Types）表示取值可以为多种类型中的一种，联合类型使用 | 分隔每个类型.</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test: <span class="built_in">string</span> | <span class="literal">undefined</span>;</span><br></pre></td></tr></table></figure>
+<p>表示 <code>test</code> 可以是 string 或 undefined.</p>
 
           
             <div class='article_footer'>
@@ -743,7 +586,7 @@
           
         
           
-            <p>本文永久链接是：<a href=https://kaviilee.github.io/blog/2020/09/09/javascript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/>https://kaviilee.github.io/blog/2020/09/09/javascript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</a></p>
+            <p>本文永久链接是：<a href=https://kaviilee.github.io/blog/2021/01/28/%E4%B8%80%E4%BA%9Bts%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/>https://kaviilee.github.io/blog/2021/01/28/%E4%B8%80%E4%BA%9Bts%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/</a></p>
           
         
       </blockquote>
@@ -777,6 +620,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/typescript/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>TypeScript</p></a></div>
+
 
         
       
@@ -793,7 +639,7 @@
       
         <a class="-mob-share-qq" target="blank" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://kaviilee.github.io/blog/2020/09/09/javascript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/&title=JavaScript类型转换 - Kaviilee's blog&summary=关于 JavaScript 类型转换的一些笔记。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://kaviilee.github.io/blog/2021/01/28/%E4%B8%80%E4%BA%9Bts%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/&title=一些TS中的运算符 - Kaviilee's blog&summary=近来用到了不少的 TypeScript 的运算符，但是也有很多是没用过的，本着学到就是赚到的想法，记录一下。"
           
           >
           
@@ -805,7 +651,7 @@
       
         <a class="-mob-share-qzone" target="blank" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://kaviilee.github.io/blog/2020/09/09/javascript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/&title=JavaScript类型转换 - Kaviilee's blog&summary=关于 JavaScript 类型转换的一些笔记。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://kaviilee.github.io/blog/2021/01/28/%E4%B8%80%E4%BA%9Bts%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/&title=一些TS中的运算符 - Kaviilee's blog&summary=近来用到了不少的 TypeScript 的运算符，但是也有很多是没用过的，本着学到就是赚到的想法，记录一下。"
           
           >
           
@@ -817,7 +663,7 @@
       
         <a class="-mob-share-weibo" target="blank" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://kaviilee.github.io/blog/2020/09/09/javascript%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/&title=JavaScript类型转换 - Kaviilee's blog&summary=关于 JavaScript 类型转换的一些笔记。"
+          href="http://service.weibo.com/share/share.php?url=https://kaviilee.github.io/blog/2021/01/28/%E4%B8%80%E4%BA%9Bts%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/&title=一些TS中的运算符 - Kaviilee's blog&summary=近来用到了不少的 TypeScript 的运算符，但是也有很多是没用过的，本着学到就是赚到的想法，记录一下。"
           
           >
           
@@ -841,24 +687,14 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/blog/2020/10/13/conventional-commits/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>约定式提交 (Conventional Commits)</p>
-                <p class='content'>关于约定式提交的规范内容。
-
-
-约定式提交
-一种用于给提交信息增加人机可读含义的规范。
-
-概述约定式提交规范是一种基于提交消息的轻量级约定。 它提供了一组用于创建清晰的提交历史的简单规则； 这使...</p>
-              </a>
             
-            
-              <a class='next' href='/blog/2020/09/03/git-flow/'>
-                <p class='title'>Git Flow<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>之前偶尔看到的一篇文章，是讲 Git Flow 的，谈了分支相关的一些知识。
+              <a class='next' href='/blog/2021/01/20/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%8E%E9%80%80%E4%BA%8B%E4%BB%B6%E8%B8%A9%E5%9D%91/'>
+                <p class='title'>浏览器后退事件踩坑<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>这是一次关于浏览器后退事件的踩坑记录。
 
 
-Git Flow分支应用场景根据 Git Flow 的建议，主要的分支有 master、develop、hotf...</p>
+背景页面需要在打开一个 Drawer 的情况下，用户点击浏览器的后退按钮之后，将 Drawer 关闭，而不是页面发生了后退。
+解决方案思路并不是要阻止...</p>
               </a>
             
           </div>
@@ -968,7 +804,7 @@ Git Flow分支应用场景根据 Git Flow 的建议，主要的分支有 master�
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原始值转布尔值"><span class="toc-text">原始值转布尔值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原始值转数字"><span class="toc-text">原始值转数字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原始值转字符"><span class="toc-text">原始值转字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原始值转对象"><span class="toc-text">原始值转对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象转布尔值"><span class="toc-text">对象转布尔值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象转字符串和数字"><span class="toc-text">对象转字符串和数字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对象转字符串"><span class="toc-text">对象转字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象转数字"><span class="toc-text">对象转数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ToPrimitive"><span class="toc-text">ToPrimitive</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一元操作符"><span class="toc-text">一元操作符 +</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二元操作符"><span class="toc-text">二元操作符 +</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相等"><span class="toc-text">&#x3D;&#x3D; 相等</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#非空断言操作符"><span class="toc-text">非空断言操作符 !</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符"><span class="toc-text">?. 运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空值合并运算符"><span class="toc-text">?? 空值合并运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可选属性"><span class="toc-text">?: 可选属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Partial"><span class="toc-text">Partial</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Required"><span class="toc-text">Required</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#amp-运算符"><span class="toc-text">&amp; 运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分隔符"><span class="toc-text">| 分隔符</span></a></li></ol>
     </div>
   </section>
 
