@@ -17,8 +17,8 @@
   box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
 }
 @font-face {
-  font-family: 'UbuntuMono';
-  src: url("https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+  font-family: 'NotoSerif-Regular';
+  src: url("");
   font-weight: 'normal';
   font-style: 'normal';
 }
@@ -44,7 +44,7 @@ html {
   color: #444;
   width: 100%;
   height: 100%;
-  font-family: UbuntuMono, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: NotoSerif-Regular, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
   font-size: 0.9375rem;
 }
 html >::-webkit-scrollbar {
@@ -66,7 +66,7 @@ body {
   background-color: #f4f4f4;
   text-rendering: optimizelegibility;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  line-height: 1.65;
+  line-height: 1.75;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -435,7 +435,7 @@ th {
   color: #555;
 }
 .article div.btns b {
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 .article div.btns.wide>a {
   padding-left: 32px;
@@ -883,7 +883,7 @@ details summary {
   margin: -16px;
   border-radius: 4px;
   color: rgba(85,85,85,0.7);
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: bold;
   position: relative;
   line-height: normal;
@@ -1366,7 +1366,7 @@ p.p.right {
 }
 span.p.small,
 p.p.small {
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 span.p.large,
 p.p.large {
@@ -1497,7 +1497,7 @@ div.tabs ul.nav-tabs li.tab a {
   border-radius: 4px 4px 0 0;
   padding: 8px;
   text-align: center;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: inherit;
   font-weight: bold;
   color: rgba(68,68,68,0.65);
@@ -1575,7 +1575,7 @@ div.timenode:last-child:after {
 div.timenode .meta {
   position: relative;
   color: rgba(68,68,68,0.65);
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 32px;
   height: 32px;
 }
@@ -2669,7 +2669,7 @@ div.gallery.stretch>p img {
 }
 .l_main #comments #valine_container .vcount {
   color: #555;
-  font-size: 0.875rem;
+  font-size: 1rem;
   padding: 0;
   font-weight: inherit;
 }
@@ -2835,7 +2835,7 @@ div.gallery.stretch>p img {
   border-left: 2px solid transparent;
   border-radius: 2px;
   vertical-align: middle;
-  font-size: 0.875rem;
+  font-size: 1rem;
   transition: all 0.28s ease;
   -moz-transition: all 0.28s ease;
   -webkit-transition: all 0.28s ease;
@@ -3258,7 +3258,7 @@ div.gallery.stretch>p img {
 @media screen and (max-width: 500px) {
   .article ul,
   .article ol {
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
   .article figure {
     font-size: 13px;
@@ -3432,7 +3432,7 @@ div.gallery.stretch>p img {
 article .readmore {
   display: block;
   margin-top: 0.6rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 .cover-wrapper .cover {
   top: 0;
@@ -3559,7 +3559,7 @@ article .readmore {
   line-height: 1.2;
 }
 .cover-wrapper .cover .cover-body .subtitle {
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 .cover-wrapper .cover .cover-body .logo {
   max-height: 120px;
@@ -3570,7 +3570,7 @@ article .readmore {
     font-size: 3.6rem;
   }
   .cover-wrapper .cover .cover-body .subtitle {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
   }
   .cover-wrapper .cover .cover-body .logo {
     max-height: 150px;
@@ -3609,7 +3609,7 @@ article .readmore {
   width: 100%;
   box-shadow: none;
   box-sizing: border-box;
-  font-size: 0.875rem;
+  font-size: 1rem;
   -webkit-appearance: none;
   padding-left: 36px;
   border-radius: 1.4rem;
@@ -3727,7 +3727,7 @@ article .readmore {
 .cover-wrapper .cover .cover-body .menu.dock .list-h a p,
 .cover-wrapper .cover .cover-body .menu.featured .list-h a p,
 .cover-wrapper .cover .cover-body .menu.focus .list-h a p {
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 .cover-wrapper .cover .cover-body .menu.dock .list-h a.active,
 .cover-wrapper .cover .cover-body .menu.featured .list-h a.active,
@@ -4456,7 +4456,7 @@ div.hoverbox:hover >div.target {
 .comments .article p[cst] {
   margin-top: 0.9rem;
   margin-bottom: 0.9rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 .white-box {
   background: #fff;
@@ -4549,7 +4549,7 @@ div.hoverbox:hover >div.target {
 }
 .l_header .nav-sub .title {
   font-size: 0.9375rem;
-  font-family: UbuntuMono, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: NotoSerif-Regular, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
   line-height: 1.2;
   max-height: 64px;
   white-space: normal;
@@ -4683,7 +4683,7 @@ div.hoverbox:hover >div.target {
   box-shadow: none;
   box-sizing: border-box;
   padding-left: 36px;
-  font-size: 0.875rem;
+  font-size: 1rem;
   border-radius: 8px;
   border: none;
   transition: all 0.28s ease;
@@ -4793,7 +4793,7 @@ ul.list-v >li>a {
   -o-transition: all 0.28s ease;
   display: block;
   color: #696969;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: bold;
   line-height: 36px;
   padding: 0 20px 0 16px;
@@ -5087,7 +5087,7 @@ ul.list-v >li>a.active {
   width: 1rem;
 }
 .l_main .article .prev-next >a p.content {
-  font-size: 0.875rem;
+  font-size: 1rem;
   margin: 0 0.5rem;
   text-align: justify;
   word-break: break-all;
@@ -5355,7 +5355,7 @@ ul.list-v.rightmenu li.navigation .nav:last-child {
   display: block;
   float: right;
   vertical-align: middle;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: bold;
   line-height: 50px;
   color: rgba(68,68,68,0.65);
@@ -5369,7 +5369,7 @@ ul.list-v.rightmenu li.navigation .nav:last-child {
   margin-left: 16px;
 }
 #u-search .modal-footer .nav .icon {
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 #u-search .modal-body {
   position: absolute;
@@ -5476,7 +5476,7 @@ ul.list-v.rightmenu li.navigation .nav:last-child {
   max-height: calc(100vh - 144px);
   overflow: auto;
   text-align: justify;
-  font-size: 0.875rem;
+  font-size: 1rem;
   max-width: 100%;
 }
 @media screen and (max-width: 768px) {
@@ -5588,7 +5588,7 @@ ul.list-v.rightmenu li.navigation .nav:last-child {
 .widget >.content ul.popular-posts a .badge {
   flex: none;
   font-weight: normal;
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: rgba(68,68,68,0.7);
 }
 .widget >.content ul.entry a:hover,
@@ -5734,7 +5734,7 @@ ul.list-v.rightmenu li.navigation .nav:last-child {
 }
 .widget.text .content,
 .widget.text .content p {
-  font-size: 0.875rem;
+  font-size: 1rem;
   word-break: break-all;
 }
 .widget.text .content a {
@@ -5755,7 +5755,7 @@ ul.list-v.rightmenu li.navigation .nav:last-child {
   padding: 8px 0;
 }
 .widget.list .content a {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: bold;
   line-height: 1.5;
   padding-top: 6px;
@@ -5869,7 +5869,7 @@ ul.list-v.rightmenu li.navigation .nav:last-child {
   margin-bottom: 8px;
 }
 .widget.related_posts .content h3 {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: bold;
   margin: 0;
 }
@@ -5907,7 +5907,7 @@ ul.list-v.rightmenu li.navigation .nav:last-child {
   max-width: 500px;
   border-radius: 4px;
   color: #444;
-  font-family: UbuntuMono, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-family: NotoSerif-Regular, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
 }
 .aplayer .aplayer-list {
   text-align: left;
@@ -5999,7 +5999,7 @@ ul.list-v.rightmenu li.navigation .nav:last-child {
 .l_side .toc-wrapper a {
   padding-left: 8px;
   color: rgba(68,68,68,0.65);
-  font-size: 0.875rem;
+  font-size: 1rem;
   display: inline-block;
 }
 .l_side .toc-wrapper ul .toc-child a,
