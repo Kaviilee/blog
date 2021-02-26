@@ -61,27 +61,65 @@ meta:
     right: 16px;
     display: none;
   }
+  #artitalk_main p.shuoshuo_time span{
+    color: #2c3e50!important;
+  }
+  #artitalk_main p.shuoshuo_time svg, #artitalk_main p.shuoshuo_time path{
+    fill: #2c3e50!important;
+  }
+  #operare_artitalk .at_button, #artitalk_main .at_button {
+    background: rgba(161,102,171,.1) !important;
+    color: #2c3e50;
+  }
 
   .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel {
-    background: linear-gradient(-45deg, #f1ac9d, #f06966, #dee2d1, #6abe83) 0% 0% / 400% 400%!important;
+    background: linear-gradient(90deg,
+      rgba(247,149,51,.1) 0,
+      rgba(243,112,85,.1) 15%,
+      rgba(239,78,123,.1) 30%,
+      rgba(161,102,171,.1) 44%,
+      rgba(80,115,184,.1) 58%,
+      rgba(16,152,173,.1) 72%,
+      rgba(7,179,155,.1) 86%,
+      rgba(109,186,130,.1) 100%
+    )!important;
+    /* filter: blur(20px); */
     animation: 15s ease 0s infinite normal none running gradientBG;
     /* color: white; */
   }
   .cbp_tmtimeline>li .cbp_tmlabel {
-    background: linear-gradient(-45deg, #f1ac9d, #f06966, #dee2d1, #6abe83) 0% 0% / 400% 400%!important;
+    background: linear-gradient(90deg,
+      rgba(247,149,51,.1) 0,
+      rgba(243,112,85,.1) 15%,
+      rgba(239,78,123,.1) 30%,
+      rgba(161,102,171,.1) 44%,
+      rgba(80,115,184,.1) 58%,
+      rgba(16,152,173,.1) 72%,
+      rgba(7,179,155,.1) 86%,
+      rgba(109,186,130,.1) 100%
+    )!important;
     animation: 15s ease 0s infinite normal none running gradientBG;
     /* color: white; */
   }
   .cbp_tmtimeline>li:nth-child(odd) .cbp_tmlabel:after {
-    border-right-color:  #6CBF84!important;
-    /* border-right-color:  unset!important; */
+    /* border-right-color:  #6CBF84!important; */
+    border-right-color:  #fff!important;
   }
   .cbp_tmtimeline>li .cbp_tmlabel:after {
-    border-right-color:  #6CBF84!important;
-    /* border-right-color:  unset!important; */
+    /* border-right-color:  #6CBF84!important; */
+    border-right-color:  #fff!important;
   }
   .button {
-    background: linear-gradient(-45deg, #f1ac9d, #f06966, #dee2d1, #6abe83) 0% 0% / 400% 400%!important;
+    background: linear-gradient(90deg,
+      rgba(247,149,51,.1) 0,
+      rgba(243,112,85,.1) 15%,
+      rgba(239,78,123,.1) 30%,
+      rgba(161,102,171,.1) 44%,
+      rgba(80,115,184,.1) 58%,
+      rgba(16,152,173,.1) 72%,
+      rgba(7,179,155,.1) 86%,
+      rgba(109,186,130,.1) 100%
+    )!important;
     animation: 15s ease 0s infinite normal none running gradientBG;
     /* color: white; */
   }
