@@ -8,8 +8,8 @@ meta:
     header: []
     footer: []
 ---
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/artitalk"></script>
+<!-- 版本 3.2.0 -->
+<script type="text/javascript" src="https://unpkg.com/artitalk@3.2.0/artitalk.js"></script>
 
 <div id="artitalk_main"></div>
 
@@ -22,7 +22,7 @@ meta:
 
 <style>
   #artitalk_main {
-    font-family: 'NotoSerif-Regular, "PingFang SC", "Microsoft YaHei", Helvetica, Arial';
+    font-family: NotoSerif-Regular, "PingFang SC", "Microsoft YaHei", Helvetica, Arial;
     color: #000!important;
   }
   #artitalk_main a {
