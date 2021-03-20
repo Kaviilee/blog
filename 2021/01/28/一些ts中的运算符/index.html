@@ -505,22 +505,22 @@
 <a id="more"></a>
 
 <h3 id="非空断言操作符"><a href="#非空断言操作符" class="headerlink" title="非空断言操作符 !"></a>非空断言操作符 !</h3><p><code>!</code> 是一个后缀表达式操作符，可以用于断言操作对象是非 null 和非 undefined 类型。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> func = <span class="function">(<span class="params">str: <span class="built_in">string</span> | <span class="literal">null</span> | <span class="literal">undefined</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// Type 'string | null | undefined' is not assignable to type 'string'.</span></span><br><span class="line">  <span class="comment">// Type 'undefined' is not assignable to type 'string'.(2322)</span></span><br><span class="line">  <span class="keyword">let</span> onlyStr: <span class="built_in">string</span> = str; <span class="comment">// error</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> ignoredNullOrUndefined: <span class="built_in">string</span> = str!; <span class="comment">// ok</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> func = <span class="function">(<span class="params">str: <span class="built_in">string</span> | <span class="literal">null</span> | <span class="literal">undefined</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// Type 'string | null | undefined' is not assignable to type 'string'.</span></span><br><span class="line">  <span class="comment">// Type 'undefined' is not assignable to type 'string'.(2322)</span></span><br><span class="line">  <span class="keyword">let</span> onlyStr: <span class="built_in">string</span> = str; <span class="comment">// error</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> ignoredNullOrUndefined: <span class="built_in">string</span> = str!; <span class="comment">// ok</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="运算符"><a href="#运算符" class="headerlink" title="?. 运算符"></a>?. 运算符</h3><p><code>?.</code> 可选链，在我们遇到可能是 null 或 undefined 时就可以停止表达式的运行。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = b?.c</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> a = b?.c</span><br></pre></td></tr></table></figure>
 <p>上述 TypeScript 代码在编译之后</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = b === <span class="literal">null</span> || b === <span class="keyword">void</span> <span class="number">0</span> ? <span class="keyword">void</span> <span class="number">0</span> : b.c;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> a = b === <span class="literal">null</span> || b === <span class="keyword">void</span> <span class="number">0</span> ? <span class="keyword">void</span> <span class="number">0</span> : b.c;</span><br></pre></td></tr></table></figure>
 
 <p>所以使用 <code>?.</code> 运算符就可以自动检查对象 b 是否为 null 或 undefined，如果是就返回 undefined。<br>使用 <code>?.</code> 可以代替 <code>&amp;&amp;</code> 执行空检查。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = b &amp;&amp; b.c</span><br><span class="line"></span><br><span class="line"><span class="comment">// equal to</span></span><br><span class="line"><span class="keyword">const</span> a = b?.c</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> a = b &amp;&amp; b.c</span><br><span class="line"></span><br><span class="line"><span class="comment">// equal to</span></span><br><span class="line"><span class="keyword">const</span> a = b?.c</span><br></pre></td></tr></table></figure>
 <p>值得注意的是，<code>?.</code> 只检查 null 和 undefined，对于空字串和 0，它是不会检查的。</p>
 <blockquote>
 <p>可选链还可以和函数调用一起使用</p>
 </blockquote>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> res = obj.func?.()</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> res = obj.func?.()</span><br></pre></td></tr></table></figure>
 <p>编译之后</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> res = (_a = obj.func) === <span class="literal">null</span> || _a === <span class="keyword">void</span> <span class="number">0</span> ? <span class="keyword">void</span> <span class="number">0</span> : _a.call(obj);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> res = (_a = obj.func) === <span class="literal">null</span> || _a === <span class="keyword">void</span> <span class="number">0</span> ? <span class="keyword">void</span> <span class="number">0</span> : _a.call(obj);</span><br></pre></td></tr></table></figure>
 
 <p>如果 obj 不存在 func 这个方法，就回返回 undefined.</p>
 <p>注意事项：</p>
@@ -533,10 +533,10 @@
 </blockquote>
 <p>与 || 运算符不同，<code>??</code> 也是只判断 null 和 undefined，其他的 falsy 它是不会返回右侧的。</p>
 <h3 id="可选属性"><a href="#可选属性" class="headerlink" title="?: 可选属性"></a>?: 可选属性</h3><p>这个运算符一般用在定义类型的时候</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">  age?: <span class="built_in">number</span>;</span><br><span class="line">  <span class="comment">// equal to</span></span><br><span class="line">  <span class="comment">// age: number | undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">  age?: <span class="built_in">number</span>;</span><br><span class="line">  <span class="comment">// equal to</span></span><br><span class="line">  <span class="comment">// age: number | undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="Partial"><a href="#Partial" class="headerlink" title="Partial"></a>Partial<T></h4><p>把某个接口的属性变成可选属性</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* type CopyPerson = &#123;</span></span><br><span class="line"><span class="comment">  name?: string;</span></span><br><span class="line"><span class="comment">  age?: number;</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> CopyPerson = Partial&lt;Person&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> Person &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* type CopyPerson = &#123;</span></span><br><span class="line"><span class="comment">  name?: string;</span></span><br><span class="line"><span class="comment">  age?: number;</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> CopyPerson = Partial&lt;Person&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="Required"><a href="#Required" class="headerlink" title="Required"></a>Required<T></h4><p>使用 <code>Required</code> 可以把可选属性转为必选属性。</p>
 <h3 id="amp-运算符"><a href="#amp-运算符" class="headerlink" title="&amp; 运算符"></a>&amp; 运算符</h3><p>在 TypeScript 中使用 <code>&amp;</code> 运算符可以将多个类型叠加成为一种类型。</p>
 <blockquote>
@@ -548,7 +548,7 @@
 <h3 id="分隔符"><a href="#分隔符" class="headerlink" title="| 分隔符"></a>| 分隔符</h3><blockquote>
 <p>在 TypeScript 中联合类型（Union Types）表示取值可以为多种类型中的一种，联合类型使用 | 分隔每个类型.</p>
 </blockquote>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test: <span class="built_in">string</span> | <span class="literal">undefined</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> test: <span class="built_in">string</span> | <span class="literal">undefined</span>;</span><br></pre></td></tr></table></figure>
 <p>表示 <code>test</code> 可以是 string 或 undefined.</p>
 
           
@@ -609,7 +609,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-20T15:19:33+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-20T17:48:35+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年3月20日</p>
@@ -692,7 +692,7 @@
                 <p class='content'>记录一下 webpack 配置对应的意义，便于自己查阅~
 
 
-123456789101112131415161718192021222324252627282930313233343536373...</p>
+const path = require('path')module.exports = &#123;  // entry 表示入口...</p>
               </a>
             
             
@@ -846,7 +846,7 @@
     
       
         <div class='copyright'>
-        <p><a href="/">Copyright © 2019-2020 Kaviilee</a></p>
+        <p><a href="/">Copyright © 2019-2021 Kaviilee</a></p>
 
         </div>
       
@@ -885,7 +885,7 @@
 
     <script type="text/javascript">
       $(function(){
-        var imgs=["https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-6k83ol.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-g8yk2d.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-dgl52l.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-72gje9.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/images/custom/cover/wallhaven-kwjg5m.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-r2k7wm.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/images/custom/cover/wallhaven-ymy5gd.jpg"];
+        var imgs=["https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-6k83ol.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-g8yk2d.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-dgl52l.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/images/custom/cover/wallhaven-kwjg5m.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-r2k7wm.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/images/custom/cover/wallhaven-ymy5gd.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
             /*From countercurrent-time*/
