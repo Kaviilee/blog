@@ -516,7 +516,7 @@
 <p>CSS linear-gradient() 函数用于创建一个表示两种或多种颜色线性渐变的图片。其结果属于 <code>&lt;gradient&gt;</code> 数据类型，是一种特别的 <code>&lt;image&gt;</code> 数据类型。</p>
 </blockquote>
 <p>以上是 mdn 关于 <code>linear-gradient</code> 的定义。语法如下</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">linear-gradient</span>(</span><br><span class="line">  <span class="selector-attr">[ &lt;angle&gt; | to &lt;side-or-corner&gt; ,]</span>? &lt;<span class="selector-tag">color-stop-list</span>&gt; )</span><br><span class="line">  \---------------------------------/ \----------------------------/</span><br><span class="line">    <span class="selector-tag">Definition</span> <span class="selector-tag">of</span> <span class="selector-tag">the</span> <span class="selector-tag">gradient</span> <span class="selector-tag">line</span>        <span class="selector-tag">List</span> <span class="selector-tag">of</span> <span class="selector-tag">color</span> <span class="selector-tag">stops</span></span><br><span class="line"></span><br><span class="line">where &lt;side-or-corner&gt; = [ left | right ] || [ top | bottom ]</span><br><span class="line">  and &lt;color-stop-list&gt; = [ &lt;linear-color-stop&gt; [, &lt;color-hint&gt;? ]? ]#, &lt;linear-color-stop&gt;</span><br><span class="line">  and &lt;linear-color-stop&gt; = &lt;color&gt; [ &lt;color-stop-length&gt; ]?</span><br><span class="line">  and &lt;color-stop-length&gt; = [ &lt;percentage&gt; | &lt;length&gt; ]&#123;1,2&#125;</span><br><span class="line">  and &lt;color-hint&gt; = [ &lt;percentage&gt; | &lt;length&gt; ] // 颜色中转点</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">linear-gradient</span>(</span><br><span class="line">  <span class="selector-attr">[ &lt;angle&gt; | to &lt;side-or-corner&gt; ,]</span>? &lt;<span class="selector-tag">color-stop-list</span>&gt; )</span><br><span class="line">  \---------------------------------/ \----------------------------/</span><br><span class="line">    <span class="selector-tag">Definition</span> <span class="selector-tag">of</span> <span class="selector-tag">the</span> <span class="selector-tag">gradient</span> <span class="selector-tag">line</span>        <span class="selector-tag">List</span> <span class="selector-tag">of</span> <span class="selector-tag">color</span> <span class="selector-tag">stops</span></span><br><span class="line"></span><br><span class="line">where &lt;side-or-corner&gt; = [ left | right ] || [ top | bottom ]</span><br><span class="line">  and &lt;color-stop-list&gt; = [ &lt;linear-color-stop&gt; [, &lt;color-hint&gt;? ]? ]#, &lt;linear-color-stop&gt;</span><br><span class="line">  and &lt;linear-color-stop&gt; = &lt;color&gt; [ &lt;color-stop-length&gt; ]?</span><br><span class="line">  and &lt;color-stop-length&gt; = [ &lt;percentage&gt; | &lt;length&gt; ]&#123;1,2&#125;</span><br><span class="line">  and &lt;color-hint&gt; = [ &lt;percentage&gt; | &lt;length&gt; ] // 颜色中转点</span><br></pre></td></tr></table></figure>
 
 <p>这个函数表示接受<strong>第一个参数</strong>为是渐变的角度，它可以是单位为 <code>deg</code>，<code>rad</code>，<code>grad</code> 或 <code>turn</code> 的具体的角度值（该角度是顺时针增加的）；还可以是 <code>to</code> 和表示方向的关键词（<code>top</code>，<code>right</code>，<code>bottom</code>，<code>left</code> 这些值会被转换成 0°，90°，180°，270°，其余值会被转换成一个以顶部中央方向为起点顺时针旋转的角度），关键词先后顺序无影响，都是可选的。<strong>第二个参数</strong>是一系列的颜色节点，由一个 <code>&lt;color&gt;</code> 值组成，并且伴随一个可选的终点位置，这个终点位置可以是一个百分比值或者是沿着渐变轴的 <code>&lt;length&gt;</code>。</p>
 <h3 id="渐变容器"><a href="#渐变容器" class="headerlink" title="渐变容器"></a>渐变容器</h3><p>渐变图像是没有内在尺寸的，是无限大的。那么 <code>linear-gradient</code> 函数的具体尺寸由渐变容器的大小决定。</p>
@@ -539,7 +539,7 @@
 <p><code>top(0deg)</code>，<code>right(90deg)</code>，<code>bottom(180deg)</code>，<code>left(270deg)</code>。</p>
 <p>而如果是是使用 <code>to top left</code> 这种复合的顶角关键词，就没有对应的固定角度。因为它依赖的是渐变容器的尺寸，如果容器刚好是一个正方形，那么 <code>to top right</code> 和 <code>45deg</code> 的效果是一样。</p>
 <h3 id="渐变色节点-linear-color-stop"><a href="#渐变色节点-linear-color-stop" class="headerlink" title="渐变色节点 (linear color stop)"></a>渐变色节点 (linear color stop)</h3><p>渐变色节点可以这样定义：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;linear-color-stop&gt; = &lt;color&gt; [ &lt;percentage&gt; | &lt;length&gt; ]?</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;linear-color-stop&gt; = &lt;color&gt; [ &lt;percentage&gt; | &lt;length&gt; ]?</span><br></pre></td></tr></table></figure>
 
 <p>这意味着颜色在渐变线上的位置并不需要强制提供。</p>
 <p>如果没有提供颜色在渐变线上的位置，颜色的位置就会沿着渐变线平均分布。如果只有 2 个颜色，那么颜色 1 将被放在 <code>0%</code> 的位置，颜色 2 就被放在 <code>100%</code> 的位置；如果有 3 个颜色，那么颜色 1 在 <code>0%</code>，颜色 2 在 <code>50%</code>，颜色 3 在 <code>100%</code>，以此类推。</p>
@@ -603,7 +603,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-20T15:19:33+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-20T17:48:35+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年3月20日</p>
@@ -695,7 +695,7 @@
                 <p class='content'>在知道可以用 background-image 的渐变来定义虚线之前我都是用 border-bottom: 1px dashed #ccc 的。是新的知识，耶！
 
 
-123&lt;div cla...</p>
+&lt;div class=...</p>
               </a>
             
           </div>
@@ -839,7 +839,7 @@
     
       
         <div class='copyright'>
-        <p><a href="/">Copyright © 2019-2020 Kaviilee</a></p>
+        <p><a href="/">Copyright © 2019-2021 Kaviilee</a></p>
 
         </div>
       
@@ -878,7 +878,7 @@
 
     <script type="text/javascript">
       $(function(){
-        var imgs=["https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-6k83ol.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-g8yk2d.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-dgl52l.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-72gje9.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/images/custom/cover/wallhaven-kwjg5m.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-r2k7wm.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/images/custom/cover/wallhaven-ymy5gd.jpg"];
+        var imgs=["https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-6k83ol.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-g8yk2d.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-dgl52l.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/images/custom/cover/wallhaven-kwjg5m.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-r2k7wm.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/images/custom/cover/wallhaven-ymy5gd.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
             /*From countercurrent-time*/

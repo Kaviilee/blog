@@ -505,7 +505,7 @@
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>页面需要在打开一个 Drawer 的情况下，用户点击浏览器的后退按钮之后，将 Drawer 关闭，而不是页面发生了后退。</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>并不是要阻止浏览器触发后退事件，而是在浏览器触发后退事件前，将预定的 history 信息加入到浏览器的路由信息中，后退时，是后退到了指定的页面，然后在后退事件中加入自己的处理。</p>
 <h3 id="一点点代码"><a href="#一点点代码" class="headerlink" title="一点点代码"></a>一点点代码</h3><p>利用 <code>history.pushState()</code> 方法在浏览器的历史堆栈中添加一个 state。<br>然后再监听 <code>popstate</code> 事件，加入自己的处理。</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> handleOnpopState = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// your code</span></span><br><span class="line">  Drawer.close()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.history.pushState(<span class="literal">null</span>, <span class="string">''</span>, <span class="built_in">document</span>.URL);</span><br><span class="line"></span><br><span class="line"><span class="comment">// mounted</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'popstate'</span>, handleOnpopState, <span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// unmount</span></span><br><span class="line"><span class="built_in">window</span>.removeEventListener(<span class="string">'popstate'</span>, handleOnpopState, <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> handleOnpopState = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// your code</span></span><br><span class="line">  Drawer.close()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.history.pushState(<span class="literal">null</span>, <span class="string">''</span>, <span class="built_in">document</span>.URL);</span><br><span class="line"></span><br><span class="line"><span class="comment">// mounted</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'popstate'</span>, handleOnpopState, <span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// unmount</span></span><br><span class="line"><span class="built_in">window</span>.removeEventListener(<span class="string">'popstate'</span>, handleOnpopState, <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
 
 <h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>当网页加载时,各浏览器对popstate事件是否触发有不同的表现,Chrome 和 Safari会触发popstate事件, 而Firefox不会.</p>
 
@@ -567,7 +567,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-20T15:19:33+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-20T17:48:35+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年3月20日</p>
@@ -800,7 +800,7 @@
     
       
         <div class='copyright'>
-        <p><a href="/">Copyright © 2019-2020 Kaviilee</a></p>
+        <p><a href="/">Copyright © 2019-2021 Kaviilee</a></p>
 
         </div>
       
@@ -839,7 +839,7 @@
 
     <script type="text/javascript">
       $(function(){
-        var imgs=["https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-6k83ol.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-g8yk2d.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-dgl52l.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-72gje9.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/images/custom/cover/wallhaven-kwjg5m.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-r2k7wm.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/images/custom/cover/wallhaven-ymy5gd.jpg"];
+        var imgs=["https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-6k83ol.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-g8yk2d.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-dgl52l.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/images/custom/cover/wallhaven-kwjg5m.jpg", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-r2k7wm.png", "https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/images/custom/cover/wallhaven-ymy5gd.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
             /*From countercurrent-time*/
