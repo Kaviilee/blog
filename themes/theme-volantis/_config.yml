@@ -18,7 +18,7 @@ style:
     highlight:
       language: true # show language of codeblock
       copy_btn: true
-      grayscale: true # Enable grayscale effect
+      grayscale: false # Enable grayscale effect
     text_align: # left, right, justify, center
       h1: left
       h2: left
@@ -71,9 +71,9 @@ style:
       style: normal
       offset: 0.1rem # Correct baseline for zh-CN
     codefont:
-      fontfamily: 'Menlo, UbuntuMono, Monaco'
-      name: 'Monaco'
-      url: https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/Monaco/Monaco.ttf
+      fontfamily: 'Source Code Pro, UbuntuMono'
+      name: 'fontawesome'
+      # url: https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/fonts/FontAwesome.otf
       weight: normal
       style: normal
   color:
@@ -420,7 +420,7 @@ footer:
       url: https://github.com/Kaviilee
     - icon: fas fa-headphones-alt
       url: https://music.163.com/#/user/home?id=92087776
-  copyright: '[Copyright © 2019-2020 Kaviilee](/)'
+  copyright: '[Copyright © 2019-2021 Kaviilee](/)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: '<br>'
 
@@ -494,7 +494,7 @@ plugins:
       - https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-g8yk2d.jpg
       - https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-dgl52l.png
       # - https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-g8yqjd.jpg
-      - https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-72gje9.png
+      # - https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-72gje9.png
       - https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/images/custom/cover/wallhaven-kwjg5m.jpg
       - https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.13/blog/images/custom/cover/wallhaven-r2k7wm.png
       - https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/images/custom/cover/wallhaven-ymy5gd.jpg
