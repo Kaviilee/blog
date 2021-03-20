@@ -28,6 +28,9 @@ meta:
   #artitalk_main a {
     color: #2d64b3;
   }
+  #pubComment {
+    margin-right: 4px;
+  }
   #pubShuo {
     margin-right: 4px;
   }
