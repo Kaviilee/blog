@@ -16,13 +16,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>linear-gradient笔记 - Kaviilee&#39;s blog</title>
+  <title>修改 console.log 的颜色 - Kaviilee&#39;s blog</title>
   
-    <meta name="keywords" content="CSS">
+    <meta name="keywords" content="其他">
   
 
   
-    <meta name="description" content="之前用 background-image 的 linear-gradient 画了下划线，觉得很神奇，就去认真学习了一下。做了些小笔记，备忘。">
+    <meta name="description" content="今日用 node 写一个小工具的时候，想要 console 输出不一样的颜色，又不想而外引入工具库，遂查找资料，记录一下。">
   
 
   <!-- feed -->
@@ -397,9 +397,9 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">linear-gradient笔记</div>
+  <div id="pjax-pageTitle">修改 console.log 的颜色</div>
   <div id="pjax-enable-cover">true</div>
-  <div id="pjax-permalink">https://kaviilee.github.io/blog/2020/12/21/linear-gradient%E7%AC%94%E8%AE%B0/</div>
+  <div id="pjax-permalink">https://kaviilee.github.io/blog/2021/03/22/%E4%BF%AE%E6%94%B9console%E7%9A%84%E9%A2%9C%E8%89%B2/</div>
   
   <div id="valine-path">none</div>
   <div id="valine-placeholder">none</div>
@@ -449,8 +449,8 @@
         
           
   <h1 class="title">
-    <a href="/blog/2020/12/21/linear-gradient%E7%AC%94%E8%AE%B0/">
-      linear-gradient笔记
+    <a href="/blog/2021/03/22/%E4%BF%AE%E6%94%B9console%E7%9A%84%E9%A2%9C%E8%89%B2/">
+      修改 console.log 的颜色
     </a>
   </h1>
 
@@ -470,14 +470,6 @@
           
             
               
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/css/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>CSS</p>
-    </a>
-  </div>
-
 
             
           
@@ -485,7 +477,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年12月21日</p>
+    <p>发布于：2021年3月22日</p>
   </a>
 </div>
 
@@ -509,41 +501,27 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <p>之前用 <code>background-image</code> 的 <code>linear-gradient</code> 画了下划线，觉得很神奇，就去认真学习了一下。做了些小笔记，备忘。</p>
+          <p>今日用 node 写一个小工具的时候，想要 <code>console</code> 输出不一样的颜色，又不想而外引入工具库，遂查找资料，记录一下。</p>
 <a id="more"></a>
 
-<h2 id="渐变线的构成"><a href="#渐变线的构成" class="headerlink" title="渐变线的构成"></a>渐变线的构成</h2><blockquote>
-<p>CSS linear-gradient() 函数用于创建一个表示两种或多种颜色线性渐变的图片。其结果属于 <code>&lt;gradient&gt;</code> 数据类型，是一种特别的 <code>&lt;image&gt;</code> 数据类型。</p>
-</blockquote>
-<p>以上是 mdn 关于 <code>linear-gradient</code> 的定义。语法如下</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">linear-gradient</span>(</span><br><span class="line">  <span class="selector-attr">[ &lt;angle&gt; | to &lt;side-or-corner&gt; ,]</span>? &lt;<span class="selector-tag">color-stop-list</span>&gt; )</span><br><span class="line">  \---------------------------------/ \----------------------------/</span><br><span class="line">    <span class="selector-tag">Definition</span> <span class="selector-tag">of</span> <span class="selector-tag">the</span> <span class="selector-tag">gradient</span> <span class="selector-tag">line</span>        <span class="selector-tag">List</span> <span class="selector-tag">of</span> <span class="selector-tag">color</span> <span class="selector-tag">stops</span></span><br><span class="line"></span><br><span class="line">where &lt;side-or-corner&gt; = [ left | right ] || [ top | bottom ]</span><br><span class="line">  and &lt;color-stop-list&gt; = [ &lt;linear-color-stop&gt; [, &lt;color-hint&gt;? ]? ]#, &lt;linear-color-stop&gt;</span><br><span class="line">  and &lt;linear-color-stop&gt; = &lt;color&gt; [ &lt;color-stop-length&gt; ]?</span><br><span class="line">  and &lt;color-stop-length&gt; = [ &lt;percentage&gt; | &lt;length&gt; ]&#123;1,2&#125;</span><br><span class="line">  and &lt;color-hint&gt; = [ &lt;percentage&gt; | &lt;length&gt; ] // 颜色中转点</span><br></pre></td></tr></table></figure>
+<h2 id="不使用库"><a href="#不使用库" class="headerlink" title="不使用库"></a>不使用库</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">console.log(fg, bg, content, "\x1b[0m");</span><br></pre></td></tr></table></figure>
 
-<p>这个函数表示接受<strong>第一个参数</strong>为是渐变的角度，它可以是单位为 <code>deg</code>，<code>rad</code>，<code>grad</code> 或 <code>turn</code> 的具体的角度值（该角度是顺时针增加的）；还可以是 <code>to</code> 和表示方向的关键词（<code>top</code>，<code>right</code>，<code>bottom</code>，<code>left</code> 这些值会被转换成 0°，90°，180°，270°，其余值会被转换成一个以顶部中央方向为起点顺时针旋转的角度），关键词先后顺序无影响，都是可选的。<strong>第二个参数</strong>是一系列的颜色节点，由一个 <code>&lt;color&gt;</code> 值组成，并且伴随一个可选的终点位置，这个终点位置可以是一个百分比值或者是沿着渐变轴的 <code>&lt;length&gt;</code>。</p>
-<h3 id="渐变容器"><a href="#渐变容器" class="headerlink" title="渐变容器"></a>渐变容器</h3><p>渐变图像是没有内在尺寸的，是无限大的。那么 <code>linear-gradient</code> 函数的具体尺寸由渐变容器的大小决定。</p>
-<p>一般来说，如果给一个元素的 <code>background-image</code> 使用 <code>linear-gradient</code>，那么渐变的区域就是该元素的区域。而如果该元素设置了 <code>background-size</code> 渐变容器就会变成设置的 <code>background-size</code> 大小。</p>
-<h3 id="渐变线"><a href="#渐变线" class="headerlink" title="渐变线"></a>渐变线</h3><blockquote>
-<p>渐变线(Gradient line)由包含渐变图形的容器的中心点和一个角度来定义的。</p>
-</blockquote>
-<p>这里借用一下 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/linear-gradient()" target="_blank" rel="noopener">mdn</a> 的图片</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://developer.mozilla.org/files/3537/linear-gradient.png" alt="linear-gradient"></p>
-<h3 id="渐变角度"><a href="#渐变角度" class="headerlink" title="渐变角度"></a>渐变角度</h3><p><code>linear-gradient</code> 是通过渐变角度来控制渐变的方向的。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://i.loli.net/2020/12/21/7GzHpLmk1Q6w5s9.png" alt="渐变角度"></p>
-<p>如上图所示，红线就是渐变角度。上文中有说到，定义这个角度有两种方法：</p>
+<p>这里 <code>fg</code> 其实就是字体颜色，<code>bg</code> 对应背景颜色，<code>content</code> 就是要输出的内容</p>
+<p>以下列出其他的颜色</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Reset &#x3D; &quot;\x1b[0m&quot;</span><br><span class="line">Bright &#x3D; &quot;\x1b[1m&quot;</span><br><span class="line">Dim &#x3D; &quot;\x1b[2m&quot;</span><br><span class="line">Underscore &#x3D; &quot;\x1b[4m&quot;</span><br><span class="line">Blink &#x3D; &quot;\x1b[5m&quot;</span><br><span class="line">Reverse &#x3D; &quot;\x1b[7m&quot;</span><br><span class="line">Hidden &#x3D; &quot;\x1b[8m&quot;</span><br><span class="line"></span><br><span class="line">FgBlack &#x3D; &quot;\x1b[30m&quot;</span><br><span class="line">FgRed &#x3D; &quot;\x1b[31m&quot;</span><br><span class="line">FgGreen &#x3D; &quot;\x1b[32m&quot;</span><br><span class="line">FgYellow &#x3D; &quot;\x1b[33m&quot;</span><br><span class="line">FgBlue &#x3D; &quot;\x1b[34m&quot;</span><br><span class="line">FgMagenta &#x3D; &quot;\x1b[35m&quot;</span><br><span class="line">FgCyan &#x3D; &quot;\x1b[36m&quot;</span><br><span class="line">FgWhite &#x3D; &quot;\x1b[37m&quot;</span><br><span class="line"></span><br><span class="line">BgBlack &#x3D; &quot;\x1b[40m&quot;</span><br><span class="line">BgRed &#x3D; &quot;\x1b[41m&quot;</span><br><span class="line">BgGreen &#x3D; &quot;\x1b[42m&quot;</span><br><span class="line">BgYellow &#x3D; &quot;\x1b[43m&quot;</span><br><span class="line">BgBlue &#x3D; &quot;\x1b[44m&quot;</span><br><span class="line">BgMagenta &#x3D; &quot;\x1b[45m&quot;</span><br><span class="line">BgCyan &#x3D; &quot;\x1b[46m&quot;</span><br><span class="line">BgWhite &#x3D; &quot;\x1b[47m&quot;</span><br></pre></td></tr></table></figure>
+
+<p><code>Fgxx</code> 对应的是字体颜色，<code>Bgxx</code> 对应的是背景颜色。</p>
+<p>当然我们可以封装一下，使调用更加便捷一点</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> colors = &#123;</span><br><span class="line">  reset: <span class="string">"\x1b[0m"</span>,</span><br><span class="line">  bright: <span class="string">"\x1b[1m"</span>,</span><br><span class="line">  dim: <span class="string">"\x1b[2m"</span>,</span><br><span class="line">  underscore: <span class="string">"\x1b[4m"</span>,</span><br><span class="line">  blink: <span class="string">"\x1b[5m"</span>,</span><br><span class="line">  reverse: <span class="string">"\x1b[7m"</span>,</span><br><span class="line">  hidden: <span class="string">"\x1b[8m"</span>,</span><br><span class="line">    </span><br><span class="line">  fg: &#123;</span><br><span class="line">    black: <span class="string">"\x1b[30m"</span>,</span><br><span class="line">    red: <span class="string">"\x1b[31m"</span>,</span><br><span class="line">    green: <span class="string">"\x1b[32m"</span>,</span><br><span class="line">    yellow: <span class="string">"\x1b[33m"</span>,</span><br><span class="line">    blue: <span class="string">"\x1b[34m"</span>,</span><br><span class="line">    magenta: <span class="string">"\x1b[35m"</span>,</span><br><span class="line">    cyan: <span class="string">"\x1b[36m"</span>,</span><br><span class="line">    white: <span class="string">"\x1b[37m"</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  bg: &#123;</span><br><span class="line">    black: <span class="string">"\x1b[40m"</span>,</span><br><span class="line">    red: <span class="string">"\x1b[41m"</span>,</span><br><span class="line">    green: <span class="string">"\x1b[42m"</span>,</span><br><span class="line">    yellow: <span class="string">"\x1b[43m"</span>,</span><br><span class="line">    blue: <span class="string">"\x1b[44m"</span>,</span><br><span class="line">    magenta: <span class="string">"\x1b[45m"</span>,</span><br><span class="line">    cyan: <span class="string">"\x1b[46m"</span>,</span><br><span class="line">    white: <span class="string">"\x1b[47m"</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="使用库"><a href="#使用库" class="headerlink" title="使用库"></a>使用库</h2><p>修改 console 颜色的库有</p>
 <ul>
-<li>使用方向关键词：<code>to &lt;top | right | bottom | left | top right | top left | bottom right | bottom left&gt;</code></li>
-<li>使用具体的角度值：比如 <code>45deg</code></li>
+<li><a href="https://github.com/chalk/chalk" target="_blank" rel="noopener">chalk</a></li>
+<li><a href="https://github.com/Marak/colors.js" target="_blank" rel="noopener">colors</a></li>
+<li><a href="https://github.com/medikoo/cli-color" target="_blank" rel="noopener">cli-color</a></li>
 </ul>
-<p>如果缺省角度值，默认值就是 <code>to bottom (180deg)</code> </p>
-<p><img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://i.loli.net/2020/12/21/ug8wz2qYCJiPmbS.png" alt="default"></p>
-<p>这里方向关键词有其对应的具体角度值:</p>
-<p><code>top(0deg)</code>，<code>right(90deg)</code>，<code>bottom(180deg)</code>，<code>left(270deg)</code>。</p>
-<p>而如果是是使用 <code>to top left</code> 这种复合的顶角关键词，就没有对应的固定角度。因为它依赖的是渐变容器的尺寸，如果容器刚好是一个正方形，那么 <code>to top right</code> 和 <code>45deg</code> 的效果是一样。</p>
-<h3 id="渐变色节点-linear-color-stop"><a href="#渐变色节点-linear-color-stop" class="headerlink" title="渐变色节点 (linear color stop)"></a>渐变色节点 (linear color stop)</h3><p>渐变色节点可以这样定义：</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;linear-color-stop&gt; = &lt;color&gt; [ &lt;percentage&gt; | &lt;length&gt; ]?</span><br></pre></td></tr></table></figure>
-
-<p>这意味着颜色在渐变线上的位置并不需要强制提供。</p>
-<p>如果没有提供颜色在渐变线上的位置，颜色的位置就会沿着渐变线平均分布。如果只有 2 个颜色，那么颜色 1 将被放在 <code>0%</code> 的位置，颜色 2 就被放在 <code>100%</code> 的位置；如果有 3 个颜色，那么颜色 1 在 <code>0%</code>，颜色 2 在 <code>50%</code>，颜色 3 在 <code>100%</code>，以此类推。</p>
-<p>运用好 <code>linear-gradient</code> 可以让你的页面更好看(是真的</p>
+<h2 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h2><p>好看的 <code>console.log</code> 可以让写代码的我快乐(๑•̀ㅂ•́)و✧</p>
 
           
             <div class='article_footer'>
@@ -580,7 +558,7 @@
           
         
           
-            <p>本文永久链接是：<a href=https://kaviilee.github.io/blog/2020/12/21/linear-gradient%E7%AC%94%E8%AE%B0/>https://kaviilee.github.io/blog/2020/12/21/linear-gradient%E7%AC%94%E8%AE%B0/</a></p>
+            <p>本文永久链接是：<a href=https://kaviilee.github.io/blog/2021/03/22/%E4%BF%AE%E6%94%B9console%E7%9A%84%E9%A2%9C%E8%89%B2/>https://kaviilee.github.io/blog/2021/03/22/%E4%BF%AE%E6%94%B9console%E7%9A%84%E9%A2%9C%E8%89%B2/</a></p>
           
         
       </blockquote>
@@ -615,7 +593,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/css/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>CSS</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/%E5%85%B6%E4%BB%96/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>其他</p></a></div>
 
 
         
@@ -633,7 +611,7 @@
       
         <a class="-mob-share-qq" target="blank" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://kaviilee.github.io/blog/2020/12/21/linear-gradient%E7%AC%94%E8%AE%B0/&title=linear-gradient笔记 - Kaviilee's blog&summary=之前用 background-image 的 linear-gradient 画了下划线，觉得很神奇，就去认真学习了一下。做了些小笔记，备忘。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://kaviilee.github.io/blog/2021/03/22/%E4%BF%AE%E6%94%B9console%E7%9A%84%E9%A2%9C%E8%89%B2/&title=修改 console.log 的颜色 - Kaviilee's blog&summary=今日用 node 写一个小工具的时候，想要 console 输出不一样的颜色，又不想而外引入工具库，遂查找资料，记录一下。"
           
           >
           
@@ -645,7 +623,7 @@
       
         <a class="-mob-share-qzone" target="blank" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://kaviilee.github.io/blog/2020/12/21/linear-gradient%E7%AC%94%E8%AE%B0/&title=linear-gradient笔记 - Kaviilee's blog&summary=之前用 background-image 的 linear-gradient 画了下划线，觉得很神奇，就去认真学习了一下。做了些小笔记，备忘。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://kaviilee.github.io/blog/2021/03/22/%E4%BF%AE%E6%94%B9console%E7%9A%84%E9%A2%9C%E8%89%B2/&title=修改 console.log 的颜色 - Kaviilee's blog&summary=今日用 node 写一个小工具的时候，想要 console 输出不一样的颜色，又不想而外引入工具库，遂查找资料，记录一下。"
           
           >
           
@@ -657,7 +635,7 @@
       
         <a class="-mob-share-weibo" target="blank" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://kaviilee.github.io/blog/2020/12/21/linear-gradient%E7%AC%94%E8%AE%B0/&title=linear-gradient笔记 - Kaviilee's blog&summary=之前用 background-image 的 linear-gradient 画了下划线，觉得很神奇，就去认真学习了一下。做了些小笔记，备忘。"
+          href="http://service.weibo.com/share/share.php?url=https://kaviilee.github.io/blog/2021/03/22/%E4%BF%AE%E6%94%B9console%E7%9A%84%E9%A2%9C%E8%89%B2/&title=修改 console.log 的颜色 - Kaviilee's blog&summary=今日用 node 写一个小工具的时候，想要 console 输出不一样的颜色，又不想而外引入工具库，遂查找资料，记录一下。"
           
           >
           
@@ -681,21 +659,15 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/blog/2020/12/29/%E8%AE%B0%E4%B8%80%E6%AC%A1%E6%96%87%E5%AD%97%E6%8B%B7%E8%B4%9D/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>记一次文字拷贝</p>
-                <p class='content'>Clipboard API，“船新”的浏览器与系统剪贴板交互的异步 API。
-
-
-小小的碎碎念恰巧前段时间要做 复制到剪贴板 这个功能，就去查了一下实现方式，大致都是 document.exec...</p>
-              </a>
             
-            
-              <a class='next' href='/blog/2020/12/14/%E4%BD%BF%E7%94%A8background-image%E7%94%BB%E8%99%9A%E7%BA%BF/'>
-                <p class='title'>使用background-image画虚线<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>在知道可以用 background-image 的渐变来定义虚线之前我都是用 border-bottom: 1px dashed #ccc 的。是新的知识，耶！
+              <a class='next' href='/blog/2021/03/20/webpack%E5%B8%B8%E7%94%A8loaders%E5%92%8Cplugins/'>
+                <p class='title'>webpack 常用 loaders 和 plugins<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>记录一下 webpack 常用 loaders 和 plugins
 
 
-&lt;div class=...</p>
+常用 Loaders加载文件
+raw-loader：把文本文件的内容加载到代码中去。
+file-loader：把文本输出到...</p>
               </a>
             
           </div>
@@ -805,7 +777,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#渐变线的构成"><span class="toc-text">渐变线的构成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#渐变容器"><span class="toc-text">渐变容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#渐变线"><span class="toc-text">渐变线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#渐变角度"><span class="toc-text">渐变角度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#渐变色节点-linear-color-stop"><span class="toc-text">渐变色节点 (linear color stop)</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#不使用库"><span class="toc-text">不使用库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用库"><span class="toc-text">使用库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#碎碎念"><span class="toc-text">碎碎念</span></a></li></ol>
     </div>
   </section>
 
