@@ -7,7 +7,9 @@
   },
   "scripts": {
     "dev": "hexo clean & hexo g & hexo s",
-    "serve": "hexo s"
+    "serve": "hexo s",
+    "draft": "node ./utils/generatedraft.js",
+    "release": "node ./utils/publish.js"
   },
   "dependencies": {
     "hexo": "4.2",

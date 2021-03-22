@@ -3,7 +3,7 @@
 ###### 创建草稿(`drafts`)
 
 ```
-$ hexo new draft "new-blog"
+$ yarn draft "new-blog" || npm run draft "new-blog"
 # INFO  Created: ~/blog/source/_drafts/new-blog.md
 ```
 
@@ -20,7 +20,7 @@ $ hexo s -p 9000 --draft
 ###### 发布草稿(`publish`)
 
 ```
-hexo publish post new-blog
+$ yarn publish
 ```
 
 ##### 发布
