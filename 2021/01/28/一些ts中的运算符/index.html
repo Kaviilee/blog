@@ -550,6 +550,17 @@
 </blockquote>
 <figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> test: <span class="built_in">string</span> | <span class="literal">undefined</span>;</span><br></pre></td></tr></table></figure>
 <p>表示 <code>test</code> 可以是 string 或 undefined.</p>
+<h3 id="Record"><a href="#Record" class="headerlink" title="Record"></a>Record</h3><p><code>Record&lt;K extends keyof any, T&gt;</code> 将 <code>K</code> 中所有的属性的值转化为 <code>T</code> 类型。</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> Record&lt;K <span class="keyword">extends</span> keyof <span class="built_in">any</span>, T&gt; = &#123;</span><br><span class="line">  [P <span class="keyword">in</span> K]: T</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// example</span></span><br><span class="line"><span class="keyword">type</span> Route = <span class="string">'home'</span> | <span class="string">'demo'</span> | <span class="string">'help'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> route: Record&lt;Route, <span class="built_in">string</span>&gt; = &#123;</span><br><span class="line">  home: <span class="built_in">string</span>;</span><br><span class="line">  demo: <span class="built_in">string</span>;</span><br><span class="line">  gelp: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Pick"><a href="#Pick" class="headerlink" title="Pick"></a>Pick</h3><p><code>Pick&lt;T, K extends keyof T&gt;</code> 将某个类型中的子属性挑出来，变成包含这个类型部分属性的子类型。</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> Pick&lt;T, K <span class="keyword">extends</span> keyof T&gt; = &#123;</span><br><span class="line">  [P <span class="keyword">in</span> K]: T[P]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// example</span></span><br><span class="line"><span class="keyword">interface</span> Todo &#123;</span><br><span class="line">  title: <span class="built_in">string</span>;</span><br><span class="line">  description: <span class="built_in">string</span>;</span><br><span class="line">  status: <span class="built_in">boolean</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> TodoPreview = Pick&lt;Todo, <span class="string">'title'</span> | <span class="string">'status'</span>&gt;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> todo: TodoPreview = &#123;</span><br><span class="line">  title: <span class="string">'todo1'</span>,</span><br><span class="line">  status: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="EXclude"><a href="#EXclude" class="headerlink" title="EXclude"></a>EXclude</h3><p><code>Exclude&lt;T, U&gt;</code> 将某个类型中的另一个类型移除。</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 如果 T 能够赋值给 U，那么就返回 never 类型，否则返回 T 类型，其实就是将 T 中属于 U 的类型移除。</span></span><br><span class="line"><span class="keyword">type</span> Exclude&lt;T, U&gt; = T <span class="keyword">extends</span> U ? : never : T</span><br><span class="line"></span><br><span class="line"><span class="comment">// example</span></span><br><span class="line"><span class="keyword">type</span> Demo = Exclude&lt;<span class="string">'a'</span> | <span class="string">'b'</span> | <span class="string">'c'</span>, <span class="string">'c'</span>&gt;; <span class="comment">// 'a' | 'b'</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="ReturnType"><a href="#ReturnType" class="headerlink" title="ReturnType"></a>ReturnType</h3><p><code>ReturnType&lt;T&gt;</code> 用于获取函数 <code>T</code> 的返回类型。</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> ReturnType&lt;T <span class="keyword">extends</span> (...args: <span class="built_in">any</span>) =&gt; <span class="built_in">any</span>&gt; = T <span class="keyword">extends</span> (...args: <span class="built_in">any</span>) =&gt; infer R ? R : <span class="built_in">any</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// example</span></span><br><span class="line"><span class="keyword">type</span> Demo = ReturnType&lt;<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">string</span>&gt;; <span class="comment">// string</span></span><br></pre></td></tr></table></figure>
 
           
             <div class='article_footer'>
@@ -609,10 +620,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-22T09:48:16+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-23T08:24:44+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年3月22日</p>
+    <p>更新于：2021年3月23日</p>
   </a>
 </div>
 
@@ -812,7 +823,7 @@ const path = require('path')module.exports = &#123;  // entry 表示入口...</p
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#非空断言操作符"><span class="toc-text">非空断言操作符 !</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符"><span class="toc-text">?. 运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空值合并运算符"><span class="toc-text">?? 空值合并运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可选属性"><span class="toc-text">?: 可选属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Partial"><span class="toc-text">Partial</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Required"><span class="toc-text">Required</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#amp-运算符"><span class="toc-text">&amp; 运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分隔符"><span class="toc-text">| 分隔符</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#非空断言操作符"><span class="toc-text">非空断言操作符 !</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符"><span class="toc-text">?. 运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空值合并运算符"><span class="toc-text">?? 空值合并运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可选属性"><span class="toc-text">?: 可选属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Partial"><span class="toc-text">Partial</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Required"><span class="toc-text">Required</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#amp-运算符"><span class="toc-text">&amp; 运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分隔符"><span class="toc-text">| 分隔符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Record"><span class="toc-text">Record</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pick"><span class="toc-text">Pick</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EXclude"><span class="toc-text">EXclude</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ReturnType"><span class="toc-text">ReturnType</span></a></li></ol>
     </div>
   </section>
 
