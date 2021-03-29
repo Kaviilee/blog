@@ -16,9 +16,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Kaviilee&#39;s blog</title>
+  <title>刷刷算法 - Kaviilee&#39;s blog</title>
+  
+    <meta name="keywords" content="算法">
   
 
+  
+    <meta name="description" content="是算法耶！">
   
 
   <!-- feed -->
@@ -82,7 +86,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover list' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -392,10 +396,10 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">刷刷算法</div>
   <div id="pjax-enable-cover">true</div>
-  <div id="pjax-permalink">https://kaviilee.github.io/blog/mylist/index.html</div>
+  <div id="pjax-permalink">https://kaviilee.github.io/blog/2021/03/30/%E5%88%B7%E5%88%B7%E7%AE%97%E6%B3%95/</div>
   
   <div id="valine-path">none</div>
   <div id="valine-placeholder">none</div>
@@ -429,49 +433,273 @@
       
       
 
-
 <div class='l_main'>
   
-    <section class="post-list ">
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </section>
-    
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/blog/2021/03/30/%E5%88%B7%E5%88%B7%E7%AE%97%E6%B3%95/">
+      刷刷算法
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+
+
+ 
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年3月30日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p>是算法耶！</p>
+<a id="more"></a>
+
+
+<ol>
+<li>实现 Trie （前缀树）<br>Trie（发音类似 “try”）或者说 前缀树 是一种树形数据结构，用于高效地存储和检索字符串数据集中的键。这一数据结构有相当多的应用情景，例如自动补完和拼写检查。</li>
+</ol>
+<p>请你实现 Trie 类：</p>
+<ul>
+<li>Trie() 初始化前缀树对象。</li>
+<li>void insert(String word) 向前缀树中插入字符串 word 。</li>
+<li>boolean search(String word) 如果字符串 word 在前缀树中，返回 true（即，在检索之前已经插入）；否则，返回 false 。</li>
+<li>boolean startsWith(String prefix) 如果之前已经插入的字符串 word 的前缀之一为 prefix ，返回 true ；否则，返回 false 。</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> Trie &#123;</span><br><span class="line">  root: &#123; [key: <span class="built_in">string</span>]: <span class="built_in">any</span> &#125;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.root = <span class="built_in">Object</span>.create(<span class="literal">null</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  insert(word: <span class="built_in">string</span>): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> node = <span class="keyword">this</span>.root;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> w of word) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!node[w]) &#123;</span><br><span class="line">        node[w] = <span class="built_in">Object</span>.create(<span class="literal">null</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      node = node[w]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    node.isEnd = <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  searchPrefix(word: <span class="built_in">string</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> node = <span class="keyword">this</span>.root;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> w of word) &#123;</span><br><span class="line">      node = node[w];</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (!node) <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> node</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  search(word: <span class="built_in">string</span>): <span class="built_in">boolean</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> node = <span class="keyword">this</span>.searchPrefix(word)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> !!node &amp;&amp; !!node.isEnd;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  startWith(prefix: <span class="built_in">string</span>): <span class="built_in">boolean</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> !!<span class="keyword">this</span>.searchPrefix(prefix)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>实现 LRU 算法</li>
+</ol>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> LRUCache &#123;</span><br><span class="line">  cache: Map&lt;<span class="built_in">number</span>, <span class="built_in">number</span>&gt;;</span><br><span class="line">  capacity: <span class="built_in">number</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">capacity: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.cache = <span class="keyword">new</span> Map&lt;<span class="built_in">number</span>, <span class="built_in">number</span>&gt;()</span><br><span class="line">    <span class="keyword">this</span>.capacity = capcity;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  put(key: <span class="built_in">number</span>, value: <span class="built_in">number</span>): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.cache.has(key)) &#123;</span><br><span class="line">      <span class="keyword">this</span>.cache.delete(key);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">this</span>.cache.size &gt;= <span class="keyword">this</span>.capacity) &#123;</span><br><span class="line">      <span class="keyword">this</span>.cache.delete(<span class="keyword">this</span>.cache.keys().next().value)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.cache.set(key, value)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">get</span>(key: <span class="built_in">number</span>): <span class="built_in">number</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.cache.has(key)) &#123;</span><br><span class="line">      <span class="keyword">const</span> val = <span class="keyword">this</span>.cache.get(key);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">this</span>.cache.delete(key);</span><br><span class="line">      <span class="keyword">this</span>.cache.set(key, val);</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> val</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://kaviilee.github.io/blog/2021/03/30/%E5%88%B7%E5%88%B7%E7%AE%97%E6%B3%95/>https://kaviilee.github.io/blog/2021/03/30/%E5%88%B7%E5%88%B7%E7%AE%97%E6%B3%95/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-29T17:54:17+00:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年3月29日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/%E7%AE%97%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>算法</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" target="blank" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://kaviilee.github.io/blog/2021/03/30/%E5%88%B7%E5%88%B7%E7%AE%97%E6%B3%95/&title=刷刷算法 - Kaviilee's blog&summary=是算法耶！"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" target="blank" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://kaviilee.github.io/blog/2021/03/30/%E5%88%B7%E5%88%B7%E7%AE%97%E6%B3%95/&title=刷刷算法 - Kaviilee's blog&summary=是算法耶！"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" target="blank" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://kaviilee.github.io/blog/2021/03/30/%E5%88%B7%E5%88%B7%E7%AE%97%E6%B3%95/&title=刷刷算法 - Kaviilee's blog&summary=是算法耶！"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/blog/2021/03/24/%E5%87%89%E7%BB%8F/'>
+                <p class='title'>凉经<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>记录一下自己 “被打” 的过程😂
+
+
+面试记录2021.2.28 从前公司离职，开始了复习知识和面试的日子。记录一下自己面试的经历以及题目，常看常新，补全知识。
+富途一面
+Vue 组件间通信
+...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
 </div>
 <aside class='l_side'>
   
@@ -532,72 +760,12 @@
   
 
   
-    
-    
-  
-
-  <section class="widget category shadow desktop">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/blog/categories/css/" href="/blog/categories/css/"
-            id="blogcategoriescss"
-            ><div class='name'>CSS</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/javascript/" href="/blog/categories/javascript/"
-            id="blogcategoriesjavascript"
-            ><div class='name'>JavaScript</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" href="/blog/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"
-            id="blogcategoriesE5898DE7ABAFE5B7A5E7A88BE58C96"
-            ><div class='name'>前端工程化</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/%E6%8A%80%E6%9C%AF/" href="/blog/categories/%E6%8A%80%E6%9C%AF/"
-            id="blogcategoriesE68A80E69CAF"
-            ><div class='name'>技术</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/%E6%A1%86%E6%9E%B6/" href="/blog/categories/%E6%A1%86%E6%9E%B6/"
-            id="blogcategoriesE6A186E69EB6"
-            ><div class='name'>框架</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
 
   
     
     
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
 
 
-    <div class='content'>
-      <a href="/blog/tags/antd-v4/" style="font-size: 19px; color: #777">Antd v4</a> <a href="/blog/tags/css/" style="font-size: 14px; color: #999">CSS</a> <a href="/blog/tags/docker/" style="font-size: 14px; color: #999">Docker</a> <a href="/blog/tags/typescript/" style="font-size: 14px; color: #999">TypeScript</a> <a href="/blog/tags/git/" style="font-size: 19px; color: #777">git</a> <a href="/blog/tags/react/" style="font-size: 14px; color: #999">react</a> <a href="/blog/tags/webpack/" style="font-size: 19px; color: #777">webpack</a> <a href="/blog/tags/%E5%85%B6%E4%BB%96/" style="font-size: 14px; color: #999">其他</a> <a href="/blog/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a> <a href="/blog/tags/%E8%A7%84%E8%8C%83/" style="font-size: 24px; color: #555">规范</a> <a href="/blog/tags/%E9%9D%A2%E7%BB%8F/" style="font-size: 14px; color: #999">面经</a>
-    </div>
-  </section>
 
 
   
