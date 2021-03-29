@@ -123,11 +123,11 @@ cover:
       icon: fas fa-archive
       color: '#ff9800'
       url: /archives/
-    - name: 关于
+    - name: 说说
       # img: https://i.loli.net/2020/07/24/skczZ1VdMGRbTLi.png
-      icon: fas fa-info-circle
+      icon: fas fa-comment
       color: '#734ae6'
-      url: /about/
+      url: /shuoshuo/
 
 
 
@@ -450,7 +450,8 @@ plugins:
   # highlight.js
   highlightjs:
     js: https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js
-    css: https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/solarized-light.css
+    # css: https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/solarized-light.css
+    css: https://cdn.jsdelivr.net/npm/highlight.js@10.7.1/styles/atom-one-dark.css
     # more: https://www.jsdelivr.com/package/npm/highlight.js?path=styles
 
   # https://scrollrevealjs.org/api/reveal.html
