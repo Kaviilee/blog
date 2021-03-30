@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "hexo clean & hexo g & hexo s",
-    "generate": "hexo g",
+    "postinstall": "hexo g",
     "serve": "hexo s",
     "draft": "node ./utils/generatedraft.js",
     "release": "node ./utils/publish.js"
