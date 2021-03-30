@@ -19,7 +19,7 @@ plugins:
 custom:
   scripts:
     hooks:
-      'before:deploy:deploy': hexo g
+      'before:deploy:deploy': yarn postinstall
 
  # 新增的 CDN 自定义域名配置
  hosts:
