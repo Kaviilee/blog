@@ -15,5 +15,12 @@ inputs:
  protocol: http
 
  # 新增的 CDN 自定义域名配置
- hosts:
-    - host: garvey1ee.top/blog # 希望配置的自定义域名
+#  hosts:
+#     - host: garvey1ee.top/blog # 希望配置的自定义域名
+customDomains:
+  - domain: host: garvey1ee.top/blog
+    # 如要添加https，需先行在腾讯云-SSL证书进行认证获取cettificateId
+    # certificateId: abcdefg
+    protocols:
+      - http
+      # - https
