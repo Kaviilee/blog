@@ -123,11 +123,11 @@ cover:
       icon: fas fa-archive
       color: '#ff9800'
       url: /archives/
-    - name: 说说
+    - name: 关于
       # img: https://i.loli.net/2020/07/24/skczZ1VdMGRbTLi.png
-      icon: fas fa-comment
+      icon: fas fa-info-circle
       color: '#734ae6'
-      url: /shuoshuo/
+      url: /about/
 
 
 
@@ -151,9 +151,9 @@ navbar:
     - name: 归档
       icon: fas fa-archive
       url: archives/
-    - name: 说说
-      icon: fas fa-comment
-      url: shuoshuo/
+    # - name: 说说
+    #   icon: fas fa-comment
+    #   url: shuoshuo/
     # - name: 友链
     #   icon: fas fa-link
     #   url: friends/
