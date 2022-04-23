@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,9 +16,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：git - Kaviilee&#39;s blog</title>
+  <title>一些js小技巧 - Kaviilee&#39;s blog</title>
+  
+    <meta name="keywords" content="javascript">
   
 
+  
+    <meta name="description" content="记录一些js的小技巧。">
   
 
   <!-- feed -->
@@ -84,7 +86,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -370,10 +372,10 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">一些js小技巧</div>
   <div id="pjax-enable-cover">true</div>
-  <div id="pjax-permalink"></div>
+  <div id="pjax-permalink">https://kaviilee.github.io/blog/2022/04/23/%E4%B8%80%E4%BA%9Bjs%E5%B0%8F%E6%8A%80%E5%B7%A7/</div>
   
   <div id="valine-path">none</div>
   <div id="valine-placeholder">none</div>
@@ -407,27 +409,12 @@
       
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -437,11 +424,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/blog/2020/10/13/conventional-commits/">
-      约定式提交 (Conventional Commits)
+  <h1 class="title">
+    <a href="/blog/2022/04/23/%E4%B8%80%E4%BA%9Bjs%E5%B0%8F%E6%8A%80%E5%B7%A7/">
+      一些js小技巧
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -451,14 +438,14 @@
           
             
               
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/%E6%8A%80%E6%9C%AF/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>技术</p>
-    </a>
-  </div>
 
+
+ 
+
+            
+          
+            
+              
 
             
           
@@ -466,41 +453,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年10月13日</p>
+    <p>发布于：2022年4月23日</p>
   </a>
 </div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.2k字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：4分钟</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/blog/2020/10/13/conventional-commits/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/blog/2020/10/13/conventional-commits/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
 
             
           
@@ -518,151 +473,218 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>关于约定式提交的规范内容。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/blog/2020/10/13/conventional-commits/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p>记录一些js的小技巧。</p>
+<a id="more"></a>
 
-          </div>
+<h2 id="一些js小技巧"><a href="#一些js小技巧" class="headerlink" title="一些js小技巧"></a>一些js小技巧</h2><h3 id="操作URL查询参数"><a href="#操作URL查询参数" class="headerlink" title="操作URL查询参数"></a>操作URL查询参数</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> params = <span class="keyword">new</span> URLSearchParams(location.search); <span class="comment">// location.search = '?key=dd&amp;value=kk'</span></span><br><span class="line">params.has(<span class="string">'key'</span>); <span class="comment">// true</span></span><br><span class="line">params.get(<span class="string">'value'</span>); <span class="comment">// kk</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="取整"><a href="#取整" class="headerlink" title="取整"></a>取整</h3><blockquote>
+<p>代替正数的 Math.floor()，代替负数的 Math.ceil()</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> num1 = ~~<span class="number">2.3</span>;</span><br><span class="line"><span class="keyword">const</span> num2 = <span class="number">2.3</span> | <span class="number">0</span>;</span><br><span class="line"><span class="keyword">const</span> num3 = <span class="number">2.3</span> &gt;&gt; <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="短路运算"><a href="#短路运算" class="headerlink" title="短路运算"></a>短路运算</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> a = d &amp;&amp; <span class="number">1</span>; <span class="comment">// 满足条件赋值：取假运算，从左到右依次判断，遇到假值返回假值，后面不再执行，否则返回最后一个真值</span></span><br><span class="line"><span class="keyword">const</span> b = d || <span class="number">1</span>; <span class="comment">// 默认赋值：取真运算，从左到右依次判断，遇到真值返回真值，后面不再执行，否则返回最后一个假值</span></span><br><span class="line"><span class="keyword">const</span> c = !d; <span class="comment">// 取假赋值：单个表达式转换为true则返回false，否则返回true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="判断空对象"><a href="#判断空对象" class="headerlink" title="判断空对象"></a>判断空对象</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> flag = !<span class="built_in">Object</span>.keys(obj).length; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="满足条件时执行"><a href="#满足条件时执行" class="headerlink" title="满足条件时执行"></a>满足条件时执行</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> flagA = <span class="literal">true</span>; <span class="comment">// 条件A</span></span><br><span class="line"><span class="keyword">const</span> flagB = <span class="literal">false</span>; <span class="comment">// 条件B</span></span><br><span class="line">(flagA || flagB) &amp;&amp; Func(); <span class="comment">// 满足A或B时执行</span></span><br><span class="line">(flagA || !flagB) &amp;&amp; Func(); <span class="comment">// 满足A或不满足B时执行</span></span><br><span class="line">flagA &amp;&amp; flagB &amp;&amp; Func(); <span class="comment">// 同时满足A和B时执行</span></span><br><span class="line">flagA &amp;&amp; !flagB &amp;&amp; Func(); <span class="comment">// 满足A且不满足B时执行</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="克隆数组"><a href="#克隆数组" class="headerlink" title="克隆数组"></a>克隆数组</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> _arr = [...arr]; <span class="comment">// [1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="合并数组"><a href="#合并数组" class="headerlink" title="合并数组"></a>合并数组</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</span><br><span class="line"><span class="keyword">const</span> arr = [...arr1, ...arr2]; <span class="comment">// [1, 2, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [...new <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="literal">null</span>, <span class="literal">null</span>])]; <span class="comment">// [1, 2 ,4, 6, null]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="过滤空值"><a href="#过滤空值" class="headerlink" title="过滤空值"></a>过滤空值</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="literal">undefined</span>, <span class="literal">null</span>, <span class="string">""</span>, <span class="number">0</span>, <span class="literal">false</span>, <span class="literal">NaN</span>, <span class="number">1</span>, <span class="number">2</span>].filter(<span class="built_in">Boolean</span>); <span class="comment">// [1, 2]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="统计成员个数"><a href="#统计成员个数" class="headerlink" title="统计成员个数"></a>统计成员个数</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">const</span> count = arr.reduce(<span class="function">(<span class="params">t, v</span>) =&gt;</span> &#123;</span><br><span class="line">    t[v] = t[v] ? ++t[v] : <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;, &#123;&#125;);</span><br><span class="line"><span class="comment">// count =&gt; &#123; 0: 1, 1: 2, 2: 3 &#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="按属性对Object分类"><a href="#按属性对Object分类" class="headerlink" title="按属性对Object分类"></a>按属性对Object分类</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> people = [</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'Alice'</span>, <span class="attr">age</span>: <span class="number">20</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'Max'</span>, <span class="attr">age</span>: <span class="number">21</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">name</span>: <span class="string">'Tom'</span>, <span class="attr">age</span>: <span class="number">20</span> &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> groupBy = <span class="function">(<span class="params">objectArr, property</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> objectArr.reduce(<span class="function">(<span class="params">acc, obj</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> key = obj[property];</span><br><span class="line">        <span class="keyword">if</span> (!acc[key]) &#123;</span><br><span class="line">            acc[key] = []</span><br><span class="line">        &#125;</span><br><span class="line">        acc[key].push(obj);</span><br><span class="line">        <span class="keyword">return</span> acc;</span><br><span class="line">    &#125;, &#123;&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> groupedPeople = groupBy(people, <span class="string">'age'</span>);</span><br><span class="line"><span class="comment">/* &#123;</span></span><br><span class="line"><span class="comment">    20: [</span></span><br><span class="line"><span class="comment">        &#123; name: 'Max', age: 20 &#125;,</span></span><br><span class="line"><span class="comment">        &#123; name: 'Jane', age: 20 &#125;</span></span><br><span class="line"><span class="comment">    ],</span></span><br><span class="line"><span class="comment">    21: [&#123; name: 'Alice', age: 21 &#125;]</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="删除对象无用属性"><a href="#删除对象无用属性" class="headerlink" title="删除对象无用属性"></a>删除对象无用属性</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">a</span>: <span class="number">0</span>, <span class="attr">b</span>: <span class="number">1</span>, <span class="attr">c</span>: <span class="number">2</span> &#125;; <span class="comment">// 只想拿b和c</span></span><br><span class="line"><span class="keyword">const</span> &#123; a, ...rest &#125; = obj; <span class="comment">// &#123; b: 1, c: 2 &#125;</span></span><br></pre></td></tr></table></figure>
+
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
         
-      
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
         
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+          
+            <p>本文永久链接是：<a href=https://kaviilee.github.io/blog/2022/04/23/%E4%B8%80%E4%BA%9Bjs%E5%B0%8F%E6%8A%80%E5%B7%A7/>https://kaviilee.github.io/blog/2022/04/23/%E4%B8%80%E4%BA%9Bjs%E5%B0%8F%E6%8A%80%E5%B7%A7/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
   
 
 
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/blog/2020/09/03/git-flow/">
-      Git Flow
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
               
-  
-  <div class='new-meta-item category'>
-    <a href='/blog/categories/%E6%8A%80%E6%9C%AF/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>技术</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年9月3日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：993字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：3分钟</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/blog/2020/09/03/git-flow/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/blog/2020/09/03/git-flow/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
+            </div>
           
         </div>
         
-          <hr>
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
         
-      </div>
-    
-  </section>
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-04-23T06:02:38+00:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2022年4月23日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/blog/tags/javascript/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>javascript</p></a></div>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
+        
       
-        <p>之前偶尔看到的一篇文章，是讲 Git Flow 的，谈了分支相关的一些知识。</p>
+        
+          
+
+        
       
-    </div>
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        <a class= "readmore" href="/blog/2020/09/03/git-flow/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
+        <a class="-mob-share-qq" target="blank" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://kaviilee.github.io/blog/2022/04/23/%E4%B8%80%E4%BA%9Bjs%E5%B0%8F%E6%8A%80%E5%B7%A7/&title=一些js小技巧 - Kaviilee's blog&summary=记录一些js的小技巧。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
         </a>
       
     
-  </section>
-</article>
-
-          </div>
-        
+      
+        <a class="-mob-share-qzone" target="blank" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://kaviilee.github.io/blog/2022/04/23/%E4%B8%80%E4%BA%9Bjs%E5%B0%8F%E6%8A%80%E5%B7%A7/&title=一些js小技巧 - Kaviilee's blog&summary=记录一些js的小技巧。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
       
     
+      
+        <a class="-mob-share-weibo" target="blank" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://kaviilee.github.io/blog/2022/04/23/%E4%B8%80%E4%BA%9Bjs%E5%B0%8F%E6%8A%80%E5%B7%A7/&title=一些js小技巧 - Kaviilee's blog&summary=记录一些js的小技巧。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.1/blog/images/loader/imageloading.svg" data-original="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
   </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/blog/2021/03/30/%E5%88%B7%E5%88%B7%E7%AE%97%E6%B3%95/'>
+                <p class='title'>刷刷算法<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>是算法耶！
+
+
+
+
+实现 Trie （前缀树）Trie（发音类似 “try”）或者说 前缀树 是一种树形数据结构，用于高效地存储和检索字符串数据集中的键。这一数据结构有相当多的应用情景，例如自动...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
   
     
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
 </div>
 <aside class='l_side'>
   
@@ -723,70 +745,24 @@
   
 
   
-    
-    
-  
 
-  <section class="widget category shadow desktop">
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/blog/categories/css/" href="/blog/categories/css/"
-            id="blogcategoriescss"
-            ><div class='name'>CSS</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/javascript/" href="/blog/categories/javascript/"
-            id="blogcategoriesjavascript"
-            ><div class='name'>JavaScript</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/" href="/blog/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"
-            id="blogcategoriesE5898DE7ABAFE5B7A5E7A88BE58C96"
-            ><div class='name'>前端工程化</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/%E6%8A%80%E6%9C%AF/" href="/blog/categories/%E6%8A%80%E6%9C%AF/"
-            id="blogcategoriesE68A80E69CAF"
-            ><div class='name'>技术</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/blog/categories/%E6%A1%86%E6%9E%B6/" href="/blog/categories/%E6%A1%86%E6%9E%B6/"
-            id="blogcategoriesE6A186E69EB6"
-            ><div class='name'>框架</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/blog/tags/antd-v4/" style="font-size: 19px; color: #777">Antd v4</a> <a href="/blog/tags/css/" style="font-size: 14px; color: #999">CSS</a> <a href="/blog/tags/docker/" style="font-size: 14px; color: #999">Docker</a> <a href="/blog/tags/typescript/" style="font-size: 14px; color: #999">TypeScript</a> <a href="/blog/tags/git/" style="font-size: 19px; color: #777">git</a> <a href="/blog/tags/javascript/" style="font-size: 14px; color: #999">javascript</a> <a href="/blog/tags/react/" style="font-size: 14px; color: #999">react</a> <a href="/blog/tags/webpack/" style="font-size: 19px; color: #777">webpack</a> <a href="/blog/tags/%E5%85%B6%E4%BB%96/" style="font-size: 14px; color: #999">其他</a> <a href="/blog/tags/%E7%AE%97%E6%B3%95/" style="font-size: 14px; color: #999">算法</a> <a href="/blog/tags/%E8%A7%84%E8%8C%83/" style="font-size: 24px; color: #555">规范</a> <a href="/blog/tags/%E9%9D%A2%E7%BB%8F/" style="font-size: 14px; color: #999">面经</a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一些js小技巧"><span class="toc-text">一些js小技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作URL查询参数"><span class="toc-text">操作URL查询参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#取整"><span class="toc-text">取整</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#短路运算"><span class="toc-text">短路运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断空对象"><span class="toc-text">判断空对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#满足条件时执行"><span class="toc-text">满足条件时执行</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#克隆数组"><span class="toc-text">克隆数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#合并数组"><span class="toc-text">合并数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组去重"><span class="toc-text">数组去重</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤空值"><span class="toc-text">过滤空值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#统计成员个数"><span class="toc-text">统计成员个数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#按属性对Object分类"><span class="toc-text">按属性对Object分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除对象无用属性"><span class="toc-text">删除对象无用属性</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -795,6 +771,7 @@
 
 
 </aside>
+
 
 
     </div>
