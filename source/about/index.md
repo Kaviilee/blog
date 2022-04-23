@@ -18,3 +18,6 @@ valine:
 
 - 小程序开发
 - 全栈之路
+- Rust
+- Go
+- Css
