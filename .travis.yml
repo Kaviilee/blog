@@ -1,26 +1,26 @@
-language: node_js
-node_js:
-    - 12
+# language: node_js
+# node_js:
+#     - 12
 
-install:
-    - yarn install
+# install:
+#     - yarn install
 
-script:
-    - hexo generate
+# script:
+#     - hexo generate
 
-deploy:
-    provider: pages
+# deploy:
+#     provider: pages
 
-    # target_branch: gh_pages // 默认就是gh_pages
-    on:
-        branch: dev
+#     # target_branch: gh_pages // 默认就是gh_pages
+#     on:
+#         branch: dev
 
-    skip-cleanup: true
+#     skip-cleanup: true
 
-    local_dir: public
+#     local_dir: public
 
-    token: $GITHUB_TOKEN
+#     token: $GITHUB_TOKEN
 
-    keep_history: true
+#     keep_history: true
 
-    committer_from_gh: true
+#     committer_from_gh: true
