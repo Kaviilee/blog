@@ -20,7 +20,7 @@ $ hexo s -p 9000 --draft
 ###### 发布草稿(`publish`)
 
 ```
-$ yarn publish
+$ yarn release [name]
 ```
 
 ##### 发布

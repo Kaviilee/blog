@@ -71,7 +71,7 @@ style:
       style: normal
       offset: 0.1rem # Correct baseline for zh-CN
     codefont:
-      fontfamily: 'Source Code Pro, UbuntuMono'
+      fontfamily: '"Microsoft YaHei", "Source Code Pro", "UbuntuMono"'
       name: 'fontawesome'
       # url: https://cdn.jsdelivr.net/gh/Kaviilee/cdn@1.14/blog/fonts/FontAwesome.otf
       weight: normal
