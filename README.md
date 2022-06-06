@@ -25,7 +25,7 @@ $ yarn release [name]
 
 ##### 发布
 
-```
+```bash
 git push
 ```
  
