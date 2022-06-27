@@ -1,0 +1,16 @@
+{
+  "name": "blog",
+  "version": "2.0.0",
+  "description": "kaviilee's blog with vuepress",
+  "main": "index.js",
+  "repository": "git@github.com:Kaviilee/blog.git",
+  "author": "Kaviilee <jiaweilee95@126.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.9.7"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}
